@@ -623,9 +623,91 @@ ary.filter(function(x) { return x === undefined;});
 
 > 面试题：
 >
-> 手写promise
+> 什么是promise？
+>
+> 手写promise？
 
+**Promise** 对象用于表示一个异步操作的最终状态（完成或失败），以及其返回的值
 
+- 本质
+
+  - Promise 本质上是一个绑定了回调的对象，而不是将回调传进函数内部
+
+- 背景
+
+  - 多重的异步操作,导致回调地域
+
+    ```js
+    doSomething(function(result) {
+      doSomethingElse(result, function(newResult) {
+        doThirdThing(newResult, function(finalResult) {
+          console.log('Got the final result: ' + finalResult);
+        }, failureCallback);
+      }, failureCallback);
+    }, failureCallback);
+    ```
+
+  - promise链式调用
+
+    ```js
+    doSomething().then(function(result) {
+      return doSomethingElse(result);
+    })
+    .then(function(newResult) {
+      return doThirdThing(newResult);
+    })
+    .then(function(finalResult) {
+      console.log('Got the final result: ' + finalResult);
+    })
+    .catch(failureCallback);
+    ```
+
+  - `async/await`语法糖
+
+- 语法
+
+  ```js
+  new Promise( function(resolve, reject) {...} /* executor */  );
+  ```
+
+- 参数：
+
+  - executor：
+
+    Promise构造函数执行时立即调用`executor` 函数（executor 函数在Promise构造函数返回新建对象前被调用）
+
+    executor 内部异步操作，一旦完成，promise的状态改变（不可逆）：
+
+    - `resolve` :pending （初始状态）----->fulfilled（完成）
+    - `reject`:pending （初始状态）----->rejected（失败）
+
+    如果executor函数中抛出一个错误，那么该promise 状态为rejected，executor函数的返回值被忽略
+
+- 创建Promise
+
+  ```js
+  const myFirstPromise = new Promise((resolve, reject) => {
+    // 做一些异步操作，最终会调用下面两者之一:
+    //
+    //   resolve(someValue); // fulfilled
+    // 或
+    //   reject("failure reason"); // rejected
+  });
+  ```
+
+- 想要某个函数?拥有promise功能，只需让其返回一个promise即可
+
+  ```js
+  function myAsyncFunction(url) {
+    return new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", url);
+      xhr.onload = () => resolve(xhr.responseText);
+      xhr.onerror = () => reject(xhr.statusText);
+      xhr.send();
+    });
+  };
+  ```
 
 参考：
 
