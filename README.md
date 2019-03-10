@@ -424,7 +424,7 @@
 
 ## JavaScript相关
 
-####Array.prototype.map()
+#### Array.prototype.map()
 
 > 面试题：
 >
@@ -713,6 +713,216 @@ ary.filter(function(x) { return x === undefined;});
 
 - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Using_promises
 - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+#### Ajax
+
+> 面试题：
+>
+> 手写Ajax？
+>
+> promise ajax？
+
+- XMLHttpRequest对象
+
+  - 实现
+
+    ```js
+    XMLHttp_Object = new XMLHttpRequest();
+    ```
+
+  - 属性
+
+    - `readyState`:描述一个HTTP请求的状态
+
+      | readyState属性值 | 描述                                                         |
+      | ---------------- | ------------------------------------------------------------ |
+      | 0                | 未初始化状态：已创建XMLHttpRequest对象，但未初始化（未调用XMLHttpRequest open（）方法） |
+      | 1                | 准备发送状态：已经调用XMLHttpRequest open（）方法，准备向服务器发送请求 |
+      | 2                | 已发送，未接收：send()调用                                   |
+      | 3                | 正在接收：已经接收到响应头部信息，消息体还未完全接收         |
+      | 4                | 已加载状态：响应完全接受                                     |
+
+      `readyState`变化会激发一个`ReadystateChange`事件
+
+    - `responseText`
+
+      - 包含客户端接收到HTTP响应的文本内容
+      - 返回字符串
+      - 只读
+
+    - `responseXML`
+
+      - 用于接收到完整HTTP响应（readyState=4）描述XML响应
+      - 返回XML Document对象
+      - 只读
+
+    - `Status`
+
+      - 描述HTTP状态码
+      - `readyState`==3|4时，可用
+
+    - `statusText`
+
+      - 描述HTTP状态码文本信息
+      - `readyState`==3|4时，可用
+      - 返回字符串
+      - 只读
+
+  - 方法
+
+    - `abort()`
+
+      - 将一个XMLHttpRequest对象复位到未初始化状态
+
+      ```js
+      XMLHttp_Object.abort();
+      ```
+
+    - `open()`
+
+      - 初始化一个XMLHttpRequest对象
+
+      ```js
+      XMLHttp_Object.open(string method,string url,boolean asynch,string username,string password);
+      ```
+
+      - `method`：指定HTTP请求方法
+      - `url`：目标url地址
+      - `asynch`|可选：同步or异步（默认为true，异步）
+      - `usernae|password`|可选
+
+    - `send()`
+
+      - 向服务器发送一个具体请求
+      - `readyState==1`时可调用
+      - 调用后，`readyState==2`
+
+      ```js
+      XMLHttp_object.send(content);
+      ```
+
+      - `content`|可选：表示需要发送到服务器的内容
+
+    - `setRequestHeader()`
+
+      - 指定某个HTTP头
+      - 必须在`open()`后调用
+
+      ```js
+      XMLHttp_object.setRequestHeader(string head,sting value);
+      ```
+
+    - `getRequestHeader(string header)`
+
+      - 检索响应的头部值
+      - `readyState=3|4`才可以调用
+      - 返回字符串
+
+    - `getAllResponeHeaders()`
+
+- 发送请求
+
+  - `get`请求
+
+  ```js
+  //创建XMLHttpRequest对象，不同浏览器使用的方式不同
+  XMLHttp_Object = new XMLHttpRequest();
+  
+  //设置服务器地址
+  var url = "http://xxx";
+  
+  //初始化请求
+  XMLHttp_object.open("GET",url,ture);
+  
+  //发送请求
+  XMLHttp_object.send(null);
+  ```
+
+  - `post`请求
+
+  ```js
+  //创建XMLHttpRequest对象，不同浏览器使用的方式不同
+  XMLHttp_Object = new XMLHttpRequest();
+  
+  //设置服务器地址
+  var url = "http://xxx";
+  
+  //初始化请求
+  XMLHttp_object.open("POST",url,ture);
+  
+  //设置HTTP头部信息
+  XMLHttp_Object.setRequestHeader("Content_Type","application/x-www-form-urlencoded");
+  
+  //发送请求
+  var para = "name="+name;
+  XMLHtttp_Object.send(para);
+  ```
+
+  
+
+- 处理响应：利用`onreadystatechange`来完成
+
+  ```js
+  //调用响应函数
+  XMLHttp_Object.onreadystatechange=ResponseReq;
+  
+  //根据HTTP处理状态才去措施
+  function ResponseReq(){
+      if(XMLHttp_Object.readyState == 4){
+          //处理返回信息
+          ...
+          
+          //返回状态码
+          if(XMLHttp_Object,status == 200）{
+             //处理返回信息
+             ...
+             }else{
+              //错误处理
+              ...
+          }
+      }
+  }
+  ```
+
+  
+
+- Ajax通信范例
+
+  - promise实现ajax
+
+  ```js
+  //定义
+  const myHttpClient = url => {
+    return new Promise((resolve, reject) => {
+      let client = new XMLHttpRequest();
+      client.open("GET", url);
+      client.onreadystatechange = handler;
+      client.responseType = "json";
+      client.setRequestHeader("Accept", "application/json");
+      client.send();
+      function handler() {
+        if (this.readyState !== 4) {
+          return;
+        }
+        if (this.status === 200) {
+          resolve(this.response);
+        } else {
+          reject(new Error(this.statusText));
+        }
+      }
+    });
+  };
+  
+  //使用
+  myHttpClient('https://www.baidu.com').then(res => {
+    console.log(res);
+  }).catch(error => {
+    console.log(error);
+  });
+  
+  ```
+
+  
 
 ## DOM相关
 
