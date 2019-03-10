@@ -922,15 +922,686 @@ ary.filter(function(x) { return x === undefined;});
   
   ```
 
-  
+
+#### 闭包（Closure)
+
+> 面试题：
+>
+> 什么是闭包？
+>
+> 闭包的作用？
+
+从变量的作用域说起：全局作用域和局部作用域（函数作用域）
+
+- 函数内部可以直接读取全局变量
+- 函数外部无法读取函数内的局部变量
+
+**如何从外部读取局部变量？**
+
+- 在函数内部再定义一个函数，并返回
+
+**闭包的概念**
+
+- 简单的理解：定义在一个函数内部的函数（函数内部的子函数才能读取局部变量）
+- 本质上：闭包就是连接函数内部和函数外部的一座桥梁
+
+闭包的用途：
+
+- 读取函数内部的局部变量
+- 局部变量始终保存在内存中
+  - IE中可能导致内存泄漏
+
+举例：
+
+```js
+var name = "The Window";
+
+　　var object = {
+　　　　name : "My Object",
+
+　　　　getNameFunc : function(){
+　　　　　　return function(){
+　　　　　　　　return this.name;
+　　　　　　};
+
+　　　　}
+
+　　};
+
+　　alert(object.getNameFunc()());//object.getNameFunc()是个闭包
+
+//The Window
+
+　var name = "The Window";
+
+　　var object = {
+　　　　name : "My Object",
+
+　　　　getNameFunc : function(){
+　　　　　　var that = this;
+　　　　　　return function(){
+　　　　　　　　return that.name;
+　　　　　　};
+
+　　　　}
+
+　　};
+
+　　alert(object.getNameFunc()());
+
+//My Object
+
+function foo(x) {
+    var tmp = 3;
+    return function (y) {
+        alert(x + y + (++tmp));
+    }
+}
+var bar = foo(2); // bar 现在是一个闭包
+bar(10);
+
+//16
+```
+
+
+
+参考：
+
+- http://www.ruanyifeng.com/blog/2009/08/learning_javascript_closures.html
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures
+
+#### 立即执行函数（IIFE，**Immediately-Invoked Function Expression**）
+
+> 面试题：
+>
+> 什么是立即执行函数？
+>
+> 使用立即执行函数的目的是什么？
+
+常见的两种方式：
+
+```js
+(function(){
+    ...
+})()
+
+            
+(function(){
+    ...
+}())
+
+```
+
+作用：
+
+- 不破坏污染全局的命名空间
+
+参考：
+
+- http://www.cnblogs.com/TomXu/archive/2011/12/31/2289423.html
+
+#### 深浅拷贝
+
+> 面试题：
+>
+> 深浅拷贝实现方法有那些？
+
+```js
+let d = JSON.parse(JSON.stringify(a));//深复制包含子对象
+let c = {...a};//拷贝一层但不包含子对象
+```
+
+参考：
+
+#### 数组去重
+
+> 面试题：
+>
+> 数组去重有哪些方法？
+
+思路：
+
+- 定义一个新数组，并存放原数组的第一个元素，然后将元素组一一和新数组的元素对比，若不同则存放在新数组中 
+- 先将原数组排序，在与相邻的进行比较，如果不同则存入新数组
+- 利用对象属性存在的特性，如果没有该属性则存入新数组。
+- （最常用）：使用es6 set
+
+参考：
+
+#### 正则实现trim()功能
+
+> 面试题：
+
+```js
+//封装兼容的trim方法
+function trim(str){
+	var aaa = str.replace(/(^\s+)|(\s+$)/g,"");  
+    //以空格开头或者以空格结尾 g表示全局替换	
+    return aaa;
+}
+```
+
+参考：
+
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+#### 原型
+
+> 面试题：
+
+每个对象都有 `__proto__` 属性，但只有函数对象才有 `prototype` 属性
+
+参考：
+
+- https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes
+
+#### 继承
+
+> 面试题：
+
+
+
+参考：
+
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+
+#### call    apply    bind
+
+> 面试题：
+
+参考：
+
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+
+#### sort
+
+> 面试题：
+
+V8 引擎 sort 函数只给出了两种排序 InsertionSort 和 QuickSort，
+
+- 数量小于10的数组使用 插入
+- 比10大的数组则使用 快排
+
+#### 事件流向
+
+> 面试题
+
+流向
+
+- 冒泡：子节点一层层冒泡到根节点
+
+- 捕获顺序与冒泡相反
+
+- addEventListener最后个参数true代表捕获反之代表冒泡
+
+- 阻止冒泡不停止父节点捕获
+
+参考：
+
+- https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events
+
+#### 并发模型与事件循环
+
+> 面试题
+
+参考：
+
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/EventLoop
+
+#### 原生操作class
+
+> 面试题：
+
+```js
+//判断有无
+function hasClass(ele, cls) {
+	return ele.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+}
+
+//添加
+function addClass(ele, cls) {
+	if (!this.hasClass(ele, cls)) ele.className += " " + cls;
+}
+
+//删除
+function removeClass(ele, cls) {
+	if (hasClass(ele, cls)) {
+		let reg = new RegExp("(\\s|^)" + cls + "(\\s|$)");
+		ele.className = ele.className.replace(reg, " ");
+	}
+}
+
+//有则删，无则加
+function toggleClass(obj,cls){
+	if(hasClass(obj,cls)){
+		removeClass(obj, cls);
+	}else{
+		addClass(obj, cls);
+}
+
+```
+
+#### js自定义事件
+
+> 面试题
+
+三要素：document.createEvent() event.initEvent() element.dispatchEvent()
+
+```js
+demo:
+(en:自定义事件名称，fn:事件处理函数，addEvent:为DOM元素添加自定义事件，triggerEvent:触发自定义事件)
+window.onload = function(){
+    var demo = document.getElementById("demo");
+    demo.addEvent("test",function(){console.log("handler1")});
+    demo.addEvent("test",function(){console.log("handler2")});
+    demo.onclick = function(){
+        this.triggerEvent("test");
+    }
+}
+Element.prototype.addEvent = function(en,fn){
+    this.pools = this.pools || {};
+    if(en in this.pools){
+        this.pools[en].push(fn);
+    }else{
+        this.pools[en] = [];
+        this.pools[en].push(fn);
+    }
+}
+Element.prototype.triggerEvent  = function(en){
+    if(en in this.pools){
+        var fns = this.pools[en];
+        for(var i=0,il=fns.length;i<il;i++){
+            fns[i]();
+        }
+    }else{
+        return;
+    }
+}
+
+```
+
+
 
 ## DOM相关
 
+#### dom事件模型
+
+> 面试题：
+
+```html
+
+<body>
+    <!--行内绑定：脚本模型-->
+    <button onclick="javascrpt:alert('Hello')">Hello1</button>
+    <!--内联模型-->
+    <button onclick="showHello()">Hello2</button>
+    <!--动态绑定-->
+    <button id="btn3">Hello3</button>
+</body>
+
+<script>
+    
+/*DOM0：同一个元素，同类事件只能添加一个，如果添加多个， 后面添加的会覆盖之前添加的*/
+function showHello() {
+	alert("Hello");
+}
+var btn3 = document.getElementById("btn3");
+    btn3.onclick = function () {
+    alert("Hello");
+}
+    
+/*DOM2:可以给同一个元素添加多个同类事件*/
+btn3.addEventListener("click",function () {
+    alert("hello1");
+});
+btn3.addEventListener("click",function () {
+    alert("hello2");
+})
+if (btn3.attachEvent){
+    /*IE*/
+    btn3.attachEvent("onclick",function () {
+    	alert("IE Hello1");
+    })
+}else {
+    /*W3C*/
+    btn3.addEventListener("click",function () {
+    	alert("W3C Hello");
+    })
+}
+</script>
+```
+
+
+
 ## HTTP相关
 
+#### 常见状态码
+
+> 面试题：
+
+
+
+**2开头 （请求成功）**
+
+|      |      |
+| ---- | ---- |
+| 200  |      |
+| 201  |      |
+| 202  |      |
+
+**3开头 （请求被重定向）**
+
+|      |      |
+| ---- | ---- |
+| 300  |      |
+| 301  |      |
+| 302  |      |
+
+**4开头 （请求错误）**
+
+|      |      |
+| ---- | ---- |
+| 400  |      |
+| 401  |      |
+| 404  |      |
+
+**5开头（服务器错误）**
+
+|      |      |
+| ---- | ---- |
+| 500  |      |
+| 501  |      |
+| 502  |      |
+
+#### 缓存
+
+Cache-control
+
+CDN
+
+参考：
+
+- https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Cache-Control
+
+#### Cache-Control 和 Etag 的区别
+
+> 面试题：
+>
+> 
+
+|                | Cache-Control | Etag |
+| -------------- | :-----------: | :--: |
+| 地址栏回车     |     有效      | 有效 |
+| 页面链接跳转   |     有效      | 有效 |
+| 新开窗口       |     有效      | 有效 |
+| 前进后退       |     有效      | 有效 |
+| F5刷新         |     无效      | 有效 |
+| Ctrl+F强制刷新 |     五效      | 无效 |
+
+#### Cookie sessionStorage localStorage
+
+共同点：
+
+- 都是保存在浏览器端，且同源的
+
+区别：
+
+- 方式
+  - cookie数据始终在同源的http请求中携带，即cookie在浏览器和服务器间来回传递
+  - 而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存
+- 大小
+  - cookie数据不能超过4k(适合保存小数据)
+  - sessionStorage和localStorage容量较大
+- 数据有效期不同
+  - sessionStorage：仅在当前浏览器窗口关闭前有效
+  - localStorage：始终有效，窗口或浏览器关闭也一直保存，需手动清楚
+  - cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭
+- 作用域不同
+  - sessionStorage不在不同的浏览器窗口中共享
+  - localStorage 在所有同源窗口中都是共享的
+  - cookie也是在所有同源窗口中都是共享的
+- 应用场景：
+  - localStorage：常用于长期登录（+判断用户是否已登录），适合长期保存在本地的数据。
+  - sessionStorage ：敏感账号一次性登录
+  -  cookies与服务器交互
+
+#### GET POST区别
+
+> 面试题
+
+| 操作             | GET                                 | POST                                                    |
+| ---------------- | ----------------------------------- | ------------------------------------------------------- |
+| 后退\|刷新       | 无害                                | 重新提交                                                |
+| 缓存             | 能                                  | 不能                                                    |
+| 编码类型         | `application/x-www-form-urlencoded` | `application/x-www-from-urlencoded|multipart/form-data` |
+| 历史             | 参数保存在浏览器历史中              | 参数不会保存在浏览器历史中                              |
+| 对数据长度的限制 | 最大长度是2048个字符                | 没有限制，允许二进制数据                                |
+| 安全性           | 较差，（数据是URL的一部分）         | 更安全（参数不会被保存在浏览器历史或服务器中）          |
+| 可见性           | 对所有人可见（数据在URL中）         | 数据不会显示在URL中                                     |
+
+
+
+#### 跨域、JSONP 、CORS、postMessage
+
+> 面试题
+
+跨域概念：若协议 + 域名 + 端口号均相同，那么就是同域，否则就是跨域
+
+jsonp实现:
+
+- 只能实现get请求
+
+```html
+
+原生
+<script>
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+ 
+    // 传参并指定回调执行函数为onBack
+  	script.src='http://www.domain2.com:8080/loginuser=admin&callback=onBack';
+    document.head.appendChild(script);
+ 
+    // 回调执行函数
+    function onBack(res) {
+        alert(JSON.stringify(res));
+    }
+ </script>
+```
+
+CORS：跨源资源共享 Cross-Origin Resource Sharing(CORS)
+
 ## webpack相关
+
+#### 打包体积 优化思路
+
+1. 提取第三方库或通过引用外部文件的方式引入第三方库
+2. 代码压缩插件UglifyJsPlugin
+3. 服务器启用gzip压缩
+4. 按需加载资源文件 require.ensure
+5. 优化devtool中的source-map
+6. 剥离css文件，单独打包
+7. 去除不必要插件，通常就是开发环境与生产环境用同一套配置文件导致 
+
+#### 打包效率
+
+1. 开发环境采用增量构建，启用热更新
+2. 开发环境不做无意义的工作如提取css计算文件hash等
+3. 配置devtool
+4. 选择合适的loader
+5. 个别loader开启cache 如babel-loader
+6. 第三方库采用引入方式
+7. 提取公共代码
+8. 优化构建时的搜索路径 指明需要构建目录及不需要构建目录
+9. 模块化引入需要的部分
+
+
+
+## 网络安全相关
+
+#### XSS CSRF
+
+XSS(跨站脚本攻击)，恶意的注入html代码，其他用户访问时，会被执行 
+
+特点：
+
+- 能注入恶意的HTML/JavaScript代码到用户浏览的网页上，从而达到Cookie资料窃取、会话劫持、钓鱼欺骗等攻击
+
+ 防御手段：
+
+- 浏览器禁止页面的JS访问带有HttpOnly属性的Cookie
+- 两端进行输入格式检查
+- 通过编码转义的方式进行输出检查 CSRF(攻击跨站请求伪造) 特点：重要操作的所有参数都是可以被攻击者猜测到的。攻击者预测出URL的所有参数与参数值，才能成功地构造一个伪造的请求。 防御手段：
+- token验证机制，比如请求数据字段中添加一个token，响应请求时校验其有效性
+- 用户操作限制，比如验证码（繁琐，用户体验差）
+- 请求来源限制，比如限制HTTP Referer才能完成操作（防御效果相比较差） 实践中常用第一种
 
 ## react相关
 
 ## 算法相关
 
+
+
+## 其他
+
+
+
+#### 前后端路由差别
+
+区别
+
+- 后端每次路由请求都是重新访问服务器
+- 前端路由实际上只是JS根据URL来操作DOM元素，根据每个页面需要的去服务端请求数据，返回数据后和模板进行组合
+
+#### es6模块 commonjs  amd cmd
+
+比较：
+
+- CommonJS 的规范中，每个 JavaScript 文件就是一个独立的模块上下文（module context），在这个上下文中默认创建的属性都是私有的。也就是说，在一个文件定义的变量（还包括函数和类），都是私有的，对其他文件是不可见的。
+
+- CommonJS是同步加载模块,在浏览器中会出现堵塞情况，所以不适用
+
+- AMD 异步，需要定义回调define方式
+
+- es6 一个模块就是一个独立的文件，该文件内部的所有变量，外部无法获取。如果你希望外部能够读取模块内部的某个变量，就必须使用export关键字输出该变量。es6还可以导出类、方法，自动适用严格模式
+
+#### babel原理
+
+ES6、7代码输入 -> babylon进行解析 -> 得到AST（抽象语法树）-> plugin用babel-traverse对AST树进行遍历转译 ->得到新的AST树->用babel-generator通过AST树生成ES5代码
+
+#### 内存泄漏
+
+> 面试题
+
+定义：
+
+- 程序中己动态分配的堆内存由于某种原因程序未释放或无法释放引发的各种问题 js中可能出现的内存泄漏情况 结果：变慢，崩溃，延迟大等
+
+原因：
+
+- 全局变量
+- dom清空时还存在引用
+- ie中使用闭包
+- 定时器为清理
+- 子元素引起的内存泄漏
+
+避免策略：
+
+- 减少不必要的全局变量，生命周期较长的对象，及时对无用数据进行垃圾回收
+- 注意程序逻辑，避免死循环
+- 减少层级过多的引用
+
+#### css与js动画差异
+
+差异：
+
+- css动画
+  - 性能更好
+  - 相对简单
+- js动画
+  - 更好控制
+  - 兼容性更好
+  - 实现强大
+  - 添加事件
+
+#### JS异步加载
+
+#### 组件封装
+
+目的：
+
+- 为了重用，提高开发效率和代码质量 
+- 注意：
+  - 低耦合，
+  - 单一职责，
+  - 可复用性，
+  - 可维护性 
+
+常用操作：
+
+- 分析布局
+- 初步开发
+- 化繁为简
+- 组件抽象
+
+#### URL到界面显示发生了什么
+
+1. DNS解析 
+
+   - 先本地缓存找，在一层层找 将常见的地址解析成唯一对应的ip地址基本顺序为：本地域名服务器->根域名服务器->com顶级域名服务器依次类推下去,找到后记录并缓存下来如www.google.com为
+     **. -> .com -> google.com. -> www.google.com.**
+
+2. TCP连接 三次握手，只要没收到确认消息就要重新发 
+
+   1. 主机向服务器发送一个建立连接的请求（您好，我想认识您）；
+   2. 服务器接到请求后发送同意连接的信号（好的，很高兴认识您）；
+   3. 主机接到同意连接的信号后，再次向服务器发送了确认信号（我也很高兴认识您），自此，主机与服务器两者建立了连接。
+
+3. 发送HTTP请求 浏览器会分析这个url，并设置好请求报文发出。请求报文中包括请求行、请求头、空行、请求主体。https默认请求端口443， http默认80。 常见的http请求如下
+
+   ```js
+   POST / HTTP1.1
+   Host:www.wrox.com
+   User-Agent:Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727; .NET CLR 3.0.04506.648; .NET CLR 3.5.21022)
+   Content-Type:application/x-www-form-urlencoded
+   Content-Length:40
+   Connection: Keep-Alive
+   
+   name=Professional%20Ajax&publisher=Wiley
+   -----------------------------------------------------
+   //第一部分：请求行，第一行说明是post请求，以及http1.1版本
+   //第二部分：请求头部，第二行至第六行
+   //第三部分：空行，第七行的空行
+   //第四部分：请求数据，第八行
+   ```
+
+4. 服务器处理请求并返回HTTP报文
+
+  ```js
+  HTTP/1.1 200 OK
+  Date: Fri, 22 May 2009 06:07:21 GMT
+  Content-Type: text/html; charset=UTF-8
+  
+  <html>
+        <head></head>
+        <body>
+              <!--body goes here-->
+        </body>
+  </html>
+  -----------------------------------------------------
+  //第一行为状态行，（HTTP/1.1）表明HTTP版本为1.1版本，状态码为200，状态消息为（ok）
+  //第二行和第三行为消息报头，Date:生成响应的日期和时间；Content-Type:指定了MIME类型的HTML(text/html),编码类型是UTF-8
+  //第三部分：空行，消息报头后面的空行是必须的
+  //第四部分：响应正文，服务器返回给客户端的文本信息。空行后面的html部分为响应正文。
+  ```
+
+5. 浏览器解析渲染页面
+
+- 通过HTML解析器解析HTML文档，构建一个DOM Tree，同时通过CSS解析器解析HTML中存在的CSS，构建Style Rules，两者结合形成一个Attachment。
+- 通过Attachment构造出一个呈现树（Render Tree）
+- Render Tree构建完毕，进入到布局阶段（layout/reflow），将会为每个阶段分配一个应出现在屏幕上的确切坐标。
+- 最后将全部的节点遍历绘制出来后，一个页面就展现出来了。 遇到script会停下来执行，所以通常把script放在底部
+
+6. 连接结束
