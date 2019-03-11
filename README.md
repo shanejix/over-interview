@@ -1,3 +1,8 @@
+---
+typora-root-url: src\img
+typora-copy-images-to: src\img
+---
+
 ## HTML相关
 
 #### html语义化
@@ -7,6 +12,7 @@
 - 意义：
 
   - 根据内容的结构化（内容语义化），选择合适的标签（代码语义化），让开发者更容易阅读，让机器（浏览器，爬虫）更容易解析
+  - 有助于SEO
 
 - 语义化
 
@@ -174,36 +180,78 @@
 
 > 相关面试题： `BFC `， `IFC`,  `GFC `和 `FFC`各式什么？
 
-- BFC 定义
-  - 是一个独立的渲染区域，只有Block-level box参与
-  - 规定了内部的Block-level Box如何布局，并且与外部毫不相干
-- BFC布局规则：
-  - 内部的Box会在垂直方向，一个接一个地放置
-  - Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
-  - 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此
-  - BFC的区域不会与float box重叠
-  - BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
-  - 计算BFC的高度时，浮动元素也参与计算
-- 哪些元素会生成BFC
-  - 根元素或包含根元素的元素
-  - 浮动元素（元素的 [`float`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float) 不是 `none`）
-  - 绝对定位元素（元素的 [`position`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position) 为 `absolute` 或 `fixed`）
-  - 行内块元素（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) 为 `inline-block`）
-  - 表格单元格（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)为 `table-cell`，HTML表格单元格默认为该值）
-  - 表格标题（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) 为 `table-caption`，HTML表格标题默认为该值）
-  - 匿名表格单元格元素（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)为 `table、``table-row`、 `table-row-group、``table-header-group、``table-footer-group`（分别是HTML table、row、tbody、thead、tfoot的默认属性）或 `inline-table`）
-  - [`overflow`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow) 值不为 `visible` 的块元素
-  - [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) 值为 `flow-root` 的元素
-  - [`contain`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/contain) 值为 `layout`、`content`或 `strict` 的元素
-  - 弹性元素（[`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)为 `flex` 或 `inline-flex`元素的直接子元素）
-  - 网格元素（[`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)为 `grid` 或 `inline-grid` 元素的直接子元素）
-  - 多列容器（元素的 [`column-count`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-count) 或 [`column-width`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-width) 不为 `auto，包括 ``column-count` 为 `1`）
-  - `column-span` 为 `all` 的元素始终会创建一个新的BFC，即使该元素没有包裹在一个多列容器中（[标准变更](https://github.com/w3c/csswg-drafts/commit/a8634b96900279916bd6c505fda88dda71d8ec51)，[Chrome bug](https://bugs.chromium.org/p/chromium/issues/detail?id=709362)）。
+BFC 定义
+- 是一个独立的渲染区域，只有Block-level box参与
+- 规定了内部的Block-level Box如何布局，并且与外部毫不相干
+
+BFC布局规则：
+- 内部的Box会在垂直方向，一个接一个地放置
+- Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠
+- 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此
+- BFC的区域不会与float box重叠
+- BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+- 计算BFC的高度时，浮动元素也参与计算
+
+哪些元素会生成BFC
+- 根元素或包含根元素的元素
+- 浮动元素（元素的 [`float`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float) 不是 `none`）
+- 绝对定位元素（元素的 [`position`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position) 为 `absolute` 或 `fixed`）
+- 行内块元素（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) 为 `inline-block`）
+- 表格单元格（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)为 `table-cell`，HTML表格单元格默认为该值）
+- 表格标题（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) 为 `table-caption`，HTML表格标题默认为该值）
+- 匿名表格单元格元素（元素的 [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)为 `table、``table-row`、 `table-row-group、``table-header-group、``table-footer-group`（分别是HTML table、row、tbody、thead、tfoot的默认属性）或 `inline-table`）
+- [`overflow`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/overflow) 值不为 `visible` 的块元素
+- [`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display) 值为 `flow-root` 的元素
+- [`contain`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/contain) 值为 `layout`、`content`或 `strict` 的元素
+- 弹性元素（[`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)为 `flex` 或 `inline-flex`元素的直接子元素）
+- 网格元素（[`display`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/display)为 `grid` 或 `inline-grid` 元素的直接子元素）
+- 多列容器（元素的 [`column-count`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-count) 或 [`column-width`](https://developer.mozilla.org/zh-CN/docs/Web/CSS/column-width) 不为 `auto，包括 ``column-count` 为 `1`）
+- `column-span` 为 `all` 的元素始终会创建一个新的BFC，即使该元素没有包裹在一个多列容器中（[标准变更](https://github.com/w3c/csswg-drafts/commit/a8634b96900279916bd6c505fda88dda71d8ec51)，[Chrome bug](https://bugs.chromium.org/p/chromium/issues/detail?id=709362)）
+
+> 精简
+>
+> - 根元素
+> - `position: absolute/fixed`
+> - `display: inline-block / table`
+> - `float` 元素
+> - `ovevflow` !== `visible`
+>
+> 
+
+应用：
+
+- 阻止`margin`重叠
+- 可以包含浮动元素 —— 清除内部浮动(清除浮动的原理是两个`div`都位于同一个 BFC 区域之中)
+- 自适应两栏布局
+- 可以阻止元素被浮动元素覆盖
 
 参考：
 
 - http://www.cnblogs.com/lhb25/p/inside-block-formatting-ontext.html
 - https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context
+
+#### z-index 层叠上下文
+
+> 面试
+
+触发条件
+
+- 根层叠上下文(`html`)
+- `position`
+- css3属性
+  - `flex`
+  - `transform`
+  - `opacity`
+  - `filter`
+  - `will-change`
+  - `-webkit-overflow-scrolling`
+
+层叠等级：层叠上下文在z轴上的排序
+
+- 在同一层叠上下文中，层叠等级才有意义
+- `z-index`的优先级最高
+
+![img](/168e9d9f3a1d368b)
 
 #### css reset 和 normalize.css 有什么区别
 
@@ -262,7 +310,9 @@
     }
     ```
 
-    
+  - `position:absolute+transform`
+
+  - `flex+justify-content:center`
 
 - 垂直居中
 
@@ -293,7 +343,13 @@
     }
     ```
 
-  - 绝对布局
+    or
+
+    `flex+align-items:center`
+
+    
+
+  - 绝对布局()
 
     ```css
     已知高度
@@ -320,6 +376,8 @@
     
 
 - 水平垂直居中
+
+  - `absolute+transform`
 
   - flex布局
 
@@ -351,10 +409,8 @@
 
 > 面试题：
 
-- 每个选择器都有权值，权值越大越优先
-- 继承的样式优先级低于自身指定样式
-- ！important优先级最高 js也无法修改
-- 权值相同时，靠近元素的样式优先级高 顺序为内联样式表（标签内部）> 内部样式表（当前文件中）> 外部样式表（外部文件中）
+- `!important` > 行内样式 > `#id` > `.class` > `tag` > * > 继承 > 默认
+- 选择器 **从右往左** 解析
 
 参考：
 
@@ -400,11 +456,47 @@
 
 #### link @import导入css
 
-> 
+> 面试题：
+>
+> link和@import的区别
+
+区别：
+
+- 功能
+  - link功能较多
+    - 定义RSS
+    - 定义Rel
+  - @import只能用于加载css
+- 加载
+  - link：页面同步加载所引用的css
+  - @import：页面加载完成才会加载所引用的css
+- 兼容性
+  - @import：ie5+
+- 方式
+  - link：支持js动态引入
+  - @import不行
+
+#### CSS预处理器(Sass/Less/Postcss)
+
+原理：
+
+- 是将类 CSS 语言通过 **Webpack 编译** 转成浏览器可读的真正 CSS
+
+常用功能：
+
+- 嵌套
+- 变量
+- 循环语句
+- 条件语句
+- 自动前缀
+- 单位转换
+- mixin复用（include）
 
 #### animation
 
-> 
+> 面试题
+
+
 
 #### 长宽比方案
 
@@ -423,6 +515,80 @@
 7. inherit:继承父级
 
 ## JavaScript相关
+
+#### script 引入方式
+
+> 面试题
+
+方式：
+
+- html 静态`<script>`引入
+- js 动态插入`<script>`
+- `<script defer>`: 异步加载，元素解析完成后执行
+- `<script async>`: 异步加载，但执行时会阻塞元素渲染
+
+#### 类型转换
+
+规则:
+
+- -、*、/、% ：一律转换成数值后计算
+- +： 
+  - 数字 + 字符串 = 字符串， 运算顺序是从左到右
+  - 数字 + 对象， 优先调用对象的`valueOf` -> `toString`
+  - 数字 + `boolean/null` -> 数字
+  - 数字 + `undefined` -> `NaN`
+- `[1].toString() === '1'`
+- `{}.toString() === '[object object]'`
+- `NaN` !== `NaN` 、`+undefined 为 NaN`
+
+#### this
+
+
+
+#### AST
+
+**抽象语法树 (Abstract Syntax Tree)**，是将代码逐字母解析成 **树状对象** 的形式。这是语言之间的转换、代码语法检查，代码风格检查，代码格式化，代码高亮，代码错误提示，代码自动补全等等的基础
+
+
+
+#### 函数柯里化
+
+
+
+#### 数组(array)
+
+方法：
+
+- `map`: 遍历数组，返回回调返回值组成的新数组
+- `forEach`: 无法`break`，可以用`try/catch`中`throw new Error`来停止
+- `filter`: 过滤
+- `some`: 有一项返回`true`，则整体为`true`
+- `every`: 有一项返回`false`，则整体为`false`
+- `join`: 通过指定连接符生成字符串
+- `push / pop`: 末尾推入和弹出，改变原数组， 返回推入/弹出项
+- `unshift / shift`: 头部推入和弹出，改变原数组，返回操作项
+- `sort(fn) / reverse`: 排序与反转，改变原数组
+- `concat`: 连接数组，不影响原数组， 浅拷贝
+- `slice(start, end)`: 返回截断后的新数组，不改变原数组
+- `splice(start, number, value...)`: 返回删除元素组成的数组，value 为插入项，改变原数组
+- `indexOf / lastIndexOf(value, fromIndex)`: 查找数组项，返回对应的下标
+- `reduce / reduceRight(fn(prev, cur)， defaultPrev)`: 两两执行，prev 为上次化简函数的`return`值，cur 为当前值(从第二项开始)
+- 数组乱序：
+
+```js
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+arr.sort(function () {
+    return Math.random() - 0.5;
+});
+```
+
+- 数组拆解: flat: [1,[2,3]] --> [1, 2, 3]
+
+```js
+Array.prototype.flat = function() {
+    this.toString().split(',').map(item => +item )
+}
+```
 
 #### Array.prototype.map()
 
@@ -581,6 +747,12 @@ ary.filter(function(x) { return x === undefined;});
   | 宿主对象（由JS环境提供）                    | *Implementation-dependent* |
   | 函数对象（[[Call]] 在ECMA-262条款中实现了） | `"function"`               |
   | 任何其他对象                                | `"object"`                 |
+
+  - 基本类型(`null`): 使用 `String(null)`
+
+  - 基本类型(`string / number / boolean / undefined`) + `function`: 直接使用 `typeof`即可
+
+  - 其余引用类型(`Array / Date / RegExp Error`): 调用`toString`后根据`[object XXX]`进行判断
 
 - instanceof
 
@@ -1046,12 +1218,29 @@ bar(10);
 >
 > 深浅拷贝实现方法有那些？
 
-```js
-let d = JSON.parse(JSON.stringify(a));//深复制包含子对象
-let c = {...a};//拷贝一层但不包含子对象
-```
+浅拷贝：
+
+- `Object.assign()`
+- 展开运算符：`...`
+
+深拷贝：
+
+- `JSON.parse(JSON.stringify(obj))`
+  - 性能最快
+  - 具有循环引用的对象时，报错
+  - 值为——“函数，`undefined`，`symbo`”时，无法拷贝
+  - 递归进行
 
 参考：
+
+#### new运算符的执行过程
+
+过程：
+
+- 新生成一个对象
+- 链接到原型: `obj.__proto__ = Con.prototype`
+- 绑定this: `apply`
+- 返回新对象(如果构造函数有自己 retrun 时，则返回该值)
 
 #### 数组去重
 
@@ -1085,7 +1274,9 @@ function trim(str){
 
 - https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 
-#### 原型
+#### 原型 / 构造函数 / 实例
+
+
 
 > 面试题：
 
@@ -1099,7 +1290,24 @@ function trim(str){
 
 > 面试题：
 
+在 JS 中，继承通常指的便是 **原型链继承**，也就是通过指定原型，并可以通过原型链继承原型上的属性或者方法。
 
+- 最优化: **圣杯模式**
+
+```
+var inherit = (function(c,p){
+	var F = function(){};
+	return function(c,p){
+		F.prototype = p.prototype;
+		c.prototype = new F();
+		c.uber = p.prototype;
+		c.prototype.constructor = c;
+	}
+})();
+复制代码
+```
+
+- 使用 ES6 的语法糖 `class / extends`
 
 参考：
 
@@ -1222,7 +1430,104 @@ Element.prototype.triggerEvent  = function(en){
 
 ```
 
+#### 代码复用
 
+方式：
+
+- 函数封装
+- 继承
+- 复制`extend`
+- 混入`mixin`
+- 借用`apply/call`
+
+## 浏览器
+
+### 跨标签页通讯
+
+原理
+
+- 利用 **共享的中间介质**
+
+方法:
+
+- 通过父页面`window.open()`和子页面`postMessage`
+  - 异步下，通过 `window.open('about: blank')` 和 `tab.location.href = '*'`
+- 设置同域下共享的`localStorage`与监听`window.onstorage`
+  - 重复写入相同的值无法触发
+  - 会受到浏览器隐身模式等的限制
+- 设置共享`cookie`与不断轮询脏检查(`setInterval`)
+- 借助服务端或者中间层实现
+
+#### 浏览器架构
+
+- 用户界面
+- 主进程
+- 内核
+  - 渲染引擎
+  - JS 引擎
+    - 执行栈
+  - 事件触发线程
+    - 消息队列
+      - 微任务
+      - 宏任务
+  - 网络异步线程
+  - 定时器线程
+
+#### 从输入 url 到展示的过程
+
+DNS 解析
+
+TCP 三次握手
+
+发送请求，分析 url，设置请求报文(头，主体)
+
+服务器返回请求的文件 (html)
+
+浏览器渲染 
+
+- HTML parser --> DOM Tree 
+  - 标记化算法，进行元素状态的标记
+  - dom 树构建
+- CSS parser --> Style Tree 
+  - 解析 css 代码，生成样式树
+- attachment --> Render Tree 
+  - 结合 dom树 与 style树，生成渲染树
+- layout: 布局
+- GPU painting: 像素绘制页面
+
+#### 重绘与回流
+
+当元素的样式发生变化时，浏览器需要触发更新，重新绘制元素。这个过程中，有两种类型的操作，即重绘与回流。
+
+- **重绘(repaint)**: 当元素样式的改变不影响布局时，浏览器将使用重绘对元素进行更新，此时由于只需要UI层面的重新像素绘制，因此 **损耗较少**
+- **回流(reflow)**: 当元素的尺寸、结构或触发某些属性时，浏览器会重新渲染页面，称为回流。此时，浏览器需要重新经过计算，计算后还需要重新页面布局，因此是较重的操作。会触发回流的操作:
+  - 页面初次渲染
+  - 浏览器窗口大小改变
+  - 元素尺寸、位置、内容发生改变
+  - 元素字体大小变化
+  - 添加或者删除可见的 dom 元素
+  - 激活 CSS 伪类（例如：:hover）
+  - 查询某些属性或调用某些方法 
+    - clientWidth、clientHeight、clientTop、clientLeft
+    - offsetWidth、offsetHeight、offsetTop、offsetLeft
+    - scrollWidth、scrollHeight、scrollTop、scrollLeft
+    - getComputedStyle()
+    - getBoundingClientRect()
+    - scrollTo()
+
+**回流必定触发重绘，重绘不一定触发回流。重绘的开销较小，回流的代价较高。**
+
+#### 最佳实践:
+
+- css
+  - 避免使用`table`布局
+  - 将动画效果应用到`position`属性为`absolute`或`fixed`的元素上
+- javascript
+  - 避免频繁操作样式，可汇总后统一 **一次修改**
+  - 尽量使用`class`进行样式修改
+  - 减少`dom`的增删次数，可使用 **字符串** 或者 `documentFragment` 一次性插入
+  - 极限优化时，修改样式可将其`display: none`后修改
+  - 避免多次触发上面提到的那些会触发回流的方法，可以的话尽量用 **变量存住**
 
 ## DOM相关
 
@@ -1277,6 +1582,64 @@ if (btn3.attachEvent){
 
 ## HTTP相关
 
+#### http/https 协议
+
+1.0 协议缺陷:
+
+- 无法复用链接，完成即断开，**重新慢启动和 TCP 3次握手**
+- head of line blocking: **线头阻塞**，导致请求之间互相影响
+
+1.1 改进:
+
+- **长连接**(默认 keep-alive)，复用
+- host 字段指定对应的虚拟站点
+- 新增功能: 
+  - 断点续传
+  - 身份认证
+  - 状态管理
+  - cache 缓存 
+    - Cache-Control
+    - Expires
+    - Last-Modified
+    - Etag
+
+2.0:
+
+- 多路复用
+- 二进制分帧层: 应用层和传输层之间
+- 首部压缩
+- 服务端推送
+
+https: 较为安全的网络传输协议
+
+- 证书(公钥)
+- SSL 加密
+- 端口 443
+
+TCP:
+
+- 三次握手
+- 四次挥手
+- 滑动窗口: 流量控制
+- 拥塞处理 
+  - 慢开始
+  - 拥塞避免
+  - 快速重传
+  - 快速恢复
+
+缓存策略: 可分为 **强缓存** 和 **协商缓存**
+
+- Cache-Control/Expires: 浏览器判断缓存是否过期，未过期时，直接使用强缓存，**Cache-Control的 max-age 优先级高于 Expires**
+- 当缓存已经过期时，使用协商缓存
+  - 唯一标识方案: Etag(response 携带) & If-None-Match(request携带，上一次返回的 Etag): 服务器判断资源是否被修改，
+  - 最后一次修改时间: Last-Modified(response) & If-Modified-Since (request，上一次返回的Last-Modified) 
+    - 如果一致，则直接返回 304 通知浏览器使用缓存
+    - 如不一致，则服务端返回新的资源
+- Last-Modified 缺点：
+  - 周期性修改，但内容未变时，会导致缓存失效
+  - 最小粒度只到 s， s 以内的改动无法检测到
+- Etag 的优先级高于 Last-Modified
+
 #### 常见状态码
 
 > 面试题：
@@ -1324,6 +1687,21 @@ CDN
 参考：
 
 - https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Cache-Control
+
+#### Websocket
+
+Websocket 是一个 **持久化的协议**， 基于 http ， 服务端可以 **主动 push**
+
+- 兼容：
+  - FLASH Socket
+  - 长轮询： 定时发送 ajax
+  - long poll： 发送 --> 有消息时再 response
+- `new WebSocket(url)`
+- `ws.onerror = fn`
+- `ws.onclose = fn`
+- `ws.onopen = fn`
+- `ws.onmessage = fn`
+- `ws.send()`
 
 #### Cache-Control 和 Etag 的区别
 
@@ -1391,27 +1769,32 @@ CDN
 
 jsonp实现:
 
-- 只能实现get请求
+- 利用`<script>`标签不受跨域限制的特点
+- 缺点是只能支持 get 请求
 
-```html
+```js
+function jsonp(url, jsonpCallback, success) {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.type = 'text/javascript'
+  window[jsonpCallback] = function(data) {
+    success && success(data)
+  }
+  document.body.appendChild(script)
+}
 
-原生
-<script>
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
- 
-    // 传参并指定回调执行函数为onBack
-  	script.src='http://www.domain2.com:8080/loginuser=admin&callback=onBack';
-    document.head.appendChild(script);
- 
-    // 回调执行函数
-    function onBack(res) {
-        alert(JSON.stringify(res));
-    }
- </script>
 ```
 
 CORS：跨源资源共享 Cross-Origin Resource Sharing(CORS)
+
+#### TCP三次握手
+
+建立连接前，客户端和服务端需要通过握手来确认对方:
+
+- 客户端发送 syn(同步序列编号) 请求，进入 syn_send 状态，等待确认
+- 服务端接收并确认 syn 包后发送 syn+ack 包，进入 syn_recv 状态
+- 客户端接收 syn+ack 包后，发送 ack 包，双方进入 established 状态
 
 ## webpack相关
 
@@ -1475,21 +1858,25 @@ XSS(跨站脚本攻击)，恶意的注入html代码，其他用户访问时，�
 - 后端每次路由请求都是重新访问服务器
 - 前端路由实际上只是JS根据URL来操作DOM元素，根据每个页面需要的去服务端请求数据，返回数据后和模板进行组合
 
-#### es6模块 commonjs  amd cmd
+#### 模块化
 
-比较：
+分类:
 
-- CommonJS 的规范中，每个 JavaScript 文件就是一个独立的模块上下文（module context），在这个上下文中默认创建的属性都是私有的。也就是说，在一个文件定义的变量（还包括函数和类），都是私有的，对其他文件是不可见的。
+- es6: `import / export`
+- commonjs: `require / module.exports / exports`
+- amd: `require / defined`
 
-- CommonJS是同步加载模块,在浏览器中会出现堵塞情况，所以不适用
+`require`与`import`的区别
 
-- AMD 异步，需要定义回调define方式
-
-- es6 一个模块就是一个独立的文件，该文件内部的所有变量，外部无法获取。如果你希望外部能够读取模块内部的某个变量，就必须使用export关键字输出该变量。es6还可以导出类、方法，自动适用严格模式
+- `require`支持 **动态导入**，`import`不支持，正在提案 (babel 下可支持)
+- `require`是 **同步** 导入，`import`属于 **异步** 导入
+- `require`是 **值拷贝**，导出值变化不会影响导入值；`import`指向 **内存地址**，导入值会随导出值而变化
 
 #### babel原理
 
-ES6、7代码输入 -> babylon进行解析 -> 得到AST（抽象语法树）-> plugin用babel-traverse对AST树进行遍历转译 ->得到新的AST树->用babel-generator通过AST树生成ES5代码
+- babylon 将 ES6/ES7 代码解析成 AST
+- babel-traverse 对 AST 进行遍历转译，得到新的 AST
+- 新 AST 通过 babel-generator 转换成 ES5
 
 #### 内存泄漏
 
