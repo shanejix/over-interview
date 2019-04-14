@@ -1,12 +1,14 @@
-Regular Express
+# Regular Express
 
 
 
-定界符：`/  /`
+#### [定界符]
+
+`/  /`
 
 
 
-模式
+#### [模式]
 
 `i`
 
@@ -14,7 +16,7 @@ Regular Express
 
 
 
-方法
+#### [方法]
 
 `stiring.match()`
 
@@ -26,7 +28,7 @@ Regular Express
 
 
 
-量词
+#### [量词]
 
 `?`
 
@@ -46,7 +48,9 @@ Regular Express
 
 
 
-元字符：`[]`
+#### [元字符]
+
+`[]`
 
 - 任何一个：`[abc]`
 - 范围：`[a-z]`
@@ -54,7 +58,7 @@ Regular Express
 
 
 
-转义:
+#### [转义]
 `\d`    
 `\w`    
 `\s `   空白
@@ -67,7 +71,7 @@ Regular Express
 
 
 
-修饰符:条件
+#### [修饰符]:条件
 `^`  行首
 `$`  行尾
 

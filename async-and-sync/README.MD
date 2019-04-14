@@ -1,6 +1,4 @@
-#### 同步异步
-
-进程和线程
+#### [进程和线程]
 
 - 进程包含线程，线程是程序执行的最小单位
 - 进程分配独立的空间和地址，切换开销大
@@ -25,7 +23,7 @@
   - 死循环
   - while(true)
 
-同步（Synchronous）和异步（Asynchronous）
+#### [同步（Synchronous）和异步（Asynchronous）]
 
 - 同步：
   - 在主线程上（主栈，主任务队列）同一时间只能执行一个任务
@@ -69,8 +67,7 @@ Promise：异步任务返回一个Promise对象
 
 JavaScript中的异步本质=>通过某些机制来管控任务的执行顺序
 
-
-宏任务和微任务
+#### [宏任务和微任务]
 
 - 宏任务：macro task
   - 定时器
@@ -84,7 +81,7 @@ JavaScript中的异步本质=>通过某些机制来管控任务的执行顺序
 - 执行顺序优先级：
   - sync task => micro task => macro task
 
-任务队列：
+#### [任务队列]
 
 （1）所有同步任务都在主线程上执行，形成一个执行栈（execution context stack）。
 
@@ -94,8 +91,7 @@ JavaScript中的异步本质=>通过某些机制来管控任务的执行顺序
 
 （4）主线程不断重复上面的第三步
 
-
-Event Loop:
+#### [Event Loop]
 
 主线程从"任务队列"中读取事件，这个过程是循环不断的，所以整个的这种运行机制又称为Event Loop（事件循环）
 [event loop](http://www.ruanyifeng.com/blogimg/asset/2014/bg2014100802.png)
