@@ -84,6 +84,7 @@
                 data = str.substring(0, str.length - 1);
             }
             
+            //get
             if (/^GET|DELETE|OPTIONS|RACE|TRACE|HEAD&/.test(method)) {
                 this.url+=`this.check()${data}}`;
                 this.data = null;
