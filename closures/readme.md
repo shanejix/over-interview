@@ -40,7 +40,7 @@ var f = fn();
 ```
 
 ```js
-//闭包：惰性函数
+//闭包：高级单例模式
 
 var utils = (function () {
     return {
@@ -48,6 +48,8 @@ var utils = (function () {
     }
 })();
 ```
+
+拓展：惰性函数
 
 
 
