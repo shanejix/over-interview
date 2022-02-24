@@ -23,7 +23,6 @@ jobs:
         run: |
           npm install -g gitbook-cli     
           gitbook install
-          gitbook build
           # npm install -g gitbook-summary
       - name: push _book to branch gh-pages
         env:
@@ -33,6 +32,9 @@ jobs:
           MYNAME: ${{github.repository_owner}}
         run: |
           node -v
+          ls
+          gitbook build
+          ls
           cd _book
           git config --global user.email "${MYEMAIL}"
           git config --global user.name "${MYNAME}"
