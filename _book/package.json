@@ -12,8 +12,5 @@
   },
   "engines": {
     "node": "10.23.1"
-  },
-  "dependencies": {
-    "gitbook-cli": "^2.3.2"
   }
 }
