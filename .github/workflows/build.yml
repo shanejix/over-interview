@@ -26,9 +26,10 @@ jobs:
           npm install -g gitbook-cli     
           gitbook install
           # npm install -g gitbook-summary
+          gitbook build
       - name: push _book to branch gh-pages
         env:
-          TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.ACCESS_GITHUB_API_TOKEN}}
           REF: github.com/${{github.repository}}
           MYEMAIL: shanejix@hotmail.com
           MYNAME: ${{github.repository_owner}}
