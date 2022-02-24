@@ -1,4 +1,4 @@
-name: Gatsby Publish
+name: Gitbook Build
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "10.23.1"
-          cache: "npm"
+          # cache: "npm"
       - name: configue gitbook
         run: |
           npm install -g gitbook-cli     
