@@ -1,0 +1,8 @@
+{
+  "name": "over-interview",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:shanejix/over-interview.git",
+  "author": "shanejix <shanejix@hotmail.com>",
+  "license": "MIT"
+}
