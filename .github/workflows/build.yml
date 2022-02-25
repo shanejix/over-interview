@@ -32,10 +32,9 @@ jobs:
           MYNAME: ${{github.repository_owner}}
         run: |
           node -v
-          ls
           gitbook build
-          ls
           cd _book
+          rm -fr .github
           git config --global user.email "${MYEMAIL}"
           git config --global user.name "${MYNAME}"
           git init
