@@ -6,11 +6,22 @@
   "author": "shanejix <shanejix@hotmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "dependencies": {
+    "next": "^11.0.1",
+    "nextra": "^1.1.0",
+    "nextra-theme-docs": "^1.2.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "vuepress": "^1.9.7",
-    "vuepress-theme-book": "^0.0.6"
+    "prettier": "^2.0.5"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
