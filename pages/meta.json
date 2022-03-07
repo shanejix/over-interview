@@ -1,9 +1,5 @@
 {
-  "0": "Instruction",
-  "1": "面试相关",
-  "2": "HTML-相关",
-  "3": "CSS-相关",
-  "4": "JavaScript-相关",
-  "5": "Browser-相关",
-  "6": "前端工程化"
+  "interview": {
+    "title": "Index flow ..."
+  }
 }

@@ -8,7 +8,12 @@ module.exports = withNextra({
     return [
       {
         source: "/",
-        destination: "/0/0",
+        destination: "/interview",
+        statusCode: 301
+      },
+      {
+        source: "/index",
+        destination: "/interview",
         statusCode: 301
       }
     ]
