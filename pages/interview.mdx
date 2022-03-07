@@ -1756,6 +1756,597 @@ obj.foo() // "foo"
 
 
 
+### JavaScript中的数据类型 🔥🔥
+
+#### 「相关问题」
+
+- JavaScript中的数据类型有哪些？
+- 怎么存储
+
+
+
+#### 「回答关键点」
+
+- `7种基本类型` 
+- `复杂类型）` 
+
+
+
+基本类型主要为以下6种：
+
+- Number
+- String
+- Boolean
+- Undefined
+- null
+- symbol
+- bigInt
+
+复杂(引用）类型：
+
+- object
+
+
+
+#### 「知识点深入」
+
+复杂类型统称为`Object`，我们这里主要讲述下面三种：
+
+- Object
+- Array
+- Function
+- `Date`、
+- `RegExp`、
+- `Map`、
+- `Set`等.....
+
+存储区别
+
+- 基本数据类型存储在栈中,存放的是对应的值
+- 引用类型的对象存储于堆中,在栈中存放的是指向堆内存的地址
+
+
+
+#### 「参考资料」
+
+
+
+### JavaScript 中的类型转换机制 🔥🔥
+
+#### 「相关问题」
+
+- == 和 ===区别
+
+#### 「回答关键点」
+
+- `显示转换` 
+- `隐式转换 ` 
+
+
+
+JavaScript是动态语言,只有到运行期间才会确定变量当前类型；运算子的类型与预期不符合，就会触发类型转换机制
+
+#### 「知识点深入」
+
+##### 显示转换
+
+(很清楚可以看到这里发生了类型的转变)，常见的方法有：
+
+- Number()
+- parseInt()
+- String()
+- Boolean()
+
+##### 隐式转换
+
+在隐式转换中，最大的疑惑是 ：何时发生隐式转换？
+
+生隐式转换的场景：
+
+- 比较运算（`==`、`!=`、`>`、`<`）
+- `if`、`while`需要布尔值的地方
+- 算术运算（`+`、`-`、`*`、`/`、`%`）
+
+> 还要求运算符两边的操作数不是同一类型
+
+###### 自动转换为布尔值
+
+在需要布尔值的地方，就会将非布尔值的参数自动转为布尔值，系统内部会调用`Boolean`函数
+
+可以得出个小结：
+
+- undefined
+- null
+- false
+- +0
+- -0
+- NaN
+- ""
+
+除了上面几种会被转化成`false`，其他都换被转化成`true`
+
+###### 自动转换成字符串
+
+遇到预期为字符串的地方，就会将非字符串的值自动转为字符串
+
+具体规则是：先将复合类型的值转为原始类型的值，再将原始类型的值转为字符串
+
+常发生在`+`运算中，一旦存在字符串，则会进行字符串拼接操作
+
+```js
+'5' + 1 // '51'
+'5' + true // "5true"
+'5' + false // "5false"
+'5' + {} // "5[object Object]"
+'5' + [] // "5"
+'5' + function (){} // "5function (){}"
+'5' + undefined // "5undefined"
+'5' + null // "5null"
+```
+
+###### 自动转换成数值
+
+除了`+`有可能把运算子转为字符串，其他运算符都会把运算子自动转成数值
+
+```js
+'5' - '2' // 3
+'5' * '2' // 10
+true - 1  // 0
+false - 1 // -1
+'1' - 1   // 0
+'5' * []    // 0
+false / '5' // 0
+'abc' - 1   // NaN
+null + 1 // 1
+undefined + 1 // NaN
+
+// `null`转为数值时，值为`0` 。`undefined`转为数值时，值为`NaN
+```
+
+##### == 和 ===区别
+
+###### ==
+
+- 两个都为简单类型，字符串和布尔值都会**转换成数值**，再比较
+- 简单类型与引用类型比较，对象转化成其原始类型的值，再比较
+- 两个都为引用类型，则比较它们是否指向同一个对象
+- null 和 undefined 相等
+- 存在 NaN 则返回 false
+
+###### ===
+
+类型相同，值也需相同
+
+```js
+let result1 = ("55" === 55); // false，不相等，因为数据类型不同
+let result2 = (55 === 55); // true，相等，因为数据类型相同值也相同
+
+let result1 = (null === null)  //true
+let result2 = (undefined === undefined)  //true
+```
+
+###### 区别
+
+相等操作符（==）会做类型转换，再进行值的比较，全等运算符不会做类型转换
+
+```js
+let result1 = ("55" === 55); // false，不相等，因为数据类型不同
+let result2 = (55 === 55); // true，相等，因为数据类型相同值也相同
+```
+
+`null` 和 `undefined` 比较，相等操作符（==）为`true`，全等为`false
+
+```js
+let result1 = (null == undefined ); // true
+let result2 = (null  === undefined); // false
+```
+
+
+
+#### 「参考资料」
+
+
+
+### 如何实现深拷贝 🔥🔥🔥
+
+#### 「相关问题」
+
+- 深拷贝浅拷贝的区别？
+- 如何实现一个深拷贝？
+
+#### 「回答关键点」
+
+- `引用类型` 
+- `堆`
+-  `栈` 
+
+
+
+基本类型数据保存在在栈内存中;引用类型数据保存在堆内存中，引用数据类型的变量是一个指向堆内存中实际对象的引用，存在栈中
+
+深拷贝开辟一个新的栈，两个对象属完成相同，但是对应两个不同的地址，修改一个对象的属性，不会改变另一个对象的属性
+
+#### 「知识点深入」
+
+##### 浅拷贝
+
+简单实现
+
+```js
+function shallowClone(obj) {
+    const newObj = {};
+    for(let prop in obj) {
+        if(obj.hasOwnProperty(prop)){
+            newObj[prop] = obj[prop];
+        }
+    }
+    return newObj;
+}
+```
+
+在`JavaScript`中，存在浅拷贝的现象有：
+
+- `Object.assign`
+- `Array.prototype.slice()`, `Array.prototype.concat()`
+- 使用拓展运算符实现的复制
+
+
+
+##### 深拷贝
+
+常见的深拷贝方式有：
+
+- `_.cloneDeep()` 
+- `jQuery.extend()` 
+- `JSON.stringify()`:弊端，会忽略`undefined`、`symbol`和`函数`
+- 手写
+
+```js
+function deepClone(obj, hash = new WeakMap()) {
+  if (obj === null) return obj; // 如果是null或者undefined我就不进行拷贝操作
+  if (obj instanceof Date) return new Date(obj);
+  if (obj instanceof RegExp) return new RegExp(obj);
+  // 可能是对象或者普通的值  如果是函数的话是不需要深拷贝
+  if (typeof obj !== "object") return obj;
+  // 是对象的话就要进行深拷贝
+  if (hash.get(obj)) return hash.get(obj);
+  let cloneObj = new obj.constructor();
+  // 找到的是所属类原型上的constructor,而原型上的 constructor指向的是当前类本身
+  hash.set(obj, cloneObj);
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      // 实现一个递归拷贝
+      cloneObj[key] = deepClone(obj[key], hash);
+    }
+  }
+  return cloneObj;
+}
+```
+
+
+
+#### 「参考资料」
+
+
+
+### 如何理解JavaScript中的this 🔥🔥🔥
+
+#### 「相关问题」
+
+
+
+#### 「回答关键点」
+
+```
+`this` 的值是在代码运行时计算出来的，它取决于`代码上下文
+```
+
+
+
+#### 「知识点深入」
+
+##### 默认绑定
+
+```js
+var name = 'Jenny';
+function person() {
+    return this.name;
+}
+console.log(person());  //Jenny
+
+// 指向window，所以输出Jenny
+```
+
+> 严格模式下，不能将全局对象用于默认绑定，this会绑定到`undefined`，只有函数运行在非严格模式下，默认绑定才能绑定到全局对象
+
+##### 隐式绑定
+
+```js
+function test() {
+  console.log(this.x);
+}
+
+var obj = {};
+obj.x = 1;
+obj.m = test;
+
+obj.m(); // 1
+
+// 函数作为某个对象的方法调用
+```
+
+##### new绑定
+
+```js
+function test() {
+　this.x = 1;
+}
+
+var obj = new test();
+obj.x // 1
+
+// 通过构建函数new关键字生成一个实例对象，此时this指向这个实例对象
+```
+
+##### 显示修改
+
+```js
+var x = 0;
+function test() {
+　console.log(this.x);
+}
+
+var obj = {};
+obj.x = 1;
+obj.m = test;
+obj.m.apply(obj) // 1
+
+// apply()、call()、bind()作用是改变函数的调用对象
+```
+
+##### 箭头函数
+
+箭头函数的 `this` 被设置为他被创建时的环境(上下文)
+
+```js
+var globalObject = this;
+var foo = (() => this);
+console.log(foo() === globalObject); // true
+
+// 作为对象的一个方法调用
+var obj = {foo: foo};
+console.log(obj.foo() === globalObject); // true
+
+// 尝试使用call来设定this
+console.log(foo.call(obj) === globalObject); // true
+
+// 尝试使用bind来设定this
+foo = foo.bind(obj);
+console.log(foo() === globalObject); // true
+```
+
+再看个例子
+
+```js
+// 创建一个含有bar方法的obj对象，
+// bar返回一个函数，
+// 这个函数返回this，
+// 这个返回的函数是以箭头函数创建的，
+// 所以它的this被永久绑定到了它外层函数的this。
+// bar的值可以在调用中设置，这反过来又设置了返回函数的值。
+var obj = {
+  bar: function() {
+    var x = (() => this);
+    return x;
+  }
+};
+
+// 作为obj对象的一个方法来调用bar，把它的this绑定到obj。
+// 将返回的函数的引用赋值给fn。
+var fn = obj.bar();
+
+// 直接调用fn而不设置this，
+// 通常(即不使用箭头函数的情况)默认为全局对象
+// 若在严格模式则为undefined
+console.log(fn() === obj); // true
+
+// 但是注意，如果你只是引用obj的方法，
+// 而没有调用它
+var fn2 = obj.bar;
+// 那么调用箭头函数后，this指向window，因为它从 bar 继承了this。
+console.log(fn2()() == window); // true
+```
+
+
+
+#### 「参考资料」
+
+[this - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this#描述)
+
+
+
+# 如何理解JavaScript中执行上下文 🔥🔥🔥
+
+#### 「相关问题」
+
+- 什么是执行上下文？
+- 什么是执行栈？
+
+#### 「回答关键点」
+
+- `执行环境` 
+
+
+
+执行上下文是一种对`Javascript`代码执行环境的抽象概念，也就是说只要有`Javascript`代码运行，那么它就一定是运行在执行上下文中
+
+执行上下文的类型分为三种：
+
+- **全局执行上下文**：只有一个，浏览器中的全局对象就是 `window`对象，`this` 指向这个全局对象
+- **函数执行上下文**：存在无数个，只有在函数被调用的时候才会被创建，每次调用函数都会创建一个新的执行上下文
+- **Eval 函数执行上下文**： 指的是运行在 `eval` 函数中的代码，很少用而且不建议使用
+
+
+
+#### 「知识点深入」
+
+##### 生命周期
+
+###### 创建阶段：未执行任何内部代码之前
+
+```js
+ExecutionContext = {  
+  ThisBinding = <this value>,     // 确定this 
+  LexicalEnvironment = { ... },   // 词法环境
+  VariableEnvironment = { ... },  // 变量环境
+}
+```
+
+###### ThisBinding
+
+`this`的值是在执行的时候才能确认，定义的时候不能确认
+
+###### 词法环境
+
+词法环境有两个组成部分：全局环境、函数环境
+
+```js
+GlobalExectionContext = {     // 全局执行上下文
+  LexicalEnvironment: {       // 词法环境
+    EnvironmentRecord: {      // 环境记录
+      Type: "Object",         // 全局环境
+      // 标识符绑定在这里 
+      outer: <null>           // 对外部环境的引用 全局环境是一个没有外部环境的词法环境
+  }  
+}
+```
+
+```js
+FunctionExectionContext = {   // 函数执行上下文
+  LexicalEnvironment: {       // 词法环境
+    EnvironmentRecord: {      // 环境记录
+      Type: "Declarative",    // 函数环境
+      // 用户在函数中定义的变量被存储在环境记录中
+      Arguments: {},  
+      // 标识符绑定在这里        // 对外部环境的引用
+      outer: <Global or outer function environment reference>  
+  }  
+}
+```
+
+###### 变量环境
+
+```js
+// 举个例子
+
+let a = 20;  
+const b = 30;  
+var c;
+
+function multiply(e, f) {  
+ var g = 20;  
+ return e * f * g;  
+}
+
+c = multiply(20, 30);
+
+// ...
+
+// 执行上下文如下：
+GlobalExectionContext = {
+
+  ThisBinding: <Global Object>,
+
+  LexicalEnvironment: {  // 词法环境
+    EnvironmentRecord: {  
+      Type: "Object",  
+      // 标识符绑定在这里  // 词法环境用于存储函数声明和变量（ let 和 const ）绑定
+      a: < uninitialized >,  
+      b: < uninitialized >,  
+      multiply: < func >  
+    }  
+    outer: <null>  
+  },
+
+  VariableEnvironment: {  // 变量环境
+    EnvironmentRecord: {  
+      Type: "Object",  
+      // 标识符绑定在这里  // 变量环境仅用于存储变量（ var ）绑定
+      c: undefined,  
+    }  
+    outer: <null>  
+  }  
+}
+
+FunctionExectionContext = {  
+   
+  ThisBinding: <Global Object>,
+
+  LexicalEnvironment: {  
+    EnvironmentRecord: {  
+      Type: "Declarative",  
+      // 标识符绑定在这里  
+      Arguments: {0: 20, 1: 30, length: 2},  
+    },  
+    outer: <GlobalLexicalEnvironment>  
+  },
+
+  VariableEnvironment: {  
+    EnvironmentRecord: {  
+      Type: "Declarative",  
+      // 标识符绑定在这里  
+      g: undefined  
+    },  
+    outer: <GlobalLexicalEnvironment>  
+  }  
+}
+```
+
+`let`和`const`定义的变量`a`和`b`在创建阶段没有被赋值，但`var`声明的变量从在创建阶段被赋值为`undefined`这是因为，创建阶段，会在代码中扫描变量和函数声明，然后将函数声明存储在环境中。但变量会被初始化为`undefined`(`var`声明的情况下)和保持`uninitialized`(未初始化状态)(使用`let`和`const`声明的情况下)——这就是**变量提升的实际原因**
+
+###### 执行阶段
+
+在这阶段，执行变量赋值、代码执行
+
+如果 `Javascript` 引擎在源代码中声明的实际位置找不到变量的值，那么将为其分配 `undefined` 值
+
+###### 回收阶段
+
+执行上下文出栈等待虚拟机回收执行上下文
+
+##### 执行栈
+
+
+
+执行栈，也叫调用栈，具有 LIFO（后进先出）结构，用于存储在代码执行期间创建的所有执行上下文
+
+```js
+let a = 'Hello World!';
+function first() {
+  console.log('Inside first function');
+  second();
+  console.log('Again inside first function');
+}
+function second() {
+  console.log('Inside second function');
+}
+first();
+console.log('Inside Global Execution Context');
+```
+
+简单分析一下流程：
+
+- 创建全局上下文请压入执行栈
+- `first`函数被调用，创建函数执行上下文并压入栈
+- 执行`first`函数过程遇到`second`函数，再创建一个函数执行上下文并压入栈
+- `second`函数执行完毕，对应的函数执行上下文被推出执行栈，执行下一个执行上下文`first`函数
+- `first`函数执行完毕，对应的函数执行上下文也被推出栈中，然后执行全局上下文
+- 所有代码执行完毕，全局上下文也会被推出栈中，程序结束
+
+
+
+#### 「参考资料」
+
 
 
 ### 闭包的作用和原理 🔥🔥🔥
