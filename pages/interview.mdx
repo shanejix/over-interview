@@ -1763,7 +1763,7 @@ obj.foo() // "foo"
 - JavaScript中的数据类型有哪些？
 - 怎么存储
 
-
+- 怎么判断？typeof 和 instanceOf 的区别？
 
 #### 「回答关键点」
 
@@ -1788,8 +1788,6 @@ obj.foo() // "foo"
 
 
 
-#### 「知识点深入」
-
 复杂类型统称为`Object`，我们这里主要讲述下面三种：
 
 - Object
@@ -1800,10 +1798,76 @@ obj.foo() // "foo"
 - `Map`、
 - `Set`等.....
 
+
+
 存储区别
 
 - 基本数据类型存储在栈中,存放的是对应的值
+
 - 引用类型的对象存储于堆中,在栈中存放的是指向堆内存的地址
+
+  
+
+可以通过 typeof instanceof等方法判断原始数据类型和引用数据类型
+
+
+
+#### 「知识点深入」
+
+##### `typeof`与`instanceof` 
+
+- `typeof`会返回一个变量的基本类型，`instanceof`返回的是一个布尔值
+- `instanceof` 可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型
+- 而`typeof` 也存在弊端，它虽然可以判断基础数据类型（`null` 除外），但是引用数据类型中，除了`function` 类型以外，其他的也无法判断
+
+上述两种方法都有弊端，并不能满足所有场景的需求
+
+
+
+##### `Object.prototype.toString` 
+
+如果需要通用检测数据类型，可以采用`Object.prototype.toString`，调用该方法，统一返回格式`“[object Xxx]”`的字符串
+
+```js
+Object.prototype.toString({})       // "[object Object]"
+Object.prototype.toString.call({})  // 同上结果，加上call也ok
+Object.prototype.toString.call(1)    // "[object Number]"
+Object.prototype.toString.call('1')  // "[object String]"
+Object.prototype.toString.call(true)  // "[object Boolean]"
+Object.prototype.toString.call(function(){})  // "[object Function]"
+Object.prototype.toString.call(null)   //"[object Null]"
+Object.prototype.toString.call(undefined) //"[object Undefined]"
+Object.prototype.toString.call(/123/g)    //"[object RegExp]"
+Object.prototype.toString.call(new Date()) //"[object Date]"
+Object.prototype.toString.call([])       //"[object Array]"
+Object.prototype.toString.call(document)  //"[object HTMLDocument]"
+Object.prototype.toString.call(window)   //"[object Window]"
+```
+
+实现一个全局通用的数据类型判断方法
+
+```js
+function getType(obj){
+  let type  = typeof obj;
+  // 先进行typeof判断，如果是基础数据类型，直接返回
+  if (type !== "object") {    
+    return type;
+  }
+  // 对于typeof返回结果是object的，再进行如下的判断，正则返回结果
+  return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1'); 
+}
+
+// 使用
+
+getType([])     // "Array" typeof []是object，因此toString返回
+getType('123')  // "string" typeof 直接返回
+getType(window) // "Window" toString返回
+getType(null)   // "Null"首字母大写，typeof null是object，需toString来判断
+getType(undefined)   // "undefined" typeof 直接返回
+getType()            // "undefined" typeof 直接返回
+getType(function(){}) // "function" typeof能判断，因此首字母小写
+getType(/123/g)      //"RegExp" toString返回
+```
 
 
 
@@ -2165,7 +2229,7 @@ console.log(fn2()() == window); // true
 
 
 
-# 如何理解JavaScript中执行上下文 🔥🔥🔥
+### 如何理解JavaScript中执行上下文 🔥🔥🔥
 
 #### 「相关问题」
 
@@ -2342,6 +2406,259 @@ console.log('Inside Global Execution Context');
 - `second`函数执行完毕，对应的函数执行上下文被推出执行栈，执行下一个执行上下文`first`函数
 - `first`函数执行完毕，对应的函数执行上下文也被推出栈中，然后执行全局上下文
 - 所有代码执行完毕，全局上下文也会被推出栈中，程序结束
+
+
+
+#### 「参考资料」
+
+### JavaScript中的事件模型 🔥
+
+#### 「相关问题」
+
+- 什么是事件流？事件模型？
+- 事件代理？
+
+#### 「回答关键点」
+
+
+
+#### 「知识点深入」
+
+##### 事件与事件流
+
+由于`DOM`是一个树结构，如果在父子节点绑定事件时候，当触发子节点的时候，就存在一个顺序问题，这就涉及到了事件流的概念
+
+事件流都会经历三个阶段：
+
+- 事件捕获阶段(capture phase)
+- 处于目标阶段(target phase)
+- 事件冒泡阶段(bubbling phase)
+
+##### 事件模型
+
+事件模型可以分为三种：
+
+- 原始事件模型（DOM0级）
+- 标准事件模型（DOM2级）
+- IE事件模型（基本不用）
+
+###### 原始事件模型
+
+事件绑定监听函数比较简单, 有**两种方式**：
+
+- HTML代码中直接绑定
+
+```js
+<input type="button" onclick="fun()">
+```
+
+- 通过`JS`代码绑定
+
+```js
+var btn = document.getElementById('.btn');
+btn.onclick = fun;
+```
+
+
+
+**特性**
+
+- 绑定速度快
+
+`DOM0`级事件具有很好的跨浏览器优势，会以最快的速度绑定，但由于绑定速度太快，可能页面还未完全加载出来，以至于事件可能无法正常运行
+
+- 只支持冒泡，不支持捕获
+- 同一个类型的事件只能绑定一次
+
+```js
+<input type="button" id="btn" onclick="fun1()">
+
+var btn = document.getElementById('.btn');
+btn.onclick = fun2;
+
+// 当希望为同一个元素绑定多个同类型事件的时候（上面的这个`btn`元素绑定2个点击事件），
+// 是不被允许的，后绑定的事件会覆盖之前的事件
+```
+
+- 删除 `DOM0` 级事件处理程序只要将对应事件属性置为`null`即可
+
+```js
+btn.onclick = null;
+```
+
+
+
+###### 标准事件模型
+
+在该事件模型中，一次事件共有**三个过程:**
+
+- 事件捕获阶段：事件从`document`一直向下传播到目标元素, 依次检查经过的节点是否绑定了事件监听函数，如果有则执行
+- 事件处理阶段：事件到达目标元素, 触发目标元素的监听函数
+- 事件冒泡阶段：事件从目标元素冒泡到`document`, 依次检查经过的节点是否绑定了事件监听函数，如果有则执行
+
+事件绑定监听函数的方式如下:
+
+```text
+addEventListener(eventType, handler, useCapture)
+```
+
+事件移除监听函数的方式如下:
+
+```text
+removeEventListener(eventType, handler, useCapture)
+```
+
+```js
+- `eventType`指定事件类型(不要加on)
+- `handler`是事件处理函数
+- `useCapture`是一个`boolean`用于指定是否在捕获阶段进行处理，一般设置为`false`与IE浏览器保持一致
+```
+
+**特性**
+
+- 可以在一个`DOM`元素上绑定多个事件处理器，各自并不会冲突
+
+```js
+btn.addEventListener(‘click’, showMessage1, false);
+btn.addEventListener(‘click’, showMessage2, false);
+btn.addEventListener(‘click’, showMessage3, false);
+```
+
+- 执行时机：捕获和冒泡
+
+
+
+###### IE事件模型
+
+IE事件模型共有两个过程:
+
+- 事件处理阶段：事件到达目标元素, 触发目标元素的监听函数。
+- 事件冒泡阶段：事件从目标元素冒泡到`document`, 依次检查经过的节点是否绑定了事件监听函数，如果有则执行
+
+事件绑定监听函数的方式如下:
+
+```text
+attachEvent(eventType, handler)
+```
+
+事件移除监听函数的方式如下:
+
+```text
+detachEvent(eventType, handler)
+```
+
+##### **事件代理**
+
+> 把一个元素响应事件（`click`、`keydown`......）的函数委托到另一个元素(父层或者更外层元素上)
+
+事件流的都会经过三个阶段： 捕获阶段 -> 目标阶段 -> 冒泡阶段，而事件委托就是在冒泡阶段完成
+
+适合事件委托的事件有：`click`，`mousedown`，`mouseup`，`keydown`，`keyup`，`keypress`
+
+两大优点：
+
+- 减少整个页面所需的内存，提升整体性能
+- 动态绑定，减少重复工作
+
+局限性：
+
+- `focus`、`blur`这些事件没有事件冒泡机制，所以无法进行委托绑定事件
+- `mousemove`、`mouseout`这样的事件，虽然有事件冒泡，但是只能不断通过位置去计算定位，对性能消耗高，因此也是不适合于事件委托的
+
+
+
+#### 「参考资料」
+
+### Ajax原理 🔥
+
+#### 「相关问题」
+
+
+
+#### 「回答关键点」
+
+`AJAX`(Async Javascript and XML):可以在不重新加载整个网页的情况下，与服务器交换数据，并且更新部分网页。
+
+
+
+`Ajax`的原理简单来说通过`XmlHttpRequest`对象来向服务器发异步请求，从服务器获得数据，然后用`JavaScript`来操作`DOM`而更新页面
+
+
+
+#### 「知识点深入」
+
+##### 实现过程
+
+实现 `Ajax`异步交互需要服务器逻辑进行配合，需要完成以下步骤：
+
+- 创建 `Ajax`的核心对象 `XMLHttpRequest`对象
+- 通过 `XMLHttpRequest` 对象的 `open()` 方法与服务端**建立连接**
+- 构建请求所需的数据内容，并通过`XMLHttpRequest` 对象的 `send()` 方法**发送**给服务器端
+- 通过 `XMLHttpRequest` 对象提供的 `onreadystatechange` 事件**监听**服务器端你的通信状态
+- 接受并处理服务端向客户端响应的数据结果
+- 将处理结果更新到 `HTML`页面中
+
+##### 封装
+
+来封装一个简单的`ajax`请求
+
+```js
+/封装一个ajax请求
+function ajax(options) {
+    //1. 创建XMLHttpRequest对象
+    const xhr = new XMLHttpRequest()
+
+
+    // 初始化参数的内容
+    options = options || {}
+    options.type = (options.type || 'GET').toUpperCase()
+    options.dataType = options.dataType || 'json'
+    const params = options.data
+
+    //2. 建立连接 并 发送请求
+    if (options.type === 'GET') {
+        xhr.open('GET', options.url + '?' + params, true)
+        xhr.send(null)
+    } else if (options.type === 'POST') {
+        xhr.open('POST', options.url, true)
+        xhr.send(params)
+    }
+    
+    //3. 接收请求
+    xhr.onreadystatechange = function () {
+        // xhr.readyState === 0 UNSENT
+        // xhr.readyState === 1 OPENED
+        // xhr.readyState === 2 HEADRS_RECEIVED
+        // xhr.readyState === 3 LOADING
+        // xhr.readyState === 4 DONE
+        if (xhr.readyState === 4) {
+            let status = xhr.status
+            if (status >= 200 && status < 300) {
+                options.success && options.success(xhr.responseText, xhr.responseXML)
+            } else {
+                options.fail && options.fail(status)
+            }
+        }
+    }
+}
+```
+
+使用
+
+```js
+ajax({
+    type: 'post',
+    dataType: 'json',
+    data: {},
+    url: 'https://xxxx',
+    success: function(text,xml){// 请求成功后的回调函数
+        console.log(text)
+    },
+    fail: function(status){// 请求失败后的回调函数
+        console.log(status)
+    }
+})
+```
 
 
 
@@ -4713,6 +5030,102 @@ History 路由由于通过 History API 实现，所以有以下优势和不足�
 #### 「参考资料」
 
 1. [Window: hashchange event](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event)
+
+
+
+### DOM && BOM🔥
+
+#### 「相关问题」
+
+- 什么是dom？bom？
+
+- DOM常见的操作有哪些 
+
+#### 「回答关键点」
+
+- `DOM` 
+
+
+
+`DOM(Document Object Model)`， 文档对象模型 (DOM) 是 `HTML` 和 `XML` 文档的编程接口;对文档的结构化的表述;
+
+`BOM(Browser Object Model)` ，浏览器对象模型，提供了独立于内容与浏览器窗口进行交互的对象
+
+
+
+DOM常见操作：增删改查
+
+
+
+#### 「知识点深入」
+
+##### DOM增删改查
+
+```js
+// 创建节点
+
+const divEl = document.createElement("div");// 创建一个新元素
+const textEl = document.createTextNode("content");// 创建一个文本节点
+const fragment = document.createDocumentFragment();// 创建一个文档碎片 - 文档碎片的内容一次性添加到DOM中
+const dataAttribute = document.createAttribute('custom');// 创建属性节点，可以是自定义属性
+```
+
+```js
+// 获取节点
+
+document.getElementById('id属性值');// 返回拥有指定id的对象的引用
+document.getElementsByClassName('class属性值');// 返回拥有指定class的对象集合
+document.getElementsByTagName('标签名');// 返回拥有指定标签名的对象集合
+document.getElementsByName('name属性值'); // 返回拥有指定名称的对象结合
+document/element.querySelector('CSS选择器'); // 仅返回第一个匹配的元素(**静态实例**)
+document/element.querySelectorAll('CSS选择器');// 返回所有匹配的元素(**静态实例**)
+document.documentElement;// 获取页面中的HTML标签
+document.body;// 获取页面中的BODY标签
+document.all[''];// 获取页面中的所有元素节点的对象集合型
+```
+
+```js
+// 更新节点
+
+p.innerHTML = 'ABC <span style="color:red">RED</span> XYZ';// html
+p.innerText = '<script>alert("Hi")</script>';// 文本 同 textContent
+p.style.paddingTop = '2em';// 样式
+```
+
+```js
+// 添加节点
+
+parentElement.innerHTML = 'ABC <span style="color:red">RED</span> XYZ';// html
+parentElement.appendChild();// 子节点添加到父节点的最后一个子节点
+parentElement.insertBefore(newElement, referenceElement);// 子节点会插入到referenceElement之前
+div.setAttribute('class', 'white');// 在指定元素中添加一个属性节点，如果元素中已有该属性改变属性值'第一个参数属性名，第二个参数属性值。
+```
+
+```js
+// 删除节点
+
+// 拿到待删除节点:
+const self = document.getElementById('to-be-removed');
+// 拿到父节点:
+const parent = self.parentElement;
+// 删除:
+const removed = parent.removeChild(self);
+removed === self; // true
+```
+
+##### BOM
+
+- window
+- location
+- navigator
+- screen
+- history
+
+
+
+#### 「参考资料」
+
+- https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model
 
 ## 伍，网络
 
@@ -7498,4 +7911,329 @@ quicklink 是 Google 开源的预加载库，quicklink 会判断链接进入视�
 1. [Navigation Timeing API](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API)
 
 
+
+### 如何判断一个元素是否在可视区域中？🔥🔥
+
+#### 「相关问题」
+
+#### 「回答关键点」
+
+经常需要判断目标元素是否在视窗之内或者和视窗的距离小于一个值（例如 100 px），从而实现一些常用的功能，例如：
+
+- 图片的懒加载
+- 列表的无限滚动
+- 计算广告元素的曝光情况
+- 可点击链接的预加载
+
+
+
+#### 「知识点深入」
+
+##### 实现方式
+
+- offsetTop、scrollTop
+- getBoundingClientRect
+- Intersection Observer
+
+##### offsetTop、scrollTop
+
+公式如下
+
+```js
+el.offsetTop - document.documentElement.scrollTop <= viewPortHeight
+
+// offsetTop，元素的上外边框至包含元素(offsetParent)的上内边框之间的像素距离
+// scrollTop 可以确定元素当前滚动的状态 offset = 0 可以重置元素的滚动距离
+// clientWidth = content + padding
+```
+
+实现
+
+```js
+function isInViewPortOfOne (el) {
+    // viewPortHeight 兼容所有浏览器写法
+    const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight 
+    const offsetTop = el.offsetTop
+    const scrollTop = document.documentElement.scrollTop
+    
+    const top = offsetTop - scrollTop
+    
+    return top <= viewPortHeight
+}
+```
+
+#####  getBoundingClientRect
+
+api
+
+```js
+const target = document.querySelector('.target');
+const clientRect = target.getBoundingClientRect();
+console.log(clientRect);
+
+// {
+//   bottom: 556.21875,
+//   height: 393.59375,
+//   left: 333,
+//   right: 1017,
+//   top: 162.625,
+//   width: 684
+// }
+
+// 如果一个元素在视窗之内的话，那么它一定满足下面四个条件：
+
+// top 大于等于 0
+// left 大于等于 0
+// bottom 小于等于视窗高度
+// right 小于等于视窗宽度
+```
+
+实现
+
+```js
+function isInViewPort(element) {
+  const viewWidth = window.innerWidth || document.documentElement.clientWidth;
+  const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+    
+  const {
+    top,
+    right,
+    bottom,
+    left,
+  } = element.getBoundingClientRect();
+
+  return (
+    top >= 0 &&
+    left >= 0 &&
+    right <= viewWidth &&
+    bottom <= viewHeight
+  );
+}
+```
+
+##### Intersection Observer
+
+实现
+
+```js
+const options = {
+  // 表示重叠面积占被观察者的比例，从 0 - 1 取值，
+  // 1 表示完全被包含
+  threshold: 1.0, 
+  root:document.querySelector('#scrollArea') // 必须是目标元素的父级元素
+};
+
+const callback = (entries, observer) => { 
+    entries.forEach(entry => {
+        entry.time;               // 触发的时间
+        entry.rootBounds;         // 根元素的位置矩形，这种情况下为视窗位置
+        entry.boundingClientRect; // 被观察者的位置举行
+        entry.intersectionRect;   // 重叠区域的位置矩形
+        entry.intersectionRatio;  // 重叠区域占被观察者面积的比例（被观察者不是矩形时也按照矩形计算）
+        entry.target;             // 被观察者
+    });
+}
+
+const observer = new IntersectionObserver(callback, options);
+```
+
+使用
+
+```js
+const target = document.querySelector('.target');
+observer.observe(target);
+```
+
+
+
+#### 「参考资料」
+
+- [Element.getBoundingClientRect() - Web API 接口参考 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
+- [Intersection Observer API - Web API 接口参考 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API)
+
+### 大文件上传如何做断点续传？🔥
+
+[面试官：大文件上传如何做断点续传？ | web前端面试 - 面试官系列 (vue3js.cn)](https://vue3js.cn/interview/JavaScript/continue_to_upload.html#一、是什么)
+
+## 拾，数据结构和算法
+
+
+
+### 尾递归🔥🔥
+
+#### 数组求和
+
+```js
+function sum(arr,total){
+    if(arr.length === 0){
+        return total
+    }
+    return sum(arr,total + arr.pop())
+}
+```
+
+#### 优化斐波那契数列
+
+```js
+function f(n,start=1,total=1){
+    if(n <=2){
+        return total
+    }
+    
+    return f(n-1,total,total+start)
+}
+```
+
+#### 数组扁平化
+
+```js
+let a = [1,2,3, [1,2,3, [1,2,3]]]
+// 变成
+let a = [1,2,3,1,2,3,1,2,3]
+// 具体实现
+function flat(arr = [], result = []) {
+    arr.forEach(v => {
+        if(Array.isArray(v)) {
+            result = result.concat(flat(v, []))
+        }else {
+            result.push(v)
+        }
+    })
+    return result
+}
+```
+
+#### 数组对象格式化
+
+```js
+// 代码实现
+function keysLower(obj) {
+    let reg = new RegExp("([A-Z]+)", "g");
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            let temp = obj[key];
+            if (reg.test(key.toString())) {
+                // 将修改后的属性名重新赋值给temp，并在对象obj内添加一个转换后的属性
+                temp = obj[key.replace(reg, function (result) {
+                    return result.toLowerCase()
+                })] = obj[key];
+                // 将之前大写的键属性删除
+                delete obj[key];
+            }
+            // 如果属性是对象或者数组，重新执行函数
+            if (typeof temp === 'object' || Object.prototype.toString.call(temp) === '[object Array]') {
+                keysLower(temp);
+            }
+        }
+    }
+    return obj;
+};
+```
+
+### 函数缓存🔥🔥
+
+将函数运算过的结果进行缓存（用空间（缓存存储）换时间（计算过程））
+
+#### 闭包
+
+```js
+// 函数 + 函数体内可访问的变量总和
+
+(function() {
+    var a = 1;
+    function add() {
+        const b = 2
+        let sum = b + a
+        console.log(sum); // 3
+    }
+    add()
+})()
+
+
+```
+
+#### 柯里化
+
+```js
+// 把接受多个参数的函数转换成接受一个单一参数的函数
+
+// 非函数柯里化
+var add = function (x,y) {
+    return x+y;
+}
+add(3,4) //7
+
+// 函数柯里化
+var add2 = function (x) {
+    //**返回函数**
+    return function (y) {
+        return x+y;
+    }
+}
+add2(3)(4) //7
+```
+
+#### 高阶函数
+
+```js
+// 通过接收其他函数作为参数或返回其他函数的函数
+
+function foo(){
+  var a = 2;
+
+  function bar() {
+    console.log(a);
+  }
+  return bar;
+}
+var baz = foo();
+baz();//2
+```
+
+#### 实现函数缓存
+
+```js
+// 把参数和对应的结果数据存在一个对象中，
+// 调用时判断参数对应的数据是否存在，存在就返回对应的结果数据，否则就返回计算结果
+
+const memoize = function (func, content) {
+  let cache = Object.create(null)
+  content = content || this
+  return (...key) => {
+    if (!cache[key]) {
+      cache[key] = func.apply(content, key)
+    }
+    return cache[key]
+  }
+}
+
+// 以下几种情况下，适合使用缓存：
+
+- 对于昂贵的函数调用，执行复杂计算的函数
+- 对于具有有限且高度重复输入范围的函数
+- 对于具有重复输入值的递归函数
+- 对于纯函数，即每次使用特定输入调用时返回相同输出的函数
+```
+
+### 上拉加载🔥
+
+触底公式
+
+```js
+scrollTop + clientHeight >= scrollHeight
+```
+
+简单实现
+
+```js
+let clientHeight  = document.documentElement.clientHeight; //浏览器高度
+let scrollHeight = document.body.scrollHeight;
+let scrollTop = document.documentElement.scrollTop;
+ 
+let distance = 50;  //距离视窗还用50的时候，开始触发；
+
+if ((scrollTop + clientHeight) >= (scrollHeight - distance)) {
+    console.log("开始加载数据");
+}
+```
 
