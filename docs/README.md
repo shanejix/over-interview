@@ -1,4 +1,3 @@
-
 [有效回答]
 ​
 
@@ -8,13 +7,10 @@
 1. 面试时间总是有限的围绕一道普通技术题目的时长一般在 1-3 分钟，一轮技术面试的时长一般控制在 30-60 分钟，面试题目通常涉及不同知识面。
 1. 问题的回答一般是自顶向下的以一个概括性较强的回答进行反馈，面试官获得反馈后，通常会基于候选人回答中提到的关键点或面试官认为的其他关键点展开进一步提问。
 
-
-
 学习知识点时通常尽可能查看具有权威性的文档、规范、源码等，进行从零到一的较全面的理解，耗时较长；而复习时更多的需要有侧重点，应当进行提炼和总结。候选人通常基于知识点去查找相关技术文章，希望从其他开发者的技术文章中获取“精华”，从而省去自己从零学习或是提炼总结的成本。
 ​
 
 通过由浅入深的组织方式，以「相关问题」「回答关键点」「知识点深入」「参考资料」为内容基础大纲进行梳理。「回答关键点」作为高度概括的总结性语言，可用于第一时间回答面试官的问题；「知识点深入」以递进方式深入解析，可作为引导面试官进一步提问的方向。
-
 
 ## 零，面试相关
 
@@ -46,47 +42,25 @@
 
 #### 非常重要
 
-
-
 - 最突出的技能
-
-
 
 - JS 得心应手
 
-
-
 - 哪方面的知识掌握是最全面的
-
-
 
 - 前端工程化
 
-
-
 - 性格上最大的优势
-
-
 
 - 对技术的热情和对问题孜孜不倦的深挖实践
 
-
-
 - 最擅长的事情
-
-
 
 - 擅长从工作中分析总结，制定对某类问题的解决方法，编写效率工具
 
-
-
 - 哪些成就和贡献
 
-
-
 - Github xx 项目核心贡献者
-
-
 
 #### 范例
 
@@ -131,11 +105,7 @@ BFC 全称为 `block formatting context`，中文为“块级格式化上下文�
 
 - position 的值不为 relative 或 static;为 absolute 或 fixed
 
-
-
 - display 的值为`inline-block、inltable-cell、table-caption、table、inline-table、flex、inline-flex、grid、inline-grid`
-
-
 
 BFC 有什么用
 ​
@@ -358,8 +328,6 @@ after
 
 ###### 格式化上下文（formatting context）
 
-
-
 格式化上下文是一系列相关盒子进行布局的环境。不同的格式化上下文有不同的布局规则。目前常见的格式化上下文有以下这些：
 ​
 
@@ -370,8 +338,6 @@ after
 - 弹性格式化上下文（FFC，flex formatting context），在 CSS3 中定义
 
 - 栅格格式化上下文（GFC，grid formatting context），在 CSS3 中定义
-
-
 
 ###### 独立格式化上下文（independent formatting context）
 
@@ -554,9 +520,9 @@ CSS Modules 和前文介绍的预处理器不同，不是可编程化的 CSS，�
 ```
 
 ```javascript
-import style from "./style.css";
+import style from './style.css'
 
-document.body.innerHTML = `<h1 class="${style.title}">HZFEStudio</h1>`;
+document.body.innerHTML = `<h1 class="${style.title}">HZFEStudio</h1>`
 ```
 
 ##### CSS-in-JS
@@ -567,16 +533,16 @@ document.body.innerHTML = `<h1 class="${style.title}">HZFEStudio</h1>`;
 通过 Styled-components 写 CSS 的示例如下：
 
 ```javascript
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 function hzfe() {
   const Title = styled.h1`
     font-size: 1.5em;
     text-align: center;
     color: #666;
-  `;
-  return <Title>HZFEStudio</Title>;
+  `
+  return <Title>HZFEStudio</Title>
 }
 ```
 
@@ -617,8 +583,6 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 - `绝对定位`
 - `table-cell`
 - `line-height`
-
-
 
 #### 「知识点深入」
 
@@ -832,8 +796,6 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 
 #### 「参考资料」
 
-
-
 ### 移动端自适应的常见手段 🔥🔥🔥
 
 #### 「相关问题」
@@ -845,15 +807,13 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 
 #### 「回答关键点」
 
-- `viewport` 
+- `viewport`
 
-- `相对单位` 
+- `相对单位`
 
-- `媒体查询` 
+- `媒体查询`
 
-- `响应式图片` 
-
-  
+- `响应式图片`
 
 移动端开发的主要**痛点**是:如何让页面**适配各种不同的终端设备**，使不同的终端设备都拥有**基本一致的视觉效果和交互体验**。移动端常见的适配方案有以下几种，一般都是互相搭配使用。包括：
 
@@ -864,15 +824,9 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 - 响应式图片
 - 安全区域适配
 
-
-
 #### 「知识点深入」
 
-
-
 ##### 像素
-
-
 
 **分辨率（Resolution）**
 
@@ -884,7 +838,7 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 
 **逻辑像素（Logical pixels）**
 
-是一种抽象概念。*在不同的设备下，一个逻辑像素代表的物理像素数不同*。**CSS 像素是逻辑像素**。
+是一种抽象概念。_在不同的设备下，一个逻辑像素代表的物理像素数不同_。**CSS 像素是逻辑像素**。
 
 为了在不同尺寸和密度比的设备上表现出一致的视觉效果，使用逻辑像素描述一个相同尺寸的物理单位。在具有高密度比的屏幕下，一个逻辑像素对应多个物理像素。
 
@@ -897,8 +851,6 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 在移动端中，常见图片或者 1px 的边框在一些机型下显示模糊/变粗的问题。基于对像素相关的概念理解，可知 CSS 中的 1px 是指一个单位的逻辑像素。一个单位的逻辑像素映射到不同像素密度比的设备下，实际对应的物理像素不同。
 
 因此，同样尺寸的图片在高密度比的设备下，由于一个位图像素需要应用到多个物理像素上，所以会比低密度比设备中的视觉效果模糊。
-
-
 
 ##### 视口（**viewport**）
 
@@ -916,8 +868,6 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 
 视觉视口是布局视口的**当前可见部分**。用户可以通过缩放来查看页面内容，从而改变视觉视口，但不影响布局视口
 
-
-
 ##### 使用 viewport 元标签配置视口
 
 开发者可以通过 `<meta name="viewport">` 对移动端的布局视口进行设置。如果不进行 viewport 元标签的设置，可能会导致开发者设定的较小宽度的媒体查询永远不会被使用，因为默认的布局视口宽度为 980px。
@@ -928,8 +878,6 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
-
-
 ##### 使用现代响应式布局方案
 
 除了使用浮动布局和百分比布局外，目前比较常见的是使用 Flexbox 或 CSS Grid 来实现灵活的网格布局。可以根据以下条件来选择布局方案：
@@ -937,11 +885,7 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 1. **需要一维还是二维布局**：Flexbox 基于一条主轴方向进行布局。CSS Grid 可划分为行和列进行布局。如果只需要按照行或列进行布局则使用 Flexbox；如果需要同时按照行和列控制布局则使用 CSS Grid。
 2. **专注布局结构还是内容流**：Flexbox 专注于内容流。Flex Item 的宽度或高度由项目中的内容决定。Flex Item 根据其内部内容和可用空间进行增长和缩小。CSS Grid 专注于精确的内容布局结构规则。每个 Grid Item 都是一个网格单元，沿水平轴和垂直轴排列。如果允许内容灵活的分配空间则使用 Flexbox；如果需要准确控制布局中项目的位置则使用 CSS Grid。
 
-
-
 ![image](C:\Users\Administrator\Desktop\金三银四.assets\129393911-324a2f65-30c3-423d-9825-cc3b4d5e3d9e.png)
-
-
 
 ##### 使用媒体查询
 
@@ -963,8 +907,6 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 }
 ```
 
-
-
 ##### 使用相对单位
 
 移动端开发需要面对十分繁杂的终端设备尺寸。除了使用响应式布局、媒体查询等方案之外，在对元素进行布局时，一般会使用相对单位来获得更多的灵活性。
@@ -980,8 +922,6 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 由于目前 vw、vh 相关单位获得了更多浏览器的支持，可以直接使用 vw、vh 单位进行移动端开发。
 
 同理于 flexible 方案，使用 vw、vh 也需要对设计稿中的尺寸进行换算，将 px 转换为 vw 值，常见的工具如 postcss-px-to-viewport 等可以满足需求。
-
-
 
 ##### 使用响应式图片
 
@@ -1010,8 +950,6 @@ source 元素可以按需配置 srcset、media、sizes 等属性，以便用户�
   />
 </picture>
 ```
-
-
 
 ##### 适配安全区域
 
@@ -1049,35 +987,31 @@ body {
 
 ## 叁，JavaScript 相关
 
-
-
-### ES6+新特性🔥🔥
+### ES6+新特性 🔥🔥
 
 #### 「相关问题」
 
-- 说说var、let、const之间的区别
-- ES6中数组、对象、函数新增了哪些扩展？
-- 如何理解Set、Map两种数据结构
+- 说说 var、let、const 之间的区别
+- ES6 中数组、对象、函数新增了哪些扩展？
+- 如何理解 Set、Map 两种数据结构
 - promise？理解？场景？作用？
 - Generator？Proxy？Modular？Decorator？
 
 #### 「回答关键点」
 
-- `let` 
-- `const` 
-- `Set` 
+- `let`
+- `const`
+- `Set`
 - `Map`
-- `promise` 
-- `Generator` 
-- `Proxy` 
-- `modular` 
-- `Decorator` 
-
-
+- `promise`
+- `Generator`
+- `Proxy`
+- `modular`
+- `Decorator`
 
 #### 「知识点深入」
 
-##### var、let、const之间的区别?
+##### var、let、const 之间的区别?
 
 `var`、`let`、`const`三者区别可以围绕下面五点展开：
 
@@ -1087,23 +1021,19 @@ body {
 - 重复声明
 - 修改声明的变量
 - 使用
-- 
-
-**变量提升**
+- **变量提升**
 
 ```js
-
-
 // var
-console.log(a)  // undefined
+console.log(a) // undefined
 var a = 10
 
-// let 
-console.log(b)  // Cannot access 'b' before initialization
+// let
+console.log(b) // Cannot access 'b' before initialization
 let b = 10
 
 // const
-console.log(c)  // Cannot access 'c' before initialization
+console.log(c) // Cannot access 'c' before initialization
 const c = 10
 
 // var声明的变量存在变量提升，即变量可以在声明之前调用，值为`undefined
@@ -1126,21 +1056,21 @@ const c = 10
 ```js
 // var
 {
-    var a = 20
+  var a = 20
 }
-console.log(a)  // 20
+console.log(a) // 20
 
 // let
 {
-    let b = 20
+  let b = 20
 }
-console.log(b)  // Uncaught ReferenceError: b is not defined
+console.log(b) // Uncaught ReferenceError: b is not defined
 
 // const
 {
-    const c = 20
+  const c = 20
 }
-console.log(c)  // Uncaught ReferenceError: c is not defined
+console.log(c) // Uncaught ReferenceError: c is not defined
 ```
 
 **重复声明**
@@ -1173,12 +1103,12 @@ const c = 20 // Identifier 'c' has already been declared
 // var
 var a = 10
 a = 20
-console.log(a)  // 20
+console.log(a) // 20
 
 //let
 let b = 10
 b = 20
-console.log(b)  // 20
+console.log(b) // 20
 
 // const
 const c = 10
@@ -1190,7 +1120,7 @@ console.log(c) // Uncaught TypeError: Assignment to constant variable
 
 能用`const`的情况尽量使用`const`，其他情况下大多数使用`let`，避免使用`var`
 
-##### ES6中 数组新增了哪些扩展？
+##### ES6 中 数组新增了哪些扩展？
 
 - `...`：浅拷贝，剩余参数，
 - `Array.from()` :将类似数组的对象和可迭代对象`（iterable）`（包括 `ES6` 新增的数据结构 `Set` 和 `Map`）转化为数组
@@ -1203,9 +1133,9 @@ Array(3, 11, 8) // [3, 11, 8]
 ```
 
 - `arr.copyWithin(target,start?,end?)`
-- `arr.find()、arr.findIndex()` 
-- `arr.fill()` 
-- `arr.entries()，arr.keys()，arr.values()` 
+- `arr.find()、arr.findIndex()`
+- `arr.fill()`
+- `arr.entries()，arr.keys()，arr.values()`
 
 ```js
 or (let index of ['a', 'b'].keys()) {
@@ -1226,21 +1156,21 @@ for (let [index, elem] of ['a', 'b'].entries()) {
 // 0 "a"
 ```
 
-- `arr.includes()` 
-- `arr.flat()，arr.flatMap()` 
+- `arr.includes()`
+- `arr.flat()，arr.flatMap()`
 
 ```js
 // 相当于 [[2, 4], [3, 6], [4, 8]].flat()
-[2, 3, 4].flatMap((x) => [x, x * 2])
+;[2, 3, 4].flatMap((x) => [x, x * 2])
 // [2, 4, 3, 6, 4, 8]
 ```
 
-##### ES6中 对象新增了哪些扩展？
+##### ES6 中 对象新增了哪些扩展？
 
 - 属性、方法简写
 - 属性名表达式
-- `super` 
-- ```...``` 扩展运算符
+- `super`
+- `...` 扩展运算符
 - 属性遍历
 
 ```js
@@ -1267,19 +1197,17 @@ Reflect.ownKeys(obj)
 ```
 
 - `Object.is()` :与严格比较运算符（===）的行为基本一致，不同之处只有两个：一是`+0`不等于`-0`，二是`NaN`等于自身
-- `Object.assign()` 
-- `Object.getOwnPropertyDescriptors()` 
-- `Object.setPrototypeOf()，Object.getPrototypeOf()` 
-- `Object.keys()，Object.values()，Object.entries()` 
-- `Object.fromEntries()` 
+- `Object.assign()`
+- `Object.getOwnPropertyDescriptors()`
+- `Object.setPrototypeOf()，Object.getPrototypeOf()`
+- `Object.keys()，Object.values()，Object.entries()`
+- `Object.fromEntries()`
 
-
-
-##### ES6中 函数新增了哪些扩展？
+##### ES6 中 函数新增了哪些扩展？
 
 - 默认参数（尾部参数）
-- `fun.length` 
-- `fun.name` 
+- `fun.length`
+- `fun.name`
 - 箭头函数
 
 ```js
@@ -1292,11 +1220,7 @@ Reflect.ownKeys(obj)
 // 4. 不能使用 yield
 ```
 
-
-
-##### ES6中的set 和 map数据结构？
-
-
+##### ES6 中的 set 和 map 数据结构？
 
 **Set：无序，不重复的数据合集**
 
@@ -1309,30 +1233,30 @@ Reflect.ownKeys(obj)
 
 ```js
 // 数组
-let arr = [3, 5, 2, 2, 5, 5];
-let unique = [...new Set(arr)]; // [3, 5, 2]
+let arr = [3, 5, 2, 2, 5, 5]
+let unique = [...new Set(arr)] // [3, 5, 2]
 
 // 字符串
-let str = "352255";
-let unique = [...new Set(str)].join(""); // 352
+let str = '352255'
+let unique = [...new Set(str)].join('') // 352
 ```
 
 **并集、交集、差集**
 
 ```js
-let a = new Set([1, 2, 3]);
-let b = new Set([4, 3, 2]);
+let a = new Set([1, 2, 3])
+let b = new Set([4, 3, 2])
 
 // 并集
-let union = new Set([...a, ...b]);
+let union = new Set([...a, ...b])
 // Set {1, 2, 3, 4}
 
 // 交集
-let intersect = new Set([...a].filter(x => b.has(x)));
+let intersect = new Set([...a].filter((x) => b.has(x)))
 // set {2, 3}
 
 // （a 相对于 b 的）差集
-let difference = new Set([...a].filter(x => !b.has(x)));
+let difference = new Set([...a].filter((x) => !b.has(x)))
 // Set {1}
 ```
 
@@ -1345,8 +1269,6 @@ let difference = new Set([...a].filter(x => !b.has(x)));
 - delete()
 - clear()
 
-
-
 **WeakSet/WeakMap**
 
 - `WeackSet`成员只能是引用类型，而不能是其他类型的值
@@ -1356,16 +1278,14 @@ let difference = new Set([...a].filter(x => !b.has(x)));
 - `WeakMap`的键名所指向的对象，一旦不再需要，里面的键名对象和所对应的键值对会自动消失，不用手动删除引用
 - `WeakMap`没有遍历操作的`API`,没有`clear`清空方法
 
-
-
-##### ES6中 Promise的理解？
+##### ES6 中 Promise 的理解？
 
 `Promise`构造函数存在以下方法：
 
 - all()
 
 ```js
-const p = Promise.all([p1, p2, p3]);
+const p = Promise.all([p1, p2, p3])
 
 // 将多个 Promise实例，包装成一个新的 Promise实例
 
@@ -1375,15 +1295,13 @@ const p = Promise.all([p1, p2, p3]);
 
 // 只要p1、p2、p3之中有一个被rejected，p的状态就变成rejected，此时第一个被reject的实例的返回值，会传递给p的回调函数
 
-
 // 注意，如果作为参数的 Promise 实例，自己定义了catch方法，那么它一旦被rejected，并不会触发Promise.all()的catch方法
-
 ```
 
 - race()
 
 ```js
-const p = Promise.race([p1, p2, p3]);
+const p = Promise.race([p1, p2, p3])
 
 // 将多个 Promise 实例，包装成一个新的 Promise 实例
 
@@ -1393,7 +1311,7 @@ const p = Promise.race([p1, p2, p3]);
 - allSettled()
 
 ```js
-const p = Promise.allSettled([p1, p2, p3]);
+const p = Promise.allSettled([p1, p2, p3])
 
 // 将多个 Promise 实例，包装成一个新的 Promise 实例
 
@@ -1403,45 +1321,42 @@ const p = Promise.allSettled([p1, p2, p3]);
 - resolve()
 - reject()
 
-
-
 场景
 
 ```js
 //请求某个图片资源
-function requestImg(){
-    var p = new Promise(function(resolve, reject){
-        var img = new Image();
-        img.onload = function(){
-           resolve(img);
-        }
-        //img.src = "https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg"; 正确的
-        img.src = "https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg1";
-    });
-    return p;
+function requestImg() {
+  var p = new Promise(function (resolve, reject) {
+    var img = new Image()
+    img.onload = function () {
+      resolve(img)
+    }
+    //img.src = "https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg"; 正确的
+    img.src = 'https://b-gold-cdn.xitu.io/v3/static/img/logo.a7995ad.svg1'
+  })
+  return p
 }
 
 //延时函数，用于给请求计时
-function timeout(){
-    var p = new Promise(function(resolve, reject){
-        setTimeout(function(){
-            reject('图片请求超时');
-        }, 5000);
-    });
-    return p;
+function timeout() {
+  var p = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      reject('图片请求超时')
+    }, 5000)
+  })
+  return p
 }
 
-Promise
-.race([requestImg(), timeout()])
-.then(function(results){
-    console.log(results);
-})
-.catch(function(reason){
-    console.log(reason);
-});
+Promise.race([requestImg(), timeout()])
+  .then(function (results) {
+    console.log(results)
+  })
+  .catch(function (reason) {
+    console.log(reason)
+  })
 ```
 
-##### ES6中 Generator 的理解？
+##### ES6 中 Generator 的理解？
 
 [现代 JavaScript 教程 —— JavaScript 编程语言篇 - shanejix - 博客园 (cnblogs.com)](https://www.cnblogs.com/shanejix/p/15220858.html#generator)
 
@@ -1451,17 +1366,17 @@ Promise
 
 ```javascript
 function* objectEntries(obj) {
-  let propKeys = Reflect.ownKeys(obj);
+  let propKeys = Reflect.ownKeys(obj)
 
   for (let propKey of propKeys) {
-    yield [propKey, obj[propKey]];
+    yield [propKey, obj[propKey]]
   }
 }
 
-let jane = { first: 'Jane', last: 'Doe' };
+let jane = { first: 'Jane', last: 'Doe' }
 
 for (let [key, value] of objectEntries(jane)) {
-  console.log(`${key}: ${value}`);
+  console.log(`${key}: ${value}`)
 }
 // first: Jane
 // last: Doe
@@ -1471,11 +1386,11 @@ for (let [key, value] of objectEntries(jane)) {
 
 ```js
 function* loadUI() {
-  showLoadingScreen();
-  yield loadUIDataAsynchronously();
-  hideLoadingScreen();
+  showLoadingScreen()
+  yield loadUIDataAsynchronously()
+  hideLoadingScreen()
 }
-var loader = loadUI();
+var loader = loadUI()
 // 加载UI
 loader.next()
 
@@ -1483,7 +1398,7 @@ loader.next()
 loader.next()
 ```
 
-##### ES6中Proxy的理解？
+##### ES6 中 Proxy 的理解？
 
 `Proxy` 用于创建一个对象的代理，从而实现基本操作的拦截和自定义（如属性查找、赋值、枚举、函数调用等）
 
@@ -1492,7 +1407,7 @@ loader.next()
 var proxy = new Proxy(target, handler)
 
 // 取消代理
-Proxy.revocable(target, handler);
+Proxy.revocable(target, handler)
 ```
 
 关于`handler`拦截属性，有如下：
@@ -1511,13 +1426,9 @@ Proxy.revocable(target, handler);
 - apply(target, object, args)：拦截 Proxy 实例作为函数调用的操作
 - construct(target, args)：拦截 Proxy 实例作为构造函数调用的操作
 
-
-
 **Reflect**
 
 若需要在`Proxy`内部调用对象的默认行为，建议使用`Reflect`
-
-
 
 **场景**
 
@@ -1527,22 +1438,20 @@ Proxy.revocable(target, handler);
 - 降低函数或类的复杂度
 - 在复杂操作前对操作进行校验或对所需资源进行管理
 
-
-
 1. 使用 `Proxy` 保障数据类型的准确性
 
 ```js
-let numericDataStore = { count: 0, amount: 1234, total: 14 };
+let numericDataStore = { count: 0, amount: 1234, total: 14 }
 numericDataStore = new Proxy(numericDataStore, {
-    set(target, key, value, proxy) {
-        if (typeof value !== 'number') {
-            throw Error("属性只能是number类型");
-        }
-        return Reflect.set(target, key, value, proxy);
+  set(target, key, value, proxy) {
+    if (typeof value !== 'number') {
+      throw Error('属性只能是number类型')
     }
-});
+    return Reflect.set(target, key, value, proxy)
+  },
+})
 
-numericDataStore.count = "foo"
+numericDataStore.count = 'foo'
 // Error: 属性只能是number类型
 
 numericDataStore.count = 333
@@ -1553,26 +1462,26 @@ numericDataStore.count = 333
 
 ```js
 let api = {
-    _apiKey: '123abc456def',
-    getUsers: function(){ },
-    getUser: function(userId){ },
-    setUser: function(userId, config){ }
-};
-const RESTRICTED = ['_apiKey'];
+  _apiKey: '123abc456def',
+  getUsers: function () {},
+  getUser: function (userId) {},
+  setUser: function (userId, config) {},
+}
+const RESTRICTED = ['_apiKey']
 api = new Proxy(api, {
-    get(target, key, proxy) {
-        if(RESTRICTED.indexOf(key) > -1) {
-            throw Error(`${key} 不可访问.`);
-        } 
-        return Reflect.get(target, key, proxy);
-    },
-    set(target, key, value, proxy) {
-        if(RESTRICTED.indexOf(key) > -1) {
-            throw Error(`${key} 不可修改`);
-        } 
-        return Reflect.get(target, key, value, proxy);
+  get(target, key, proxy) {
+    if (RESTRICTED.indexOf(key) > -1) {
+      throw Error(`${key} 不可访问.`)
     }
-});
+    return Reflect.get(target, key, proxy)
+  },
+  set(target, key, value, proxy) {
+    if (RESTRICTED.indexOf(key) > -1) {
+      throw Error(`${key} 不可修改`)
+    }
+    return Reflect.get(target, key, value, proxy)
+  },
+})
 
 console.log(api._apiKey)
 api._apiKey = '987654321'
@@ -1582,18 +1491,18 @@ api._apiKey = '987654321'
 3. 实现观察者模式
 
 ```js
-const queuedObservers = new Set();
+const queuedObservers = new Set()
 
-const observe = fn => queuedObservers.add(fn);
+const observe = (fn) => queuedObservers.add(fn)
 
 function set(target, key, value, receiver) {
-  const result = Reflect.set(target, key, value, receiver);
-  queuedObservers.forEach(observer => observer());
-  return result;
+  const result = Reflect.set(target, key, value, receiver)
+  queuedObservers.forEach((observer) => observer())
+  return result
 }
 ```
 
-##### ES6中Module的理解？
+##### ES6 中 Module 的理解？
 
 模块，（Module），是能够单独命名并独立地完成一定功能的程序语句的**集合**
 
@@ -1610,29 +1519,23 @@ function set(target, key, value, receiver) {
 如果没有模块化，代码会怎样？
 
 - 变量和方法不容易维护，容易污染全局作用域
-- 加载资源的方式通过script标签从上到下。
+- 加载资源的方式通过 script 标签从上到下。
 - 依赖的环境主观逻辑偏重，代码较多就会比较复杂。
 - 大型项目资源难以维护，特别是多人合作的情况下，资源的引入会让人奔溃
 
-
-
 [现代 JavaScript 教程 —— JavaScript 编程语言篇 - shanejix - 博客园 (cnblogs.com)](https://www.cnblogs.com/shanejix/p/15220858.html#模块-module)
 
-##### ES6中 Decorator 的理解？
+##### ES6 中 Decorator 的理解？
 
 Decorator，即装饰器，（联想到装饰者模式）
 
 简单来讲，装饰者模式就是一种在不改变原类和使用继承的情况下，动态地**扩展对象功能**的设计理论
-
-
 
 `Docorator`修饰对象为下面两种：
 
 - 类的装饰
 
 - 类属性的装饰
-
-  
 
 ###### 类的装饰
 
@@ -1645,15 +1548,15 @@ class A {}
 // 等同于
 
 class A {}
-A = decorator(A) || A;
+A = decorator(A) || A
 ```
 
 如果想要传递参数，可以在装饰器外层再封装一层函数
 
 ```js
 function testable(isTestable) {
-  return function(target) {
-    target.isTestable = isTestable;
+  return function (target) {
+    target.isTestable = isTestable
   }
 }
 
@@ -1666,7 +1569,7 @@ class MyClass {}
 MyClass.isTestable // false
 ```
 
-######  类属性的装饰
+###### 类属性的装饰
 
 当对类属性进行装饰的时候，能够接受三个参数：
 
@@ -1678,33 +1581,35 @@ MyClass.isTestable // false
 
 ```js
 //定义一个readonly装饰器
-function readonly(target, name, descriptor){
-  descriptor.writable = false; // 将可写属性设为false
-  return descriptor;
+function readonly(target, name, descriptor) {
+  descriptor.writable = false // 将可写属性设为false
+  return descriptor
 }
 
 // 使用readonly装饰类的name方法
 class Person {
   @readonly
-  name() { return `${this.first} ${this.last}` }
+  name() {
+    return `${this.first} ${this.last}`
+  }
 }
 
 // 相当于
-readonly(Person.prototype, 'name', descriptor);
+readonly(Person.prototype, 'name', descriptor)
 ```
 
 一个方法有多个装饰器，先从外到内进入，再由内到外执行（洋葱模型）
 
 ```js
-function dec(id){
-    console.log('evaluated', id);
-    return (target, property, descriptor) =>console.log('executed', id);
+function dec(id) {
+  console.log('evaluated', id)
+  return (target, property, descriptor) => console.log('executed', id)
 }
 
 class Example {
-    @dec(1)
-    @dec(2)
-    method(){}
+  @dec(1)
+  @dec(2)
+  method() {}
 }
 // evaluated 1
 // evaluated 2
@@ -1734,45 +1639,41 @@ export default class MyReactComponent extends React.Component {}
 ```js
 function mixins(...list) {
   return function (target) {
-    Object.assign(target.prototype, ...list);
-  };
+    Object.assign(target.prototype, ...list)
+  }
 }
 
 // 使用
 const Foo = {
-  foo() { console.log('foo') }
-};
+  foo() {
+    console.log('foo')
+  },
+}
 
 @mixins(Foo)
 class MyClass {}
 
-let obj = new MyClass();
+let obj = new MyClass()
 obj.foo() // "foo"
 ```
 
-
-
 #### 「参考资料」
 
-
-
-### JavaScript中的数据类型 🔥🔥
+### JavaScript 中的数据类型 🔥🔥
 
 #### 「相关问题」
 
-- JavaScript中的数据类型有哪些？
+- JavaScript 中的数据类型有哪些？
 - 怎么存储
 
 - 怎么判断？typeof 和 instanceOf 的区别？
 
 #### 「回答关键点」
 
-- `7种基本类型` 
-- `复杂类型）` 
+- `7种基本类型`
+- `复杂类型）`
 
-
-
-基本类型主要为以下6种：
+基本类型主要为以下 6 种：
 
 - Number
 - String
@@ -1786,8 +1687,6 @@ obj.foo() // "foo"
 
 - object
 
-
-
 复杂类型统称为`Object`，我们这里主要讲述下面三种：
 
 - Object
@@ -1798,23 +1697,17 @@ obj.foo() // "foo"
 - `Map`、
 - `Set`等.....
 
-
-
 存储区别
 
 - 基本数据类型存储在栈中,存放的是对应的值
 
 - 引用类型的对象存储于堆中,在栈中存放的是指向堆内存的地址
 
-  
-
-可以通过 typeof instanceof等方法判断原始数据类型和引用数据类型
-
-
+可以通过 typeof instanceof 等方法判断原始数据类型和引用数据类型
 
 #### 「知识点深入」
 
-##### `typeof`与`instanceof` 
+##### `typeof`与`instanceof`
 
 - `typeof`会返回一个变量的基本类型，`instanceof`返回的是一个布尔值
 - `instanceof` 可以准确地判断复杂引用数据类型，但是不能正确判断基础数据类型
@@ -1822,58 +1715,52 @@ obj.foo() // "foo"
 
 上述两种方法都有弊端，并不能满足所有场景的需求
 
-
-
-##### `Object.prototype.toString` 
+##### `Object.prototype.toString`
 
 如果需要通用检测数据类型，可以采用`Object.prototype.toString`，调用该方法，统一返回格式`“[object Xxx]”`的字符串
 
 ```js
-Object.prototype.toString({})       // "[object Object]"
-Object.prototype.toString.call({})  // 同上结果，加上call也ok
-Object.prototype.toString.call(1)    // "[object Number]"
-Object.prototype.toString.call('1')  // "[object String]"
-Object.prototype.toString.call(true)  // "[object Boolean]"
-Object.prototype.toString.call(function(){})  // "[object Function]"
-Object.prototype.toString.call(null)   //"[object Null]"
+Object.prototype.toString({}) // "[object Object]"
+Object.prototype.toString.call({}) // 同上结果，加上call也ok
+Object.prototype.toString.call(1) // "[object Number]"
+Object.prototype.toString.call('1') // "[object String]"
+Object.prototype.toString.call(true) // "[object Boolean]"
+Object.prototype.toString.call(function () {}) // "[object Function]"
+Object.prototype.toString.call(null) //"[object Null]"
 Object.prototype.toString.call(undefined) //"[object Undefined]"
-Object.prototype.toString.call(/123/g)    //"[object RegExp]"
+Object.prototype.toString.call(/123/g) //"[object RegExp]"
 Object.prototype.toString.call(new Date()) //"[object Date]"
-Object.prototype.toString.call([])       //"[object Array]"
-Object.prototype.toString.call(document)  //"[object HTMLDocument]"
-Object.prototype.toString.call(window)   //"[object Window]"
+Object.prototype.toString.call([]) //"[object Array]"
+Object.prototype.toString.call(document) //"[object HTMLDocument]"
+Object.prototype.toString.call(window) //"[object Window]"
 ```
 
 实现一个全局通用的数据类型判断方法
 
 ```js
-function getType(obj){
-  let type  = typeof obj;
+function getType(obj) {
+  let type = typeof obj
   // 先进行typeof判断，如果是基础数据类型，直接返回
-  if (type !== "object") {    
-    return type;
+  if (type !== 'object') {
+    return type
   }
   // 对于typeof返回结果是object的，再进行如下的判断，正则返回结果
-  return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1'); 
+  return Object.prototype.toString.call(obj).replace(/^\[object (\S+)\]$/, '$1')
 }
 
 // 使用
 
-getType([])     // "Array" typeof []是object，因此toString返回
-getType('123')  // "string" typeof 直接返回
+getType([]) // "Array" typeof []是object，因此toString返回
+getType('123') // "string" typeof 直接返回
 getType(window) // "Window" toString返回
-getType(null)   // "Null"首字母大写，typeof null是object，需toString来判断
-getType(undefined)   // "undefined" typeof 直接返回
-getType()            // "undefined" typeof 直接返回
-getType(function(){}) // "function" typeof能判断，因此首字母小写
-getType(/123/g)      //"RegExp" toString返回
+getType(null) // "Null"首字母大写，typeof null是object，需toString来判断
+getType(undefined) // "undefined" typeof 直接返回
+getType() // "undefined" typeof 直接返回
+getType(function () {}) // "function" typeof能判断，因此首字母小写
+getType(/123/g) //"RegExp" toString返回
 ```
 
-
-
 #### 「参考资料」
-
-
 
 ### JavaScript 中的类型转换机制 🔥🔥
 
@@ -1883,12 +1770,10 @@ getType(/123/g)      //"RegExp" toString返回
 
 #### 「回答关键点」
 
-- `显示转换` 
-- `隐式转换 ` 
+- `显示转换`
+- `隐式转换 `
 
-
-
-JavaScript是动态语言,只有到运行期间才会确定变量当前类型；运算子的类型与预期不符合，就会触发类型转换机制
+JavaScript 是动态语言,只有到运行期间才会确定变量当前类型；运算子的类型与预期不符合，就会触发类型转换机制
 
 #### 「知识点深入」
 
@@ -1943,7 +1828,7 @@ JavaScript是动态语言,只有到运行期间才会确定变量当前类型；
 '5' + false // "5false"
 '5' + {} // "5[object Object]"
 '5' + [] // "5"
-'5' + function (){} // "5function (){}"
+'5' + function () {} // "5function (){}"
 '5' + undefined // "5undefined"
 '5' + null // "5null"
 ```
@@ -1955,12 +1840,12 @@ JavaScript是动态语言,只有到运行期间才会确定变量当前类型；
 ```js
 '5' - '2' // 3
 '5' * '2' // 10
-true - 1  // 0
+true - 1 // 0
 false - 1 // -1
-'1' - 1   // 0
-'5' * []    // 0
+'1' - 1 // 0
+'5' * [] // 0
 false / '5' // 0
-'abc' - 1   // NaN
+'abc' - 1 // NaN
 null + 1 // 1
 undefined + 1 // NaN
 
@@ -1982,11 +1867,11 @@ undefined + 1 // NaN
 类型相同，值也需相同
 
 ```js
-let result1 = ("55" === 55); // false，不相等，因为数据类型不同
-let result2 = (55 === 55); // true，相等，因为数据类型相同值也相同
+let result1 = '55' === 55 // false，不相等，因为数据类型不同
+let result2 = 55 === 55 // true，相等，因为数据类型相同值也相同
 
-let result1 = (null === null)  //true
-let result2 = (undefined === undefined)  //true
+let result1 = null === null //true
+let result2 = undefined === undefined //true
 ```
 
 ###### 区别
@@ -1994,22 +1879,18 @@ let result2 = (undefined === undefined)  //true
 相等操作符（==）会做类型转换，再进行值的比较，全等运算符不会做类型转换
 
 ```js
-let result1 = ("55" === 55); // false，不相等，因为数据类型不同
-let result2 = (55 === 55); // true，相等，因为数据类型相同值也相同
+let result1 = '55' === 55 // false，不相等，因为数据类型不同
+let result2 = 55 === 55 // true，相等，因为数据类型相同值也相同
 ```
 
 `null` 和 `undefined` 比较，相等操作符（==）为`true`，全等为`false
 
 ```js
-let result1 = (null == undefined ); // true
-let result2 = (null  === undefined); // false
+let result1 = null == undefined // true
+let result2 = null === undefined // false
 ```
 
-
-
 #### 「参考资料」
-
-
 
 ### 如何实现深拷贝 🔥🔥🔥
 
@@ -2020,11 +1901,9 @@ let result2 = (null  === undefined); // false
 
 #### 「回答关键点」
 
-- `引用类型` 
+- `引用类型`
 - `堆`
--  `栈` 
-
-
+- `栈`
 
 基本类型数据保存在在栈内存中;引用类型数据保存在堆内存中，引用数据类型的变量是一个指向堆内存中实际对象的引用，存在栈中
 
@@ -2038,13 +1917,13 @@ let result2 = (null  === undefined); // false
 
 ```js
 function shallowClone(obj) {
-    const newObj = {};
-    for(let prop in obj) {
-        if(obj.hasOwnProperty(prop)){
-            newObj[prop] = obj[prop];
-        }
+  const newObj = {}
+  for (let prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      newObj[prop] = obj[prop]
     }
-    return newObj;
+  }
+  return newObj
 }
 ```
 
@@ -2054,50 +1933,42 @@ function shallowClone(obj) {
 - `Array.prototype.slice()`, `Array.prototype.concat()`
 - 使用拓展运算符实现的复制
 
-
-
 ##### 深拷贝
 
 常见的深拷贝方式有：
 
-- `_.cloneDeep()` 
-- `jQuery.extend()` 
+- `_.cloneDeep()`
+- `jQuery.extend()`
 - `JSON.stringify()`:弊端，会忽略`undefined`、`symbol`和`函数`
 - 手写
 
 ```js
 function deepClone(obj, hash = new WeakMap()) {
-  if (obj === null) return obj; // 如果是null或者undefined我就不进行拷贝操作
-  if (obj instanceof Date) return new Date(obj);
-  if (obj instanceof RegExp) return new RegExp(obj);
+  if (obj === null) return obj // 如果是null或者undefined我就不进行拷贝操作
+  if (obj instanceof Date) return new Date(obj)
+  if (obj instanceof RegExp) return new RegExp(obj)
   // 可能是对象或者普通的值  如果是函数的话是不需要深拷贝
-  if (typeof obj !== "object") return obj;
+  if (typeof obj !== 'object') return obj
   // 是对象的话就要进行深拷贝
-  if (hash.get(obj)) return hash.get(obj);
-  let cloneObj = new obj.constructor();
+  if (hash.get(obj)) return hash.get(obj)
+  let cloneObj = new obj.constructor()
   // 找到的是所属类原型上的constructor,而原型上的 constructor指向的是当前类本身
-  hash.set(obj, cloneObj);
+  hash.set(obj, cloneObj)
   for (let key in obj) {
     if (obj.hasOwnProperty(key)) {
       // 实现一个递归拷贝
-      cloneObj[key] = deepClone(obj[key], hash);
+      cloneObj[key] = deepClone(obj[key], hash)
     }
   }
-  return cloneObj;
+  return cloneObj
 }
 ```
 
-
-
 #### 「参考资料」
 
-
-
-### 如何理解JavaScript中的this 🔥🔥🔥
+### 如何理解 JavaScript 中的 this 🔥🔥🔥
 
 #### 「相关问题」
-
-
 
 #### 「回答关键点」
 
@@ -2105,48 +1976,46 @@ function deepClone(obj, hash = new WeakMap()) {
 `this` 的值是在代码运行时计算出来的，它取决于`代码上下文
 ```
 
-
-
 #### 「知识点深入」
 
 ##### 默认绑定
 
 ```js
-var name = 'Jenny';
+var name = 'Jenny'
 function person() {
-    return this.name;
+  return this.name
 }
-console.log(person());  //Jenny
+console.log(person()) //Jenny
 
 // 指向window，所以输出Jenny
 ```
 
-> 严格模式下，不能将全局对象用于默认绑定，this会绑定到`undefined`，只有函数运行在非严格模式下，默认绑定才能绑定到全局对象
+> 严格模式下，不能将全局对象用于默认绑定，this 会绑定到`undefined`，只有函数运行在非严格模式下，默认绑定才能绑定到全局对象
 
 ##### 隐式绑定
 
 ```js
 function test() {
-  console.log(this.x);
+  console.log(this.x)
 }
 
-var obj = {};
-obj.x = 1;
-obj.m = test;
+var obj = {}
+obj.x = 1
+obj.m = test
 
-obj.m(); // 1
+obj.m() // 1
 
 // 函数作为某个对象的方法调用
 ```
 
-##### new绑定
+##### new 绑定
 
 ```js
 function test() {
-　this.x = 1;
+  this.x = 1
 }
 
-var obj = new test();
+var obj = new test()
 obj.x // 1
 
 // 通过构建函数new关键字生成一个实例对象，此时this指向这个实例对象
@@ -2155,14 +2024,14 @@ obj.x // 1
 ##### 显示修改
 
 ```js
-var x = 0;
+var x = 0
 function test() {
-　console.log(this.x);
+  console.log(this.x)
 }
 
-var obj = {};
-obj.x = 1;
-obj.m = test;
+var obj = {}
+obj.x = 1
+obj.m = test
 obj.m.apply(obj) // 1
 
 // apply()、call()、bind()作用是改变函数的调用对象
@@ -2173,20 +2042,20 @@ obj.m.apply(obj) // 1
 箭头函数的 `this` 被设置为他被创建时的环境(上下文)
 
 ```js
-var globalObject = this;
-var foo = (() => this);
-console.log(foo() === globalObject); // true
+var globalObject = this
+var foo = () => this
+console.log(foo() === globalObject) // true
 
 // 作为对象的一个方法调用
-var obj = {foo: foo};
-console.log(obj.foo() === globalObject); // true
+var obj = { foo: foo }
+console.log(obj.foo() === globalObject) // true
 
 // 尝试使用call来设定this
-console.log(foo.call(obj) === globalObject); // true
+console.log(foo.call(obj) === globalObject) // true
 
 // 尝试使用bind来设定this
-foo = foo.bind(obj);
-console.log(foo() === globalObject); // true
+foo = foo.bind(obj)
+console.log(foo() === globalObject) // true
 ```
 
 再看个例子
@@ -2199,37 +2068,33 @@ console.log(foo() === globalObject); // true
 // 所以它的this被永久绑定到了它外层函数的this。
 // bar的值可以在调用中设置，这反过来又设置了返回函数的值。
 var obj = {
-  bar: function() {
-    var x = (() => this);
-    return x;
-  }
-};
+  bar: function () {
+    var x = () => this
+    return x
+  },
+}
 
 // 作为obj对象的一个方法来调用bar，把它的this绑定到obj。
 // 将返回的函数的引用赋值给fn。
-var fn = obj.bar();
+var fn = obj.bar()
 
 // 直接调用fn而不设置this，
 // 通常(即不使用箭头函数的情况)默认为全局对象
 // 若在严格模式则为undefined
-console.log(fn() === obj); // true
+console.log(fn() === obj) // true
 
 // 但是注意，如果你只是引用obj的方法，
 // 而没有调用它
-var fn2 = obj.bar;
+var fn2 = obj.bar
 // 那么调用箭头函数后，this指向window，因为它从 bar 继承了this。
-console.log(fn2()() == window); // true
+console.log(fn2()() == window) // true
 ```
-
-
 
 #### 「参考资料」
 
 [this - JavaScript | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this#描述)
 
-
-
-### 如何理解JavaScript中执行上下文 🔥🔥🔥
+### 如何理解 JavaScript 中执行上下文 🔥🔥🔥
 
 #### 「相关问题」
 
@@ -2238,9 +2103,7 @@ console.log(fn2()() == window); // true
 
 #### 「回答关键点」
 
-- `执行环境` 
-
-
+- `执行环境`
 
 执行上下文是一种对`Javascript`代码执行环境的抽象概念，也就是说只要有`Javascript`代码运行，那么它就一定是运行在执行上下文中
 
@@ -2250,8 +2113,6 @@ console.log(fn2()() == window); // true
 - **函数执行上下文**：存在无数个，只有在函数被调用的时候才会被创建，每次调用函数都会创建一个新的执行上下文
 - **Eval 函数执行上下文**： 指的是运行在 `eval` 函数中的代码，很少用而且不建议使用
 
-
-
 #### 「知识点深入」
 
 ##### 生命周期
@@ -2259,8 +2120,8 @@ console.log(fn2()() == window); // true
 ###### 创建阶段：未执行任何内部代码之前
 
 ```js
-ExecutionContext = {  
-  ThisBinding = <this value>,     // 确定this 
+ExecutionContext = {
+  ThisBinding = <this value>,     // 确定this
   LexicalEnvironment = { ... },   // 词法环境
   VariableEnvironment = { ... },  // 变量环境
 }
@@ -2279,9 +2140,9 @@ GlobalExectionContext = {     // 全局执行上下文
   LexicalEnvironment: {       // 词法环境
     EnvironmentRecord: {      // 环境记录
       Type: "Object",         // 全局环境
-      // 标识符绑定在这里 
+      // 标识符绑定在这里
       outer: <null>           // 对外部环境的引用 全局环境是一个没有外部环境的词法环境
-  }  
+  }
 }
 ```
 
@@ -2291,10 +2152,10 @@ FunctionExectionContext = {   // 函数执行上下文
     EnvironmentRecord: {      // 环境记录
       Type: "Declarative",    // 函数环境
       // 用户在函数中定义的变量被存储在环境记录中
-      Arguments: {},  
+      Arguments: {},
       // 标识符绑定在这里        // 对外部环境的引用
-      outer: <Global or outer function environment reference>  
-  }  
+      outer: <Global or outer function environment reference>
+  }
 }
 ```
 
@@ -2303,13 +2164,13 @@ FunctionExectionContext = {   // 函数执行上下文
 ```js
 // 举个例子
 
-let a = 20;  
-const b = 30;  
+let a = 20;
+const b = 30;
 var c;
 
-function multiply(e, f) {  
- var g = 20;  
- return e * f * g;  
+function multiply(e, f) {
+ var g = 20;
+ return e * f * g;
 }
 
 c = multiply(20, 30);
@@ -2322,47 +2183,47 @@ GlobalExectionContext = {
   ThisBinding: <Global Object>,
 
   LexicalEnvironment: {  // 词法环境
-    EnvironmentRecord: {  
-      Type: "Object",  
+    EnvironmentRecord: {
+      Type: "Object",
       // 标识符绑定在这里  // 词法环境用于存储函数声明和变量（ let 和 const ）绑定
-      a: < uninitialized >,  
-      b: < uninitialized >,  
-      multiply: < func >  
-    }  
-    outer: <null>  
+      a: < uninitialized >,
+      b: < uninitialized >,
+      multiply: < func >
+    }
+    outer: <null>
   },
 
   VariableEnvironment: {  // 变量环境
-    EnvironmentRecord: {  
-      Type: "Object",  
+    EnvironmentRecord: {
+      Type: "Object",
       // 标识符绑定在这里  // 变量环境仅用于存储变量（ var ）绑定
-      c: undefined,  
-    }  
-    outer: <null>  
-  }  
+      c: undefined,
+    }
+    outer: <null>
+  }
 }
 
-FunctionExectionContext = {  
-   
+FunctionExectionContext = {
+
   ThisBinding: <Global Object>,
 
-  LexicalEnvironment: {  
-    EnvironmentRecord: {  
-      Type: "Declarative",  
-      // 标识符绑定在这里  
-      Arguments: {0: 20, 1: 30, length: 2},  
-    },  
-    outer: <GlobalLexicalEnvironment>  
+  LexicalEnvironment: {
+    EnvironmentRecord: {
+      Type: "Declarative",
+      // 标识符绑定在这里
+      Arguments: {0: 20, 1: 30, length: 2},
+    },
+    outer: <GlobalLexicalEnvironment>
   },
 
-  VariableEnvironment: {  
-    EnvironmentRecord: {  
-      Type: "Declarative",  
-      // 标识符绑定在这里  
-      g: undefined  
-    },  
-    outer: <GlobalLexicalEnvironment>  
-  }  
+  VariableEnvironment: {
+    EnvironmentRecord: {
+      Type: "Declarative",
+      // 标识符绑定在这里
+      g: undefined
+    },
+    outer: <GlobalLexicalEnvironment>
+  }
 }
 ```
 
@@ -2380,22 +2241,20 @@ FunctionExectionContext = {
 
 ##### 执行栈
 
-
-
 执行栈，也叫调用栈，具有 LIFO（后进先出）结构，用于存储在代码执行期间创建的所有执行上下文
 
 ```js
-let a = 'Hello World!';
+let a = 'Hello World!'
 function first() {
-  console.log('Inside first function');
-  second();
-  console.log('Again inside first function');
+  console.log('Inside first function')
+  second()
+  console.log('Again inside first function')
 }
 function second() {
-  console.log('Inside second function');
+  console.log('Inside second function')
 }
-first();
-console.log('Inside Global Execution Context');
+first()
+console.log('Inside Global Execution Context')
 ```
 
 简单分析一下流程：
@@ -2407,11 +2266,9 @@ console.log('Inside Global Execution Context');
 - `first`函数执行完毕，对应的函数执行上下文也被推出栈中，然后执行全局上下文
 - 所有代码执行完毕，全局上下文也会被推出栈中，程序结束
 
-
-
 #### 「参考资料」
 
-### JavaScript中的事件模型 🔥
+### JavaScript 中的事件模型 🔥
 
 #### 「相关问题」
 
@@ -2419,8 +2276,6 @@ console.log('Inside Global Execution Context');
 - 事件代理？
 
 #### 「回答关键点」
-
-
 
 #### 「知识点深入」
 
@@ -2438,15 +2293,15 @@ console.log('Inside Global Execution Context');
 
 事件模型可以分为三种：
 
-- 原始事件模型（DOM0级）
-- 标准事件模型（DOM2级）
-- IE事件模型（基本不用）
+- 原始事件模型（DOM0 级）
+- 标准事件模型（DOM2 级）
+- IE 事件模型（基本不用）
 
 ###### 原始事件模型
 
 事件绑定监听函数比较简单, 有**两种方式**：
 
-- HTML代码中直接绑定
+- HTML 代码中直接绑定
 
 ```js
 <input type="button" onclick="fun()">
@@ -2455,11 +2310,9 @@ console.log('Inside Global Execution Context');
 - 通过`JS`代码绑定
 
 ```js
-var btn = document.getElementById('.btn');
-btn.onclick = fun;
+var btn = document.getElementById('.btn')
+btn.onclick = fun
 ```
-
-
 
 **特性**
 
@@ -2483,10 +2336,8 @@ btn.onclick = fun2;
 - 删除 `DOM0` 级事件处理程序只要将对应事件属性置为`null`即可
 
 ```js
-btn.onclick = null;
+btn.onclick = null
 ```
-
-
 
 ###### 标准事件模型
 
@@ -2526,11 +2377,9 @@ btn.addEventListener(‘click’, showMessage3, false);
 
 - 执行时机：捕获和冒泡
 
+###### IE 事件模型
 
-
-###### IE事件模型
-
-IE事件模型共有两个过程:
+IE 事件模型共有两个过程:
 
 - 事件处理阶段：事件到达目标元素, 触发目标元素的监听函数。
 - 事件冒泡阶段：事件从目标元素冒泡到`document`, 依次检查经过的节点是否绑定了事件监听函数，如果有则执行
@@ -2565,25 +2414,17 @@ detachEvent(eventType, handler)
 - `focus`、`blur`这些事件没有事件冒泡机制，所以无法进行委托绑定事件
 - `mousemove`、`mouseout`这样的事件，虽然有事件冒泡，但是只能不断通过位置去计算定位，对性能消耗高，因此也是不适合于事件委托的
 
-
-
 #### 「参考资料」
 
-### Ajax原理 🔥
+### Ajax 原理 🔥
 
 #### 「相关问题」
-
-
 
 #### 「回答关键点」
 
 `AJAX`(Async Javascript and XML):可以在不重新加载整个网页的情况下，与服务器交换数据，并且更新部分网页。
 
-
-
 `Ajax`的原理简单来说通过`XmlHttpRequest`对象来向服务器发异步请求，从服务器获得数据，然后用`JavaScript`来操作`DOM`而更新页面
-
-
 
 #### 「知识点深入」
 
@@ -2623,7 +2464,7 @@ function ajax(options) {
         xhr.open('POST', options.url, true)
         xhr.send(params)
     }
-    
+
     //3. 接收请求
     xhr.onreadystatechange = function () {
         // xhr.readyState === 0 UNSENT
@@ -2647,24 +2488,22 @@ function ajax(options) {
 
 ```js
 ajax({
-    type: 'post',
-    dataType: 'json',
-    data: {},
-    url: 'https://xxxx',
-    success: function(text,xml){// 请求成功后的回调函数
-        console.log(text)
-    },
-    fail: function(status){// 请求失败后的回调函数
-        console.log(status)
-    }
+  type: 'post',
+  dataType: 'json',
+  data: {},
+  url: 'https://xxxx',
+  success: function (text, xml) {
+    // 请求成功后的回调函数
+    console.log(text)
+  },
+  fail: function (status) {
+    // 请求失败后的回调函数
+    console.log(status)
+  },
 })
 ```
 
-
-
 #### 「参考资料」
-
-
 
 ### 闭包的作用和原理 🔥🔥🔥
 
@@ -2674,19 +2513,11 @@ ajax({
 
 - 闭包的应用
 
-
-
 #### 「回答关键点」
-
-
 
 - `函数`
 
-
-
 - `作用域`
-
-
 
 - `引用`
 
@@ -2716,18 +2547,18 @@ ajax({
 
 ```javascript
 function foo() {
-  var a = "xx";
+  var a = 'xx'
   function bar() {
-    console.log(a);
+    console.log(a)
   }
-  return bar;
+  return bar
 }
 
 // 在函数 foo 执行后，通常会期待函数 foo 的整个内部作用域被引擎回收机制销毁
-var baz = foo();
+var baz = foo()
 
 // 函数 bar 作为返回值返回后，在自己定义的词法作用域以外的地方执行
-bar(); // xx
+bar() // xx
 
 // 而闭包可以阻止这件事情的发生
 // 事实上内部作用域依然存在，因为函数 bar 本身在使用，所以并不会被回收
@@ -2740,11 +2571,7 @@ bar(); // xx
 
 1. 无论何时何地，如果将函数作为返回值，就会看到闭包在这些函数中的应用 ​
 
-
-
 2. 在定时器，事件监听器，ajax 请求，跨窗口通信，web workers 或者任何其他的异步/同步任务中，只要使用了回调函数，实际上就是使用闭包
-
-
 
 #### 「参考资料」
 
@@ -2790,23 +2617,23 @@ bar(); // xx
 
 ```javascript
 function SuperType() {
-  this.b = [1, 2, 3];
+  this.b = [1, 2, 3]
 }
 
 function SubType() {}
 
-SubType.prototype = new SuperType();
-SubType.prototype.constructor = SubType;
+SubType.prototype = new SuperType()
+SubType.prototype.constructor = SubType
 
-var sub1 = new SubType();
-var sub2 = new SubType();
+var sub1 = new SubType()
+var sub2 = new SubType()
 
 // 这里对引用类型的数据进行操作
-sub1.b.push(4);
+sub1.b.push(4)
 
-console.log(sub1.b); // [1,2,3,4]
-console.log(sub2.b); // [1,2,3,4]
-console.log(sub1 instanceof SuperType); // true
+console.log(sub1.b) // [1,2,3,4]
+console.log(sub2.b) // [1,2,3,4]
+console.log(sub1 instanceof SuperType) // true
 ```
 
 **优点：**
@@ -2829,34 +2656,34 @@ console.log(sub1 instanceof SuperType); // true
 
 ```javascript
 function SuperType(name) {
-  this.name = name;
-  this.b = [1, 2, 3];
+  this.name = name
+  this.b = [1, 2, 3]
 }
 
 SuperType.prototype.say = function () {
-  console.log("xx");
-};
-
-function SubType(name) {
-  SuperType.call(this, name);
+  console.log('xx')
 }
 
-var sub1 = new SubType();
-var sub2 = new SubType();
+function SubType(name) {
+  SuperType.call(this, name)
+}
+
+var sub1 = new SubType()
+var sub2 = new SubType()
 
 // 传递参数
-var sub3 = new SubType("foo");
+var sub3 = new SubType('foo')
 
-sub1.say(); // 使用构造函数继承并没有访问到原型链，say 方法不能调用
+sub1.say() // 使用构造函数继承并没有访问到原型链，say 方法不能调用
 
-console.log(sub3.name); // foo
+console.log(sub3.name) // foo
 
-sub1.b.push(4);
+sub1.b.push(4)
 
 // 解决了原型链继承中子类实例共享父类引用属性的问题
-console.log(sub1.b); // [1,2,3,4]
-console.log(sub2.b); // [1,2,3]
-console.log(sub1 instanceof SuperType); // false
+console.log(sub1.b) // [1,2,3,4]
+console.log(sub2.b) // [1,2,3]
+console.log(sub1 instanceof SuperType) // false
 ```
 
 **优点：**
@@ -2880,21 +2707,21 @@ console.log(sub1 instanceof SuperType); // false
 
 ```javascript
 function SuperType(name) {
-  this.name = name;
-  this.a = "foo";
-  this.b = [1, 2, 3, 4];
+  this.name = name
+  this.a = 'foo'
+  this.b = [1, 2, 3, 4]
 }
 
 SuperType.prototype.say = function () {
-  console.log("foo");
-};
-
-function SubType(name) {
-  SuperType.call(this, name); // 第二次调用 SuperType
+  console.log('foo')
 }
 
-SubType.prototype = new SuperType(); // 第一次调用 SuperType
-SubType.prototype.constructor = SubType;
+function SubType(name) {
+  SuperType.call(this, name) // 第二次调用 SuperType
+}
+
+SubType.prototype = new SuperType() // 第一次调用 SuperType
+SubType.prototype.constructor = SubType
 ```
 
 **优点：**
@@ -2922,31 +2749,31 @@ SubType.prototype.constructor = SubType;
 // 最后一步，将新创建的对象（即副本）赋值给予类型的原型。
 function inheritPrototype(subType, superType) {
   // 创建对象
-  var prototype = Object.create(superType.prototype);
+  var prototype = Object.create(superType.prototype)
   // 增强对象
-  prototype.constructor = subType;
+  prototype.constructor = subType
   // 指定对象
-  subType.prototype = prototype;
+  subType.prototype = prototype
 }
 
 function SuperType(name) {
-  this.name = name;
+  this.name = name
 }
 
 SuperType.prototype.sayName = function () {
-  console.log(this.name);
-};
-
-function SubType(name, num) {
-  SuperType.call(this, name);
-  this.num = num;
+  console.log(this.name)
 }
 
-inheritPrototype(SubType, SuperType);
+function SubType(name, num) {
+  SuperType.call(this, name)
+  this.num = num
+}
+
+inheritPrototype(SubType, SuperType)
 
 SubType.prototype.sayNum = function () {
-  console.log(this.num);
-};
+  console.log(this.num)
+}
 ```
 
 **优点：**
@@ -2967,26 +2794,26 @@ ES6 中引入了 class 关键字， class 可以通过 extends 关键字实现�
 ```javascript
 class Pet {
   constructor(name, age) {
-    this.name = name;
-    this.age = age;
+    this.name = name
+    this.age = age
   }
 
   showName() {
-    console.log("调用父类的方法");
-    console.log(this.name, this.age);
+    console.log('调用父类的方法')
+    console.log(this.name, this.age)
   }
 }
 
 // 定义一个子类
 class Dog extends Pet {
   constructor(name, age, color) {
-    super(name, age); // 通过 super 调用父类的构造方法
-    this.color = color;
+    super(name, age) // 通过 super 调用父类的构造方法
+    this.color = color
   }
 
   showName() {
-    console.log("调用子类的方法");
-    console.log(this.name, this.age, this.color);
+    console.log('调用子类的方法')
+    console.log(this.name, this.age, this.color)
   }
 }
 ```
@@ -3037,13 +2864,13 @@ new 操作符通过执行自定义构造函数或内置对象构造函数，生�
 ```javascript
 function mynew(Func, ...args) {
   // 1.创建一个新对象
-  const obj = {};
+  const obj = {}
   // 2.新对象原型指向构造函数原型对象
-  obj.__proto__ = Func.prototype;
+  obj.__proto__ = Func.prototype
   // 3.将构建函数的this指向新对象
-  let result = Func.apply(obj, args);
+  let result = Func.apply(obj, args)
   // 4.根据返回值判断
-  return result instanceof Object ? result : obj;
+  return result instanceof Object ? result : obj
 }
 ```
 
@@ -3051,8 +2878,6 @@ function mynew(Func, ...args) {
 
 1. [new 操作符 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new)
 1. [The new Operator](https://262.ecma-international.org/5.1/#sec-11.2.2)
-
-
 
 ### 节流和防抖 🔥🔥🔥
 
@@ -3068,8 +2893,6 @@ function mynew(Func, ...args) {
 - `体验`
 - `防抖`
 - `节流`
-
-
 
 防抖和节流本质上是优化高频触发代码的一种手段；例如浏览器的`scroll`、`mousemove`等事件触发时，频繁的触发事件绑定的回调事件，极大的浪费资源，降低性能；为了优化体验，需要对这类事件的调用次数做限制。
 ​
@@ -3098,16 +2921,16 @@ function mynew(Func, ...args) {
 // method1：时间戳版
 
 function throttle(fn, wait = 500) {
-  let oldTime = +new Date();
+  let oldTime = +new Date()
 
   return function (...args) {
-    const newTime = +new Date();
+    const newTime = +new Date()
 
     if (newTime - oldTime >= wait) {
-      fn.apply(args);
-      oldTime = newTime; // +new Date()
+      fn.apply(args)
+      oldTime = newTime // +new Date()
     }
-  };
+  }
 }
 ```
 
@@ -3115,16 +2938,16 @@ function throttle(fn, wait = 500) {
 // method2: 定时器版
 
 function throttle(fn, wait = 500) {
-  let timer = null;
+  let timer = null
 
   return function (...args) {
     if (!timer) {
       timer = setTimeout(() => {
-        fn.apply(null, args);
-        timer = null;
-      }, wait);
+        fn.apply(null, args)
+        timer = null
+      }, wait)
     }
-  };
+  }
 }
 ```
 
@@ -3132,24 +2955,24 @@ function throttle(fn, wait = 500) {
 // method3: 时间戳 + 定时器 更精确的版本
 
 function throttle(fn, wait = 500) {
-  let timer = null;
-  const oldTime = +new Date();
+  let timer = null
+  const oldTime = +new Date()
 
   return function (...args) {
-    let newTime = +new Date();
-    const remainWaitTime = wait - (newTime - oldTime);
+    let newTime = +new Date()
+    const remainWaitTime = wait - (newTime - oldTime)
 
-    clearTimeout(timer);
+    clearTimeout(timer)
 
     if (remainWaitTime <= 0) {
-      fn.apply(null, args);
-      newTime = +new Date();
+      fn.apply(null, args)
+      newTime = +new Date()
     } else {
       timer = setTimeout(() => {
-        fn.apply(null, args);
-      }, remainWaitTime);
+        fn.apply(null, args)
+      }, remainWaitTime)
     }
-  };
+  }
 }
 ```
 
@@ -3159,18 +2982,18 @@ function throttle(fn, wait = 500) {
 // method1: 时间戳版
 
 function debunce(fn, wait) {
-  let oldTime = +new Date();
+  let oldTime = +new Date()
 
   return function (...args) {
-    const newTime = +new Date();
+    const newTime = +new Date()
 
     if (newTime - oldTime >= wait) {
-      fn.apply(null, args);
-      oldTime = newTime; // + newDate()
+      fn.apply(null, args)
+      oldTime = newTime // + newDate()
     } else {
-      oldTime = +new Date();
+      oldTime = +new Date()
     }
-  };
+  }
 }
 ```
 
@@ -3178,23 +3001,21 @@ function debunce(fn, wait) {
 // method2: 定时器版
 
 function debunce(fn, wait) {
-  let timer = null;
+  let timer = null
 
   return function (...args) {
-    clearTimeout(timer);
+    clearTimeout(timer)
 
     if (!timer) {
       timer = setTimeout(function () {
-        fn.apply(null, args);
-      }, wait);
+        fn.apply(null, args)
+      }, wait)
     }
-  };
+  }
 }
 ```
 
 #### 「参考资料」
-
-
 
 ### TypeScript 中的 Interface 和 Type Alias🔥🔥🔥
 
@@ -3206,9 +3027,9 @@ function debunce(fn, wait) {
 
 #### 「回答关键点」
 
-- `类型约束` 
-- `扩展` 
-- `类型合并` 
+- `类型约束`
+- `扩展`
+- `类型合并`
 
 Interface 和 Type Alias（Type 别名，下文简称 Type）是 TypeScript 中两个非常重要且常用的概念。在程序设计中，Interface 和 Type 主要起到**类型的限制和规范的作用**，它们不关心实现细节，只规定和限制类或变量必须提供对应的属性和方法。
 
@@ -3216,11 +3037,7 @@ Interface 和 Type 核心的区别是 Type 不可在定义后重新添加内容�
 
 #### 「知识点深入」
 
-
-
 ##### Interface 和 Type 的相同点
-
-
 
 ###### 可描述对象/函数
 
@@ -3229,17 +3046,17 @@ Interface 和 Type 都可以描述对象和函数。
 ```typescript
 // Interface
 interface IFoo {
-  name: string;
+  name: string
 }
 interface GetFoo {
-  (): string;
+  (): string
 }
 
 // Type
 type TFoo = {
-  name: string;
-};
-type GetFoo = () => string;
+  name: string
+}
+type GetFoo = () => string
 ```
 
 ###### 可扩展
@@ -3249,17 +3066,17 @@ Interface 和 Type 都可以扩展类型。
 ```typescript
 // Interface
 interface IFoo {
-  name: string;
+  name: string
 }
 interface IBar extends IFoo {
-  location: string;
+  location: string
 }
 
 // Type
 type TFoo = {
-  name: string;
-};
-type TBar = TFoo & { location: string };
+  name: string
+}
+type TBar = TFoo & { location: string }
 ```
 
 另外，Interface 的 extends 和 Type 的交叉类型有一些细微区别：extends 中的同名字段的类型必须是兼容的。而交叉类型中出现了同名字段且类型不同时，则类型一般是 never。
@@ -3271,41 +3088,37 @@ Interface 和 Type 描述的类型都可以被 class 实现。
 ```typescript
 // Interface
 interface IFoo {
-  name: string;
+  name: string
 }
 
 // Type
 type TFoo = {
-  name: string;
-};
+  name: string
+}
 
 class Foo1 implements IFoo {
-  name = "xxStudio";
+  name = 'xxStudio'
 }
 class Hoo2 implements TFoo {
-  name = "xxStudio";
+  name = 'xxStudio'
 }
 ```
 
-
-
 ##### Interface 和 Type 的不同点
 
-
-
-######  基本类型别名、联合类型、元组
+###### 基本类型别名、联合类型、元组
 
 由于 Type 定义的实际是一个别名，所以 Type 可以描述一些基本类型、联合类型和元组的别名。
 
 ```typescript
 // 基本类型
-type XMember = number;
+type XMember = number
 
 // 联合类型
-type XMemberTechStack = string | string[];
+type XMemberTechStack = string | string[]
 
 // 元组
-type XMember = [number, string];
+type XMember = [number, string]
 ```
 
 ###### 声明合并
@@ -3315,13 +3128,13 @@ Interface 可以重复定义，并将合并所有声明的属性为单个接口�
 ```typescript
 // Interface
 interface IFoo {
-  name: string;
+  name: string
 }
 interface IFoo {
-  member: number;
+  member: number
 }
 
-const foo: IFoo = { name: "foo", member: 17 };
+const foo: IFoo = { name: 'foo', member: 17 }
 ```
 
 ###### 动态属性
@@ -3329,23 +3142,21 @@ const foo: IFoo = { name: "foo", member: 17 };
 Type 可以使用 in 关键字动态生成属性，而 Interface 的索引值必须是 string 或 number 类型，所以 Interface 并不支持动态生成属性。
 
 ```typescript
-type XLanguage = "JavaScript" | "Go";
+type XLanguage = 'JavaScript' | 'Go'
 type XProjects = {
-  [key in XLanguage]?: string[];
-};
+  [key in XLanguage]?: string[]
+}
 
 const XProjects: XProjects = {
-  JavaScript: ["xx", "xx"],
-};
+  JavaScript: ['xx', 'xx'],
+}
 ```
 
 #### 「参考资料」
 
 1. [TypScript - Typed JavaScript at Any Scale](https://www.typescriptlang.org/)
 
-
-
-### JavaScript 异步编程🔥🔥🔥
+### JavaScript 异步编程 🔥🔥🔥
 
 #### 「相关问题」
 
@@ -3354,19 +3165,13 @@ const XProjects: XProjects = {
 
 #### 「回答关键点」
 
-- `阻塞` 
-- `事件循环` 
-- `回调函数` 
-
-
+- `阻塞`
+- `事件循环`
+- `回调函数`
 
 JavaScript 是一种同步的、阻塞的、单线程的语言，一次只能执行一个任务。但浏览器定义了非同步的 Web APIs，将回调函数插入到事件循环，实现异步任务的非阻塞执行。常见的异步方案有异步回调、定时器、发布/订阅模式、Promise、生成器 Generator、async/await 以及 Web Worker。
 
-
-
 #### 「知识点深入」
-
-
 
 ##### 异步回调
 
@@ -3374,13 +3179,13 @@ JavaScript 是一种同步的、阻塞的、单线程的语言，一次只能执
 
 ```js
 // 第一个参数是监听的事件类型，第二个就是事件发生时调用的回调函数。
-btn.addEventListener("click", () => {
-  console.log("You clicked me!");
+btn.addEventListener('click', () => {
+  console.log('You clicked me!')
 
-  const pElem = document.createElement("p");
-  pElem.textContent = "hello, xx.";
-  document.body.appendChild(pElem);
-});
+  const pElem = document.createElement('p')
+  pElem.textContent = 'hello, xx.'
+  document.body.appendChild(pElem)
+})
 ```
 
 异步回调是编写和处理 JavaScript 异步逻辑的最常用方式，也是最基础的异步模式。但是随着 JavaScript 的发展，异步回调的问题也不容忽视：
@@ -3388,8 +3193,6 @@ btn.addEventListener("click", () => {
 1. 回调表达异步流程的方式是非线性的，非顺序的，理解成本较高。
 2. 回调会受到控制反转的影响。因为回调的控制权在第三方（如 Ajax），由第三方来调用回调函数，无法确定调用是否符合预期。
 3. 多层嵌套回调会产生回调地狱（callback hell）。
-
-
 
 ##### 定时器：setTimeout/setInterval/requestAnimationFrame
 
@@ -3403,8 +3206,6 @@ setInterval 会按设定的时间间隔固定调用，其中 setInterval 里面�
 
 如果当前 JavaScript 线程**阻塞**，轮到的 setInterval 无法执行，那么本次任务就会**被丢弃**。而 setTimeout 被阻塞后不会**被丢弃**，等到空闲时会继续执行，但无法保证执行间隔。
 
-
-
 ##### 发布/订阅模式（publish-subscribe pattern）
 
 **发布/订阅模式是一种对象间一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都将得到状态改变的通知。**
@@ -3416,38 +3217,38 @@ class PubSub {
   constructor() {
     // 存储所有订阅的事件类型及对应的订阅函数数组
     // key <eventType>: value <subscribeList>[]
-    this.handlers = {};
+    this.handlers = {}
   }
   // 订阅事件方法
   on(eventType, handler) {
-    if (!(eventType in this.handlers)) this.handlers[eventType] = [];
-    this.handlers[eventType].push(handler);
+    if (!(eventType in this.handlers)) this.handlers[eventType] = []
+    this.handlers[eventType].push(handler)
   }
   // 消息发布方法
   emit(eventType, ...handlerArgs) {
     this.handlers[eventType].forEach((v) => {
-      v(...handlerArgs);
-    });
+      v(...handlerArgs)
+    })
   }
   // 取消订阅
   remove(eventType, handler) {
     // 没有传入具体的事件处理函数，则移除该事件类型的所有订阅函数
     // 有则在订阅数组中移除对应的函数
     if (!handler) {
-      this.handlers[eventType].length = 0;
+      this.handlers[eventType].length = 0
     } else {
-      const key = this.handlers[eventType].findIndex((v) => v === handler);
-      if (key !== -1) this.handlers[eventType].splice(key, 1);
+      const key = this.handlers[eventType].findIndex((v) => v === handler)
+      if (key !== -1) this.handlers[eventType].splice(key, 1)
     }
   }
 }
 
-const test1 = new PubSub();
-const fn1 = (...data) => console.log(data);
-test1.on("event1", fn1);
-test1.on("event1", (...data) => console.log(`fn2: ${data}`));
-test1.emit("event1");
-test1.remove("event1", fn1);
+const test1 = new PubSub()
+const fn1 = (...data) => console.log(data)
+test1.on('event1', fn1)
+test1.on('event1', (...data) => console.log(`fn2: ${data}`))
+test1.emit('event1')
+test1.remove('event1', fn1)
 ```
 
 发布/订阅模式可以更细致地了解到有多少种事件类型以及每种类型对应的订阅事件，方便进一步的监听与控制。
@@ -3466,39 +3267,35 @@ Promise 使用顺序的方式来表达异步，将回调的控制权转交给了
 3. 无法获取状态：处于 Pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 4. 无法取消：一旦创建了 Promise 并注册了完成/拒绝函数，不能取消执行。
 
-
-
 ##### 生成器 Generator
 
 Generator 函数是 ES6 提供的一种异步编程解决方案，语法与传统函数完全不同，最大的特点就是可以控制函数的执行。简单示例如下：
 
 ```js
 function* helloGenerator() {
-  yield "hello";
-  yield "xx";
-  return "ending";
+  yield 'hello'
+  yield 'xx'
+  return 'ending'
 }
 
-var hello = helloGenerator();
+var hello = helloGenerator()
 
-hello.next();
+hello.next()
 // { value: 'hello', done: false }
 
-hello.next();
+hello.next()
 // { value: 'xx', done: false }
 
-hello.next();
+hello.next()
 // { value: 'ending', done: true }
 
-hello.next();
+hello.next()
 // { value: undefined, done: true }
 ```
 
 生成器 Generator 并不像普通函数那样总是运行到结束，可以在运行当中通过 yield 来暂停并完全保持其状态，再通过 next 恢复运行。yield/next 不只是控制机制，也是一种双向消息传递机制。yield 表达式本质上是暂停下来等待某个值，next 调用会向被暂停的 yield 表达式传回一个值（或者是隐式的 undefined）。
 
 生成器 Generator 保持了顺序、同步、阻塞的代码模式，同样解决了异步回调的问题。
-
-
 
 ##### async/await
 
@@ -3509,8 +3306,6 @@ async/await 属于 [ECMAScript 2017 JavaScript 版](https://262.ecma-internation
 3. async/await 使得异步代码看起来像同步代码。
 
 async/await 也存在问题：await 关键字会阻塞其后的代码，直到 Promise 完成，就像执行同步操作一样。它可以允许其他任务在此期间继续运行，但自己的代码会被阻塞。解决方案是将 Promise 对象存储在变量中来同时开始，然后等待它们全部执行完毕。具体参照 [fast async await](https://mdn.github.io/learning-area/javascript/asynchronous/async-await/fast-async-await.html)。如果内部的 await 等待的异步任务之间没有依赖关系，且需要获取这些异步操作的结果，可以使用 Promise.allSettled() 同时执行这些任务并获得结果。
-
-
 
 ##### Web Worker
 
@@ -3564,8 +3359,6 @@ Web Worker 主要应用场景：
 
 ##### 跨域问题来源
 
-
-
 跨域是浏览器基于浏览器基于同源策略而做的安全特性--限制非同源页面和当前页面进行交互从而减少页面被攻击的可能
 ​
 
@@ -3604,19 +3397,19 @@ app.use(async (ctx, next) => {
   // Access-Control-Allow-Origin 设置为*其实意义不大，
   // 可以说是形同虚设，
   // 实际应用中，上线前我们会将Access-Control-Allow-Origin 值设为我们目标host
-  ctx.set("Access-Control-Allow-Origin", "*");
+  ctx.set('Access-Control-Allow-Origin', '*')
   ctx.set(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild"
-  );
-  ctx.set("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
+    'Access-Control-Allow-Headers',
+    'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild'
+  )
+  ctx.set('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS')
 
-  if (ctx.method == "OPTIONS") {
-    ctx.body = 200;
+  if (ctx.method == 'OPTIONS') {
+    ctx.body = 200
   } else {
-    await next();
+    await next()
   }
-});
+})
 ```
 
 CORS 将请求分为简单请求（Simple Requests）和需预检请求（Preflighted requests），不同场景有不同的行为：
@@ -3630,12 +3423,8 @@ CORS 将请求分为简单请求（Simple Requests）和需预检请求（Prefli
 
 - 请求方法：`GET、HEAD、POST`
 
-
-
 - 请求头：`Accept、Accept-Language、Content-Language、Content-Type`​
   - Content-Type 仅支持：`application/x-www-form-urlencoded、multipart/form-data、text/plain`​
-
-
 
 需预检请求
 
@@ -3646,19 +3435,11 @@ CORS 引入了以下几个以 `Access-Control-Allow-* `开头：
 
 - Access-Control-Allow-Origin 表示允许的来源
 
-
-
 - Access-Control-Allow-Methods 表示允许的请求方法
-
-
 
 - Access-Control-Allow-Headers 表示允许的请求头
 
-
-
 - Access-Control-Allow-Credentials 表示允许携带认证信息
-
-
 
 ###### 反向代理
 
@@ -3677,54 +3458,47 @@ CORS 引入了以下几个以 `Access-Control-Allow-* `开头：
 ```javascript
 module.exports = {
   devServer: {
-    host: "127.0.0.1",
+    host: '127.0.0.1',
     port: 8084,
     // 启动时自动打开浏览器
     open: true,
     proxy: {
       // '/api'是代理标识，用于告诉node，url前面是/api的就是使用代理的
-      "/api": {
+      '/api': {
         //目标地址，一般是指后台服务器地址
-        target: "http://xxx.xxx.xx.xx:8080",
+        target: 'http://xxx.xxx.xx.xx:8080',
         //是否跨域
         changeOrigin: true,
         // pathRewrite 的作用是把实际Request Url中的'/api'用""代替
         pathRewrite: {
-          "^/api": "",
+          '^/api': '',
         },
       },
     },
   },
-};
+}
 ```
 
 通过 axios 发送请求中，配置请求的根路径
 
 ```javascript
-axios.defaults.baseURL = "/api";
+axios.defaults.baseURL = '/api'
 ```
 
 2. 通过服务端实现代理请求转发以 express 框架为例
 
-
-
 ```javascript
-var express = require("express");
-const proxy = require("http-proxy-middleware");
-const app = express();
+var express = require('express')
+const proxy = require('http-proxy-middleware')
+const app = express()
 
-app.use(express.static(__dirname + "/"));
-app.use(
-  "/api",
-  proxy({ target: "http://localhost:4000", changeOrigin: false })
-);
+app.use(express.static(__dirname + '/'))
+app.use('/api', proxy({ target: 'http://localhost:4000', changeOrigin: false }))
 
-module.exports = app;
+module.exports = app
 ```
 
 3. 配置 nginx 实现代理
-
-
 
 ```javascript
 server {
@@ -3756,7 +3530,7 @@ server {
 1. 浏览器全局注册一个函数
 
 ```javascript
-window.getMember = (num) => console.log("Member: " + num);
+window.getMember = (num) => console.log('Member: ' + num)
 ```
 
 2. 构造一个请求 URL，并将函数名放入参数中
@@ -3774,7 +3548,7 @@ https://xxx.org/api/Member?callback=getHZFEMember
 4. 服务端构造一个 JavaScript 函数调用表达式并返回，
 
 ```javascript
-getMember(17);
+getMember(17)
 ```
 
 5. 浏览器加载并执行以上代码
@@ -3782,7 +3556,7 @@ getMember(17);
 ```javascript
 // 输出
 
-Member: 17;
+Member: 17
 ```
 
 ###### 非常用方式
@@ -3829,8 +3603,6 @@ Member: 17;
 
 - 解决方式和上文相同，给图片添加 crossorigin="anonymous" 并在返回的图片文件响应头加上 Access-Control-Allow-Origin: \* 即可解决
 
-
-
 #### 「参考资料」
 
 - [Cross-Origin Resource Sharing (CORS) - HTTP | MDN (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)
@@ -3843,29 +3615,17 @@ Member: 17;
 
 - 如何提升页面渲染性能
 
-
-
 - 如何减少页面重排重绘
 
-
-
 - 哪些行为会引起重排/重绘
-
-
 
 #### 「回答关键点」
 
 - `Layout`
 
-
-
 - `Paint`
 
-
-
 - `渲染性能`
-
-
 
 浏览器渲染大致分为四个阶段，在解析完 HTML 依次进入 layout （重排）和 paint （重绘）。节点或者样式的变更以及对布局信息的访问等，都可能导致重排或者重绘；重排和重绘在主线程中进行，者意味着不合理的重排和重绘会导致页面卡顿等性能问题
 ​
@@ -3874,26 +3634,16 @@ Member: 17;
 
 ##### 重排重绘
 
-
-
 浏览器渲染的关键路径
 ![](https://cdn.nlark.com/yuque/0/2022/png/377147/1646027239782-6cde6a0d-7bc6-48e3-951e-f662e9c65ee8.png#clientId=u6ddb5e62-9bae-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u6d2a3d8e&margin=%5Bobject%20Object%5D&originHeight=270&originWidth=1278&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u8b60c6dc-e4d2-4b15-8d51-89c94b33fa6&title=)
 
 1. Parse HTML：相关引擎解析文档和样式表以及脚本，生成 DOM 和 CSSOM ，最终合成为 Render 树
 
-
-
 2. Layout：递归的形式计算 Render 树中每个节点的尺寸大小和在页面中的具体位置
-
-
 
 3. Paint：将 Render 树中的节点转换成在屏幕上绘制实际像素（生在多个图层上）
 
-
-
 4. Composite：将所有层按照一定顺序合并为一个图层并绘制在屏幕上
-
-
 
 DOM 或 CSSOM 被修改，会导致浏览器重复执行上述的步骤。重排和重绘，本质上指的就是触发 Layout 和 Paint 的过程，且重排必定导致重绘
 ​
@@ -3902,43 +3652,25 @@ DOM 或 CSSOM 被修改，会导致浏览器重复执行上述的步骤。重排
 
 1. 布局结构或节点内容变化时，会导致重排
 
-
-
 - 盒子尺寸和类型（包括外边距、内边框、边框大小、高度和宽度等）
-
-
 
 - 定位方案（正常流、浮动和绝对定位）
 
-
-
 - 文档树中元素之间的关系（增删改）
-
-
 
 - 外部信息（如视口大小等）
 
-
-
 - 页面一开始渲染的时候（避免不了）
-
-
 
 2. 外观有变化时，会导致重绘
 
 - 相关的样式属性如 `color opacity`
 
-
-
 3. 获取布局信息时（需要通过即时计算得到，浏览器为了获取这些值，会进行重排），会导致重排
-
-
 
 - 相关的方法属性如 `offsetTop、offsetLeft、 offsetWidth、offsetHeight、scrollTop、scrollLeft、scrollWidth、scrollHeight、clientTop、clientLeft、clientWidth、clientHeight`
 
 - 还包括 `getComputedStyle`
-
-
 
 ##### 减少重排重绘
 
@@ -3958,29 +3690,23 @@ DOM 或 CSSOM 被修改，会导致浏览器重复执行上述的步骤。重排
 
 1.  对 DOM 进行批量写入和读取（通过虚拟 DOM 或者 DocumentFragment 实现）
 
+2.  避免对样式频繁操作
 
-
-2. 避免对样式频繁操作
-
-
-
-3. [减少频繁读取布局信息相关的 API](https://gist.github.com/paulirish/5d52fb081b3570c81e3a#element-apis),使用变量对布局信息（如 clientTop）进行缓存，避免因频繁读取布局信息而触发重排和重绘
-
-
+3.  [减少频繁读取布局信息相关的 API](https://gist.github.com/paulirish/5d52fb081b3570c81e3a#element-apis),使用变量对布局信息（如 clientTop）进行缓存，避免因频繁读取布局信息而触发重排和重绘
 
 ```javascript
 // bad
-const width = elem.getBoundingClientRect().width;
-const height = elem.getBoundingClientRect().height;
-const top = elem.getBoundingClientRect().top;
-const left = elem.getBoundingClientRect().left;
+const width = elem.getBoundingClientRect().width
+const height = elem.getBoundingClientRect().height
+const top = elem.getBoundingClientRect().top
+const left = elem.getBoundingClientRect().left
 
 // good
-const elemClientRect = elem.getBoundingClientRect();
-const width = elemClientRect.width;
-const height = elemClientRect.height;
-const top = elemClientRect.top;
-const left = elemClientRect.left;
+const elemClientRect = elem.getBoundingClientRect()
+const width = elemClientRect.width
+const height = elemClientRect.height
+const top = elemClientRect.top
+const left = elemClientRect.left
 ```
 
 #### 「参考资料」
@@ -4010,27 +3736,15 @@ const left = elemClientRect.left;
 
 1. URL 输入
 
-
-
 2. DNS 解析
-
-
 
 3. 建立 TCP 连接
 
-
-
 4. 发送 HTTP / HTTPS 请求（建立 TLS 连接）
-
-
 
 5. 服务器响应请求
 
-
-
 6. 浏览器解析渲染页面
-
-
 
 7. HTTP 请求结束，断开 TCP 连接
 
@@ -4060,19 +3774,11 @@ URL（统一资源定位符，Uniform Resource Locator）用于定位互联网�
 
 1. 首先搜索浏览器的 DNS 缓存，缓存中维护一张域名与 IP 地址的对应表
 
-
-
 2. 若没有命中，则继续搜索操作系统的 DNS 缓存
-
-
 
 3. 若仍然没有命中，则操作系统将域名发送至本地域名服务器，本地域名服务器采用递归查询自己的 DNS 缓存，查找成功则返回结果
 
-
-
 4. 若本地域名服务器的 DNS 缓存没有命中，则本地域名服务器向上级域名服务器进行迭代查询
-
-
 
 - 首先本地域名服务器向根域名服务器发起请求，根域名服务器返回顶级域名服务器的地址给本地服务器
 
@@ -4084,11 +3790,7 @@ URL（统一资源定位符，Uniform Resource Locator）用于定位互联网�
 
 6. 操作系统将 IP 地址返回给浏览器，同时自己也将 IP 地址缓存起
 
-
-
 7. 至此，浏览器就得到了域名对应的 IP 地址，并将 IP 地址缓存起
-
-
 
 > 计算机中 DNS 的记录也分成了两种缓存方式：
 > ​
@@ -4097,16 +3799,12 @@ URL（统一资源定位符，Uniform Resource Locator）用于定位互联网�
 
 > 2. 操作系统缓存：操作系统的缓存其实是用户自己配置的 hosts 文件
 
-
-
 > DNS 查询的方式有两种：
 > ​
 
 > 1. 递归查询：如果 A 请求 B，那么 B 作为请求的接收者一定要给 A 想要的答案
 
 > 2. 迭代查询：如果接收者 B 没有请求者 A 所需要的准确内容，接收者 B 将告诉请求者 A，如何去获得这个内容，但是自己并不去发出请求
-
-
 
 ##### 建立 TCP 连接
 
@@ -4159,8 +3857,6 @@ TCP 三次握手
 
 ##### 发送 HTTP / HTTPS 请求（建立 TLS 连接）
 
-
-
 当浏览器到 web 服务器的连接建立后，浏览器会发送一个初始的 HTTP GET 请求，请求的内容包括：
 ​
 
@@ -4185,11 +3881,7 @@ TCP 三次握手
 
 - Transfer-Encoding：chunked（服务器发送的资源的方式是分块发送）
 
-
-
 ##### 服务器响应请求
-
-
 
 服务器收到请求后，就会进行逻辑操作,处理完成之后将发回一个 HTTP 响应报文，内容包括:
 
@@ -4230,8 +3922,6 @@ HTTP 响应报文
 - 响应体：由用户自定义添加，如 post 的 body 等
 
 ##### 浏览器解析渲染页面
-
-
 
 当浏览器接收到服务器响应的资源后，首先会对资源进行解析：
 ​
@@ -4278,8 +3968,6 @@ HTTP 响应报文
 - `Compositing`
 - `GPU 加速`
 
-
-
 一般所有的浏览器都会经过五大步骤:
 ​
 
@@ -4307,8 +3995,6 @@ Chromium 的渲染流程的主要步骤如下图所示：
 1. Tokenizing（分词）：浏览器根据 HTML 规范将**字符串转换为不同的标记**（如 <html>, <body>）。
 1. Lexing（语法分析）：上一步产生的**标记将被转换为对象**，这些对象包含了 HTML 语法的各种信息，如属性、属性值、文本等。
 1. DOM construction（DOM 构造）：因为 HTML 标记定义了不同标签之间的关系，上一步产生的对象会链接在一个**树状数据结构**中，以标识父子、兄弟关系
-
-
 
 构建 DOM 的流程如下图所示
 
@@ -4377,8 +4063,6 @@ Layout 树和 DOM 树不一定是一一对应的，为了构建 Layout 树，浏
 - 传统的 LayoutObject 节点，会把布局运算的结果重新写回布局树中。
 - LayoutNG（Chrome 76 开始启用） 节点的输出是不可变的，会保存在 NGLayoutResult 中，这是一个树状的结构，相比之前的 LayoutObject，少了很大回溯计算，提高了性能。
 
-
-
 ##### Paint 阶段
 
 Paint 阶段将 LayoutObject 树转换成供合成器使用的高效渲染格式，包括一个包含 display item 列表的 cc::Layers 列表，与该列表与 cc::PropertyTrees 关联。
@@ -4404,8 +4088,6 @@ Paint 阶段将 LayoutObject 树转换成供合成器使用的高效渲染格式
 
 ###### 构建 cc::Layer 与 display items
 
-
-
 浏览器会继续根据 PaintLayer 树创建 cc::Layer 列表。cc::Layer 是列表状结构，每个 layer 包含了个 DisplayItem 列表，每个 DisplayItem 包含了实际的 paint op 指令。将页面分层，可以让一个图层独立于其他的图层进行变换和光栅化处理。
 ​
 
@@ -4427,8 +4109,6 @@ Paint 阶段将 LayoutObject 树转换成供合成器使用的高效渲染格式
 - CompositeAfterPaint 将在此时决定分层。
 - 将 paint chunks 通过 cc::Layer 列表传递给 compositor。
 - 将 property 树转换为 cc::PropertyTrees。
-
-
 
 上面的流程中，有两个不同的创建合成层的时机，一个是 paint 之前的 CompositeBeforePaint，该操作在渲染主线程中完成。一个是 paint 之后的 CompositeAfterPaint，后续创建 layer 的操作在 CC（Chromium Compositor）线程中完成
 ​
@@ -4493,14 +4173,14 @@ viz 位于 GPU 进程中，viz 接收来自浏览器的合成帧，合成帧来�
 
 ```javascript
 document.body.addEventListener(
-  "touchstart",
+  'touchstart',
   (event) => {
     if (event.target === area) {
-      event.preventDefault();
+      event.preventDefault()
     }
   },
   { passive: true }
-);
+)
 ```
 
 ##### 浏览器渲染性能的优化
@@ -4519,11 +4199,7 @@ document.body.addEventListener(
 1. 使用合适的网页**分层**技术：如使用多层 canvas，将动画背景，运动主体，次要物体分层，这样每一帧需要变化的就只是一个或部分合成层，而不是整个页面。
 1. 使用 CSS Transforms 和 Animations：它可以让浏览器**仅仅使用合成器来合成所有的层**就可以达到动画效果，而不需要重新计算布局，重新绘制图形。[CSS Triggers](https://csstriggers.com/) 中仅触发 Composite 的属性就是最优的选择
 
-
-
-2. 优化影响渲染的资源
-
-
+1. 优化影响渲染的资源
 
 在浏览器解析 HTML 的过程中，CSS 和 JS 都有可能对页面的渲染造成影响。优化方法包括以下几点：
 ​
@@ -4561,8 +4237,6 @@ document.body.addEventListener(
 - 常见的垃圾回收算法
 - 如何排查内存泄漏
 
-
-
 #### 「回答关键点」
 
 - `引用计数法`
@@ -4593,8 +4267,6 @@ GC（Garbage Collection，垃圾回收）是一种**内存自动管理机制**�
 1. 使用 JavaScript 对象来做缓存，且不设置过期策略和对象大小控制。
 1. 队列拥塞所带来的消费不及时问题。
 
-
-
 ##### 标记清除
 
 当变量进入执行环境是，就标记这个变量为“进入环境“。进入环境的变量所占用的内存就不能释放，当变量离开环境时，则将其标记为“离开环境“
@@ -4608,18 +4280,16 @@ GC（Garbage Collection，垃圾回收）是一种**内存自动管理机制**�
 
 ```javascript
 function add(a, b) {
-  a++;
-  var c = a + b;
-  return c;
+  a++
+  var c = a + b
+  return c
 }
 
 var m = 0,
-  n = 19; // 把 m,n,add() 标记为进入环境。
-add(m, n); // 把 a, b, c标记为进入环境。
-console.log(n); // a,b,c标记为离开环境，等待垃圾回收。
+  n = 19 // 把 m,n,add() 标记为进入环境。
+add(m, n) // 把 a, b, c标记为进入环境。
+console.log(n) // a,b,c标记为离开环境，等待垃圾回收。
 ```
-
-
 
 ##### Reference Counting（引用计数）
 
@@ -4671,8 +4341,6 @@ V8 对新生代内存空间采用了 Scavenger 算法，该算法使用了 semi-
 1. [Memory Management](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management)
 1. [Trash talk: the Orinoco garbage collector](https://v8.dev/blog/trash-talk)
 
-
-
 ### 浏览器事件循环 🔥🔥🔥
 
 #### 「相关问题」
@@ -4689,8 +4357,6 @@ V8 对新生代内存空间采用了 Scavenger 算法，该算法使用了 semi-
 
 浏览器需要事件循环来**协调**事件、用户操作、脚本执行、渲染、网络请求等。通过事件循环，浏览器可以利用**任务队列**来管理任务，让异步事件**非阻塞**地执行。每个客户端对应的事件循环是相对独立的
 ​
-
-
 
 #### 「知识点深入」
 
@@ -4710,8 +4376,6 @@ Event Loop 可以理解为一个消息分发器，通过接收和分发不同类
 1. 宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）。
 1. 当前宏任务执行完毕，开始检查渲染，然后渲染线程接管进行渲染。
 1. 渲染完毕后，JavaScript 线程继续接管，开始下一个循环。
-
-
 
 ##### 浏览器为什么需要事件循环
 
@@ -4737,15 +4401,11 @@ Event Loop 可以理解为一个消息分发器，通过接收和分发不同类
 - I/O、
 - UI 交互事件
 
-
-
 微任务主要包含：
 ​
 
 - Promise、
 - MutationObserver
-
-
 
 在当前执行栈为空的时候，主线程会查看微任务队列是否有事件存在。如果不存在，那么再去宏任务队列中取出一个事件并把对应的回调加入当前执行栈；如果存在，则会依次执行队列中事件对应的回调，直到微任务队列为空，然后去宏任务队列中取出最前面的一个事件，把对应的回调加入当前执行栈。如此反复，进入循环。
 ​
@@ -4756,21 +4416,21 @@ Event Loop 可以理解为一个消息分发器，通过接收和分发不同类
 ```javascript
 Promise.resolve().then(() => {
   // 微任务1
-  console.log("Promise1");
+  console.log('Promise1')
   setTimeout(() => {
     // 宏任务2
-    console.log("setTimeout2");
-  }, 0);
-});
+    console.log('setTimeout2')
+  }, 0)
+})
 
 setTimeout(() => {
   // 宏任务1
-  console.log("setTimeout1");
+  console.log('setTimeout1')
   Promise.resolve().then(() => {
     // 微任务2
-    console.log("Promise2");
-  });
-}, 0);
+    console.log('Promise2')
+  })
+}, 0)
 
 // Promise1 => setTimeout1 => Promise2 => setTimeout2
 ```
@@ -4780,8 +4440,6 @@ setTimeout(() => {
 1. [whatwg event loops](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
 1. [wikipedia event loops](https://en.wikipedia.org/wiki/Event_loop)
 1. [Node.js event loops](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#what-is-the-event-loop)
-
-
 
 ### 如何定位内存泄露 🔥
 
@@ -4793,8 +4451,6 @@ setTimeout(() => {
 
 - `垃圾回收`
 - `DevTools`
-
-
 
 内存泄漏是指不再使用的内存，没有被垃圾回收机制回收。当内存泄漏很大或足够频繁时，用户会有所感知：轻则影响应用性能，表现为迟缓卡顿；重则导致应用崩溃，表现为无法正常使用。为了避免内存泄漏带来的不良影响，需要对垃圾回收机制进行了解，掌握内存泄漏分析方法，完善线上相关监控措施。
 ​
@@ -4811,8 +4467,6 @@ setTimeout(() => {
 1. [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
 1. [Fix memory problems](https://developer.chrome.com/docs/devtools/memory-problems/)
 
-
-
 ### 前端路由实现 🔥🔥🔥
 
 #### 「相关问题」
@@ -4825,19 +4479,15 @@ setTimeout(() => {
 
 #### 「回答关键点」
 
-- `路由` 
+- `路由`
 - `Hash 路由`
-- `History 路由` 
-- `无刷新` 
+- `History 路由`
+- `无刷新`
 - `SPA（Single-page application，单页面 Web 应用）`
 
-路由： 通过互联网网络从源地址到目标地址的活动；对于web应用路由的实质是 URL 到对应的处理程序的映射
-
-
+路由： 通过互联网网络从源地址到目标地址的活动；对于 web 应用路由的实质是 URL 到对应的处理程序的映射
 
 Web 路由既可以由服务端，也可以由前端实现。其中前端路由根据实现方式的不同，可以分为 **Hash 路由** 和 **History 路由**。
-
-
 
 前端路由对于服务端路由来说，最显著的特点是页面可以在**无刷新**的情况下进行页面的切换。基于前端路由的这一特点，诞生了一种**无刷新**的单页应用开发模式 **SPA**。SPA 通过前端路由避免了页面的切换打断**用户体验**，让 Web 应用的体验更接近一个桌面应用程序
 
@@ -4875,39 +4525,39 @@ fragment 本质是用来标识次级资源，fragment 有以下特点：
  * @param hash
  * @returns
  */
-function parseHash (hash) {
-    // 去除 # 号
-    hash = hash.replace(/^#/, '');
+function parseHash(hash) {
+  // 去除 # 号
+  hash = hash.replace(/^#/, '')
 
-    // 简单解析示例
-    const parsed = hash.split('?');
+  // 简单解析示例
+  const parsed = hash.split('?')
 
-    // 返回 hash 的 path 和 query
-    return {
-        pathname: parsed[0],
-        search: parsed[1]
-    }
+  // 返回 hash 的 path 和 query
+  return {
+    pathname: parsed[0],
+    search: parsed[1],
+  }
 }
 
 /**
  * 监听 hash 变化
  * @returns
  */
-function onHashChange () {
-    // 解析 hash
-    const { pathname, search } = parseHash(location.hash);
+function onHashChange() {
+  // 解析 hash
+  const { pathname, search } = parseHash(location.hash)
 
-    // 切换页面内容
-    switch (pathname) {
-        case '/home':
-            document.body.innerHTML = `Hello ${search}`;
-            return;
-        default:
-            return;
-    }
+  // 切换页面内容
+  switch (pathname) {
+    case '/home':
+      document.body.innerHTML = `Hello ${search}`
+      return
+    default:
+      return
+  }
 }
 
-window.addEventListener('hashchange', onHashChange);
+window.addEventListener('hashchange', onHashChange)
 ```
 
 Hash 路由由于通过**监听 hash 变化实现**，所以有以下优势和不足：
@@ -4923,73 +4573,63 @@ Hash 路由由于通过**监听 hash 变化实现**，所以有以下优势和�
 2. **可能和锚点功能冲突**。
 3. SEO 不友好。
 
-
-
 ##### History 路由
 
 Hash 路由是一个相对“Hack”的方式，监听 fragment 的变化来实现路由功能。而 History 路由则是通过**浏览器原生提供的操作 History** 的能力来实现的路由功能。
 
-
-
- **实现原理**
+**实现原理**
 
 History 路由核心主要依赖 **History API** 里的**两个方法**和**一个事件**，其中**两个方法用于操作浏览器的历史记录**，**事件用于监听历史记录的切换**：
-
-
 
 **方法**
 
 - history.pushState：将给定的 Data **添加**到当前标签页的**历史记录栈**中。
 - history.replaceState：将给定的 Data **更新**到历史记录栈中最新的一条记录中。
 
-
-
 **事件**
 
 - popstate：监听历史记录的变化。
-
-
 
 ```js
 /**
  * 监听 history 变化
  * @returns
  */
-function onHistoryChange () {
-    // 解析 location
-    const { pathname, search } = location;
+function onHistoryChange() {
+  // 解析 location
+  const { pathname, search } = location
 
-    // 根据页面不同执行不同内容
-    switch (pathname) {
-        case '/home':
-            document.body.innerHTML = `Hello ${search.replace(/^\?/, '')}`;
-            return;
-        default:
-            document.body.innerHTML = `Hello World`;
-            return;
-    }
+  // 根据页面不同执行不同内容
+  switch (pathname) {
+    case '/home':
+      document.body.innerHTML = `Hello ${search.replace(/^\?/, '')}`
+      return
+    default:
+      document.body.innerHTML = `Hello World`
+      return
+  }
 }
 
 /**
  * 页面跳转
  * @returns
  */
-function pushState (target) {
-    history.pushState(null, '', target);
-    onHistoryChange();
+function pushState(target) {
+  history.pushState(null, '', target)
+  onHistoryChange()
 }
 
 // 3 秒后路由跳转
 setTimeout(() => {
-    pushState('/home?name=xxxStudio');
-}, 3000);
+  pushState('/home?name=xxxStudio')
+}, 3000)
 
 // 6 秒后返回
 setTimeout(() => {
-    history.back();
-}, 6000);
+  history.back()
+}, 6000)
 
-window.addEventListener('popstate', onHistoryChange);
+window.addEventListener('popstate', onHistoryChange)
 ```
 
 History 路由由于通过 History API 实现，所以有以下优势和不足：
@@ -5005,112 +4645,96 @@ History 路由由于通过 History API 实现，所以有以下优势和不足�
 1. 兼容性稍弱。
 2. **需要服务端额外配置（各 path 均指向同一个 HTML）**。
 
-
-
-#####  前端路由的优缺点
+##### 前端路由的优缺点
 
 前端路由是前后端分离的开发模式的产物，对比服务端路由，前端路由的实现方式有以下优势和不足：
-
-
 
 **优点**
 
 1. **无刷新切换内容，用户体验更佳**。
 2. **减轻服务端压力**。
 
-
-
 **缺点**
 
 1. 初次加载耗时长。
 2. **SEO 效果不佳**。
 
-
-
 #### 「参考资料」
 
 1. [Window: hashchange event](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event)
-
-
 
 ### DOM && BOM🔥
 
 #### 「相关问题」
 
-- 什么是dom？bom？
+- 什么是 dom？bom？
 
-- DOM常见的操作有哪些 
+- DOM 常见的操作有哪些
 
 #### 「回答关键点」
 
-- `DOM` 
-
-
+- `DOM`
 
 `DOM(Document Object Model)`， 文档对象模型 (DOM) 是 `HTML` 和 `XML` 文档的编程接口;对文档的结构化的表述;
 
 `BOM(Browser Object Model)` ，浏览器对象模型，提供了独立于内容与浏览器窗口进行交互的对象
 
-
-
-DOM常见操作：增删改查
-
-
+DOM 常见操作：增删改查
 
 #### 「知识点深入」
 
-##### DOM增删改查
+##### DOM 增删改查
 
 ```js
 // 创建节点
 
-const divEl = document.createElement("div");// 创建一个新元素
-const textEl = document.createTextNode("content");// 创建一个文本节点
-const fragment = document.createDocumentFragment();// 创建一个文档碎片 - 文档碎片的内容一次性添加到DOM中
-const dataAttribute = document.createAttribute('custom');// 创建属性节点，可以是自定义属性
+const divEl = document.createElement('div') // 创建一个新元素
+const textEl = document.createTextNode('content') // 创建一个文本节点
+const fragment = document.createDocumentFragment() // 创建一个文档碎片 - 文档碎片的内容一次性添加到DOM中
+const dataAttribute = document.createAttribute('custom') // 创建属性节点，可以是自定义属性
 ```
 
 ```js
 // 获取节点
 
-document.getElementById('id属性值');// 返回拥有指定id的对象的引用
-document.getElementsByClassName('class属性值');// 返回拥有指定class的对象集合
-document.getElementsByTagName('标签名');// 返回拥有指定标签名的对象集合
-document.getElementsByName('name属性值'); // 返回拥有指定名称的对象结合
-document/element.querySelector('CSS选择器'); // 仅返回第一个匹配的元素(**静态实例**)
-document/element.querySelectorAll('CSS选择器');// 返回所有匹配的元素(**静态实例**)
-document.documentElement;// 获取页面中的HTML标签
-document.body;// 获取页面中的BODY标签
-document.all[''];// 获取页面中的所有元素节点的对象集合型
+document.getElementById('id属性值') // 返回拥有指定id的对象的引用
+document.getElementsByClassName('class属性值') // 返回拥有指定class的对象集合
+document.getElementsByTagName('标签名') // 返回拥有指定标签名的对象集合
+document.getElementsByName('name属性值') // 返回拥有指定名称的对象结合
+document / element.querySelector('CSS选择器') // 仅返回第一个匹配的元素(**静态实例**)
+document / element.querySelectorAll('CSS选择器') // 返回所有匹配的元素(**静态实例**)
+document.documentElement // 获取页面中的HTML标签
+document.body // 获取页面中的BODY标签
+document.all[''] // 获取页面中的所有元素节点的对象集合型
 ```
 
 ```js
 // 更新节点
 
-p.innerHTML = 'ABC <span style="color:red">RED</span> XYZ';// html
-p.innerText = '<script>alert("Hi")</script>';// 文本 同 textContent
-p.style.paddingTop = '2em';// 样式
+p.innerHTML = 'ABC <span style="color:red">RED</span> XYZ' // html
+p.innerText = '<script>alert("Hi")</script>' // 文本 同 textContent
+p.style.paddingTop = '2em' // 样式
 ```
 
 ```js
 // 添加节点
 
-parentElement.innerHTML = 'ABC <span style="color:red">RED</span> XYZ';// html
-parentElement.appendChild();// 子节点添加到父节点的最后一个子节点
-parentElement.insertBefore(newElement, referenceElement);// 子节点会插入到referenceElement之前
-div.setAttribute('class', 'white');// 在指定元素中添加一个属性节点，如果元素中已有该属性改变属性值'第一个参数属性名，第二个参数属性值。
+parentElement.innerHTML = 'ABC <span style="color:red">RED</span> XYZ' // html
+parentElement.appendChild() // 子节点添加到父节点的最后一个子节点
+parentElement.insertBefore(newElement, referenceElement) // 子节点会插入到referenceElement之前
+div.setAttribute('class', 'white') // 在指定元素中添加一个属性节点，如果元素中已有该属性改变属性值'第一个参数属性名，第二个参数属性值。
 ```
 
 ```js
 // 删除节点
 
 // 拿到待删除节点:
-const self = document.getElementById('to-be-removed');
+const self = document.getElementById('to-be-removed')
 // 拿到父节点:
-const parent = self.parentElement;
+const parent = self.parentElement
 // 删除:
-const removed = parent.removeChild(self);
-removed === self; // true
+const removed = parent.removeChild(self)
+removed === self // true
 ```
 
 ##### BOM
@@ -5120,8 +4744,6 @@ removed === self; // true
 - navigator
 - screen
 - history
-
-
 
 #### 「参考资料」
 
@@ -5138,8 +4760,6 @@ removed === self; // true
 - 说说 HTTPS 中间人攻击，及其如何防范
 
 #### 「回答关键点」
-
-
 
 - `XSS`
 
@@ -5206,8 +4826,6 @@ CSRF（跨站请求伪造） 是指攻击者可以在用户不知情的情况下
 
 3. DOM 型
 
-
-
 原理：攻击者通过在 URL 插入恶意代码，客户端脚本取出 URL 中的恶意代码并执行。
 ​
 
@@ -5248,33 +4866,19 @@ CSRF（跨站请求伪造） 是指攻击者可以在用户不知情的情况下
 
 ##### 防范 CSRF
 
-
-
 1. 使用 CSRF Token 验证用户身份
-
-
 
 - 原理：服务端生成 CSRF Token （通常存储在 Session 中），用户提交请求时携带上 Token，服务端验证 Token 是否有效
 
-
-
 - 优点：能比较有效的防御 CSRF （前提是没有 XSS 漏洞泄露 Token）
 
-
-
 - 缺点：大型网站中 Session 存储会增加服务器压力，且若使用分布式集群还需要一个公共存储空间存储 Token，否则可能用户请求到不同服务器上导致用户凭证失效；有一定的工作量
-
-
 
 2. 双重 Cookie 验证
 
 - 原理：利用攻击者不能获取到 Cookie 的特点，在 URL 参数或者自定义请求头上带上 Cookie 数据，服务器再验证该数据是否与 Cookie 一致
 
-
-
 - 优点：无需使用 Session，不会给服务器压力
-
-
 
 3. 设置 Cookie 的 SameSite 属性可以用来限制第三方 Cookie 的使用，可选值有 Strict、Lax、None。
 
@@ -5285,8 +4889,6 @@ CSRF（跨站请求伪造） 是指攻击者可以在用户不知情的情况下
 - None：关闭 SameSite 属性
 
 4. 设置白名单，仅允许安全域名请求
-
-
 
 5. 增加验证码验证
 
@@ -5342,8 +4944,6 @@ SSL 剥离
 
 ##### 中间人攻击防范
 
-
-
 对于开发者来说：
 ​
 
@@ -5368,8 +4968,6 @@ SSL 剥离
 
 - [https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting](https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)
 - [https://developer.mozilla.org/zh-CN/docs/learn/Server-side/First_steps/Website_security](https://developer.mozilla.org/zh-CN/docs/learn/Server-side/First_steps/Website_security)
-
-
 
 ### HTTP 缓存机制 🔥🔥🔥
 
@@ -5509,8 +5107,6 @@ HTTP/1.0 Pragma
 
 1. [HTTP Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)
 
-
-
 ### HTTP/2 和 HTTP/1.1 的对比 🔥🔥🔥
 
 #### 「相关问题」
@@ -5520,17 +5116,15 @@ HTTP/1.0 Pragma
 
 #### 「回答关键点」
 
-- `队头阻塞` 
+- `队头阻塞`
 
-- `持久连接` 
+- `持久连接`
 
-- `二进制分帧层` 
+- `二进制分帧层`
 
-- `多路复用` 
+- `多路复用`
 
 - `服务端推送`
-
-  
 
 **HTTP/1.1 相较 HTTP/1.0 的改进和优化：**
 
@@ -5542,15 +5136,11 @@ HTTP/1.0 Pragma
 - 新增更多状态码
 - 断点续传、并行下载
 
-
-
 **HTTP/1.1 的缺点：**
 
 - 队头阻塞（Head-of-line blocking）
 - 头部冗余
 - TCP 连接数限制
-
-
 
 **HTTP/2 的优点：**
 
@@ -5559,15 +5149,9 @@ HTTP/1.0 Pragma
 - Header 压缩
 - 服务端推送
 
-
-
 #### 「知识点深入」
 
-
-
 ##### HTTP/1.1
-
-
 
 ##### 相较 HTTP/1.0 的改进和优化
 
@@ -5647,8 +5231,6 @@ HTTP/2 允许在单个 TCP 连接上**并行**地处理多个请求和响应，�
 
 - [HPACK: Header Compression for HTTP/2](https://httpwg.org/specs/rfc7541.html)
 
-
-
 ## 陆，前端工程化
 
 ### Webpack 工作原理 🔥🔥🔥
@@ -5684,8 +5266,6 @@ webpack 是一种模块打包工具,可以将各类资源(js,css,图片,字体�
 
 ##### 核心任务
 
-
-
 完成内容转化和资源合并,可以分为以下三大阶段
 
 1. 初始化阶段
@@ -5707,8 +5287,6 @@ webpack 是一种模块打包工具,可以将各类资源(js,css,图片,字体�
 - 对编译后的 Module 组合成 Chunk
 
 - 把 Chunk 转换成文件，输出到文件系统
-
-
 
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/377147/1646013899730-aabdc04d-166c-40e2-9a05-5aeae0838073.png#clientId=u6ddb5e62-9bae-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=u9db45715&margin=%5Bobject%20Object%5D&name=image.png&originHeight=415&originWidth=339&originalType=url&ratio=1&rotation=0&showTitle=false&size=13704&status=done&style=none&taskId=ue504f383-3b23-4795-9282-cbe8bc41f7f&title=)
 
@@ -5760,14 +5338,10 @@ function webpack(options) {
 
 1. run / watch-run
 
-
-
 启动一次新的编译, watch-run 和 run 类似，区别在于它是在监听模式下启动的编译，在这个事件中可以获取到是哪些文件发生了变化导致重新启动一次新的编译
 ​
 
 2. compile / compilation
-
-
 
 compile 事件是为了告诉插件一次新的编译将要启动，同时会给插件带上 Compiler 对象
 ​
@@ -5839,27 +5413,15 @@ Compiler 和 Compilation 的区别在于：Compiler 代表了整个 Webpack 从�
 - `UMD`
 - `ESM`
 
-
-
 1. [CommonJS](https://nodejs.org/api/modules.html#modules_modules_commonjs_modules): 主要是 Node.js 使用，通过 require 同步加载模块，exports 导出内容
-
-
 
 2. [AMD](https://en.wikipedia.org/wiki/Asynchronous_module_definition): 主要是浏览器端使用，通过 require 异步加载模块，通过 define 定义模块和依赖，推崇依赖前置
 
-
-
 3. [CMD](https://github.com/seajs/seajs/issues/242): 和 AMD 比较类似，主要是浏览器端使用，通过 require 异步加载模块，exports 导出内容，推崇依赖就近
-
-
 
 4. [UMD](https://github.com/umdjs/umd/): 通用模块规范，是 CommonJS、AMD 两个规范的大融合，是跨平台的解决方案
 
-
-
 5. ESM: 官方模块化规范，现代浏览器原生支持，通过 import 异步加载模块，export 导出内容
-
-
 
 #### 「知识点深入」
 
@@ -5895,8 +5457,6 @@ CommonJS 通过同步的方式加载模块，首次加载会缓存结果，后�
 
 - 可以在任意位置 require 模块
 
-
-
 - 支持循环依赖
 
 缺点
@@ -5914,22 +5474,22 @@ AMD，即异步模块定义。AMD 定义了一套 JavaScript 模块依赖异步�
 
 ```javascript
 // foo.js
-define("foo", [], function () {
-  const member = 17;
+define('foo', [], function () {
+  const member = 17
   const getMember = () => {
-    return `member: ${member}`;
-  };
+    return `member: ${member}`
+  }
 
   return {
     getMember,
-  };
-});
+  }
+})
 
 // index.js
-require(["foo"], function (foo) {
+require(['foo'], function (foo) {
   // 依赖前置
-  console.log(foo.getMember()); // member: 17
-});
+  console.log(foo.getMember()) // member: 17
+})
 ```
 
 使用场景
@@ -5975,20 +5535,20 @@ CMD，即通用模块定义。CMD 定义了一套 JavaScript 模块依赖异步�
 
 ```javascript
 // foo.js
-define("foo", [], function () {
-  const member = 17;
+define('foo', [], function () {
+  const member = 17
   const getMember = () => {
-    return `member: ${member}`;
-  };
+    return `member: ${member}`
+  }
 
-  exports.getMember = getMember;
-});
+  exports.getMember = getMember
+})
 
 // index.js
 define(function (require, exports) {
-  const foo = require("foo"); // 依赖就近
-  console.log(foo.getMember()); // member: 17
-});
+  const foo = require('foo') // 依赖就近
+  console.log(foo.getMember()) // member: 17
+})
 ```
 
 使用场景
@@ -6095,8 +5655,6 @@ ESM 加载模块的方式同样取决于所处的环境，Node.js 同步加载�
 
 - 兼容性不佳
 
-
-
 #### 「扩展」
 
 ##### 静态分析
@@ -6120,8 +5678,6 @@ ESM 加载模块的方式同样取决于所处的环境，Node.js 同步加载�
 - [https://github.com/umdjs/umd/](https://github.com/umdjs/umd/)
 - [https://zh.wikipedia.org/wiki/%E9%9D%9C%E6%85%8B%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90](https://zh.wikipedia.org/wiki/%E9%9D%9C%E6%85%8B%E7%A8%8B%E5%BA%8F%E5%88%86%E6%9E%90)
 - [https://tc39.es/ecma262/#sec-modules](https://tc39.es/ecma262/#sec-modules)
-
-
 
 ### Babel 的作用和原理 🔥🔥🔥
 
@@ -6197,12 +5753,12 @@ module.exports = function () {
        * @param {NodePath} path
        */
       Identifier(path) {
-        path.node.name = path.node.name.toUpperCase();
+        path.node.name = path.node.name.toUpperCase()
       },
     },
     post() {},
-  };
-};
+  }
+}
 ```
 
 使用该 Babel 插件的效果如下：
@@ -6278,8 +5834,6 @@ interface VisitorInTransform {
 1. [estree](https://github.com/estree/estree)
 1. [访问者模式](https://en.wikipedia.org/wiki/Visitor_pattern)
 
-
-
 ### 谈下 webpack loader 的机制 🔥🔥🔥
 
 #### 「相关问题」
@@ -6289,19 +5843,13 @@ interface VisitorInTransform {
 
 #### 「回答关键点」
 
-- `转换` 
-- `生命周期` 
+- `转换`
+- `生命周期`
 - `chunk`
-
-
 
 webpack 本身只能处理 JavaScript 和 JSON 文件，而 loader 为 webpack 添加了处理其他类型文件的能力。loader 将其他类型的文件转换成有效的 webpack modules（如 ESmodule、CommonJS、AMD），webpack 能消费这些模块，并将其添加到依赖关系图中
 
-
-
 loader 本质上是一个函数，该函数对接收到的内容进行转换，返回转换后的结果。
-
-
 
 常见的 loader 有：
 
@@ -6312,24 +5860,20 @@ loader 本质上是一个函数，该函数对接收到的内容进行转换，�
 - style-loader：将 CSS 代码注入到 JavaScript 中，通过 DOM 操作加载 CSS。
 - css-loader：加载 CSS，支持模块化、压缩、文件导入等特性。
 
-
-
 #### 「知识点深入」
 
-##### 编写loader
+##### 编写 loader
 
 由于 Webpack 是运行在 Node.js 之上的，一个 Loader 其实就是一个 Node.js 模块（本质是一个函数），这个模块需要导出一个函数。这个导出的函数的工作就是：**获得处理前的原内容，对原内容执行处理后，返回处理后的内容**
-
-
 
 一个最简单的 Loader 的源码如下：
 
 ```js
-module.exports = function(source) {
+module.exports = function (source) {
   // source 为 compiler 传递给 Loader 的一个文件的原内容
   // 该函数需要返回处理后的内容，这里简单起见，直接把原内容返回了，相当于该 Loader 没有做任何转换
-  return source;
-};
+  return source
+}
 ```
 
 ###### **获得 Loader 的 options**
@@ -6348,28 +5892,29 @@ module.exports = {
         use: [
           'style-loader',
           {
-            loader:'css-loader',
+            loader: 'css-loader',
             // 给 css-loader 传入配置项
-            options:{
-              minimize:true, 
-            }
+            options: {
+              minimize: true,
+            },
           },
-          'sass-loader'],
+          'sass-loader',
+        ],
       },
-    ]
+    ],
   },
-};
+}
 ```
 
 上面给 css-loader 传了 options 参数。如何在自己编写的 Loader 中获取到用户传入的 options 呢？需要这样做：
 
 ```js
-const loaderUtils = require('loader-utils');
-module.exports = function(source) {
+const loaderUtils = require('loader-utils')
+module.exports = function (source) {
   // 获取到用户给当前 Loader 传入的 options
-  const options = loaderUtils.getOptions(this);
-  return source;
-};
+  const options = loaderUtils.getOptions(this)
+  return source
+}
 ```
 
 ###### **返回其它结果**
@@ -6377,13 +5922,13 @@ module.exports = function(source) {
 有些场景下除了需要返回原内容的处理结果外，还需要返回代码对应的 source map(例如以用 babel-loader 转换 ES6 代码为例)
 
 ```js
-module.exports = function(source) {
+module.exports = function (source) {
   // 通过 this.callback 告诉 Webpack 返回的结果
-  this.callback(null, source, sourceMaps);
+  this.callback(null, source, sourceMaps)
   // 当你使用 this.callback 返回内容时，该 Loader 必须返回 undefined，
-  // 以让 Webpack 知道该 Loader 返回的结果在 this.callback 中，而不是 return 中 
-  return;
-};
+  // 以让 Webpack 知道该 Loader 返回的结果在 this.callback 中，而不是 return 中
+  return
+}
 ```
 
 其中的 `this.callback` 是 Webpack 给 Loader 注入的 API，以方便 Loader 和 Webpack 之间通信。 `this.callback` 的详细使用方法如下：
@@ -6409,14 +5954,14 @@ Loader 有同步和异步之分，在有些场景下转换的步骤只能是异�
 在转换步骤是异步时，可以这样：
 
 ```js
-module.exports = function(source) {
-    // 告诉 Webpack 本次转换是异步的，Loader 会在 callback 中回调结果
-    var callback = this.async();
-    someAsyncOperation(source, function(err, result, sourceMaps, ast) {
-        // 通过 callback 返回异步执行后的结果
-        callback(err, result, sourceMaps, ast);
-    });
-};
+module.exports = function (source) {
+  // 告诉 Webpack 本次转换是异步的，Loader 会在 callback 中回调结果
+  var callback = this.async()
+  someAsyncOperation(source, function (err, result, sourceMaps, ast) {
+    // 通过 callback 返回异步执行后的结果
+    callback(err, result, sourceMaps, ast)
+  })
+}
 ```
 
 ###### loader 开发辅助工具及 loaderContext
@@ -6424,33 +5969,31 @@ module.exports = function(source) {
 `loader-utils` 与 `schema-utils`，可以使获取及验证传递给 loader 的参数的工作简单化。
 
 ```js
-import { getOptions } from "loader-utils";
-import { validate } from "schema-utils";
+import { getOptions } from 'loader-utils'
+import { validate } from 'schema-utils'
 
 const schema = {
-  type: "object",
+  type: 'object',
   properties: {
     test: {
-      type: "string",
+      type: 'string',
     },
   },
-};
+}
 
 export default function (source) {
-  const options = getOptions(this);
+  const options = getOptions(this)
 
   validate(schema, options, {
-    name: "Example Loader",
-    baseDataPath: "options",
-  });
+    name: 'Example Loader',
+    baseDataPath: 'options',
+  })
 
   // Apply some transformations to the source...
 
-  return `export default ${JSON.stringify(source)}`;
+  return `export default ${JSON.stringify(source)}`
 }
 ```
-
-
 
 loader-utils 主要有以下工具方法：
 
@@ -6459,15 +6002,15 @@ loader-utils 主要有以下工具方法：
 - `stringifyRequest`将请求的资源转换为可以在 loader 生成的代码中 require 或 import 使用的相对路径字符串，同时避免绝对路径导致重新计算 hash 值。
 
   ```js
-  loaderUtils.stringifyRequest(this, "./test.js");
+  loaderUtils.stringifyRequest(this, './test.js')
   // "\"./test.js\""
   ```
 
 - `urlToRequest` 将请求的资源路径转换成 webpack 可以处理的形式。
 
   ```js
-  const url = "~path/to/module.js";
-  const request = loaderUtils.urlToRequest(url); // "path/to/module.js"
+  const url = '~path/to/module.js'
+  const request = loaderUtils.urlToRequest(url) // "path/to/module.js"
   ```
 
 - `interpolateName` 对文件名模板进行插值。
@@ -6479,8 +6022,6 @@ loader-utils 主要有以下工具方法：
   ```
 
 - `getHashDigest`：获取文件内容的 hash 值。
-
-
 
 在编写 loader 的过程中，还可以利用 loaderContext 对象来获取 loader 的相关信息和进行一些高级的操作，常见的属性和方法有：
 
@@ -6494,11 +6035,9 @@ loader-utils 主要有以下工具方法：
 
 以上内容是编写一个 loader 的关键点，想要学习更详细的关于编写 loader 的指导，可以参考官方的 [guidelines](https://webpack.js.org/contribute/writing-a-loader/#guidelines)。
 
-
-
 ##### webpack loader 工作机制
 
-######  根据 module.rules 解析 loader 加载规则
+###### 根据 module.rules 解析 loader 加载规则
 
 当 webpack 处理一个模块（module）时，会根据配置文件中 `module.rules` 的规则，使用 loader 处理对应资源，得到可供 webpack 使用的 JavaScript 模块。
 
@@ -6507,18 +6046,18 @@ loader-utils 主要有以下工具方法：
 ```js
 rules: [
   // pre 前置 loader
-  { enforce: "pre", test: /\.js$/, loader: "eslint-loader" },
+  { enforce: 'pre', test: /\.js$/, loader: 'eslint-loader' },
   // normal loader
-  { test: /\.js$/, loader: "babel-loader" },
+  { test: /\.js$/, loader: 'babel-loader' },
   // post 后置 loader
-  { enforce: "post", test: /\.js$/, loader: "eslint-loader" },
-];
+  { enforce: 'post', test: /\.js$/, loader: 'eslint-loader' },
+]
 ```
 
 以及内联使用的 inline loader：
 
 ```js
-import "style-loader!css-loader!sass-loader!./xx.scss";
+import 'style-loader!css-loader!sass-loader!./xx.scss'
 ```
 
 在正常的执行流程中，这些不同类型的 loader 的执行顺序是：`pre -> normal -> inline -> post`。在 pitch 流程中，这些 loader 的执行顺序是反过来的：`post -> inline -> normal -> pre`。
@@ -6527,11 +6066,11 @@ import "style-loader!css-loader!sass-loader!./xx.scss";
 
 ```js
 // ! 前缀会禁用 normal loader
-import { xx } from "!./xx.js";
+import { xx } from '!./xx.js'
 // -! 前缀会禁用 pre loader 和 normal loader
-import { xx } from "-!./xx.js";
+import { xx } from '-!./xx.js'
 // !! 前缀会禁用 pre、normal 和 post loader
-import { xx } from "!!./xx.js";
+import { xx } from '!!./xx.js'
 ```
 
 一般情况下，`!` 前缀和 inline loader 一起使用仅出现在 loader（如 style-loader）生成的代码中，webpack 官方不建议用户同时使用 inline loader 和 `!` 前缀。
@@ -6542,7 +6081,7 @@ webpack rules 中配置的 loader 可以是多个链式串联的。在正常流�
 - 第一个 loader 最后执行，它将返回 JavaScript 模块和可选的 source map。
 - 位于中间的 loader，对接收和返回没有特定要求，只要能处理之前 loader 返回的内容，产出下一个 loader 能够理解的内容就可以。
 
-######  loader-runner 的执行流程
+###### loader-runner 的执行流程
 
 webpack 调用 loader 的时机在触发 compilation 的 buildModule 钩子之后。webpack 会在 `NormalModule.js` 中，调用 runLoaders 运行 loader：
 
@@ -6554,26 +6093,26 @@ runLoaders(
     context: loaderContext, // 传递给 loader 的上下文
     processResource: (loaderContext, resourcePath, callback) => {
       // 获取资源的方式，有 scheme 的文件通过 readResourceForScheme 读取，否则通过 fs.readFile 读取。
-      const resource = loaderContext.resource;
-      const scheme = getScheme(resource);
+      const resource = loaderContext.resource
+      const scheme = getScheme(resource)
       if (scheme) {
         hooks.readResourceForScheme
           .for(scheme)
           .callAsync(resource, this, (err, result) => {
             // ...
-            return callback(null, result);
-          });
+            return callback(null, result)
+          })
       } else {
-        loaderContext.addDependency(resourcePath);
-        fs.readFile(resourcePath, callback);
+        loaderContext.addDependency(resourcePath)
+        fs.readFile(resourcePath, callback)
       }
     },
   },
   (err, result) => {
     // 当 loader 转换完成后，会将结果返回到 webpack 中继续处理。
-    processResult(err, result.result);
+    processResult(err, result.result)
   }
-);
+)
 ```
 
 runLoaders 函数来自 `loader-runner` 包。在介绍 runLoaders 的具体流程之前，先介绍一下 pitch 阶段，之前所讲的这种从后往前执行 loader 的流程，一般叫做 normal 阶段。与之相对的，还有一种叫做 pitch 阶段的流程。
@@ -6595,11 +6134,11 @@ loader-runner 的具体流程如下：
        rules: [
          {
            //...
-           use: ["a-loader", "b-loader", "c-loader"],
+           use: ['a-loader', 'b-loader', 'c-loader'],
          },
        ],
      },
-   };
+   }
    ```
 
    那么处理这个 module 的流程如下：
@@ -6628,8 +6167,6 @@ loader-runner 的具体流程如下：
 
    iterateNormalLoaders 和 iteratePitchingLoaders 都会调用 runSyncOrAsync 来执行 loader。runSyncOrAsync 会提供 context.async，这是一个返回 callback 的 async 函数，用于异步处理。
 
-
-
 ##### 常见 webpack loader 原理解析
 
 loader 本身的操作并不复杂，就是一个负责转换其他资源到 JavaScript 模块的函数。
@@ -6641,27 +6178,27 @@ loader 本身的操作并不复杂，就是一个负责转换其他资源到 Jav
 该 loader 在 webpack 5 中已废弃，直接使用 asset modules 的功能代替即可。该 loader 源码如下：
 
 ```js
-import { getOptions } from "loader-utils";
-import { validate } from "schema-utils";
+import { getOptions } from 'loader-utils'
+import { validate } from 'schema-utils'
 
-import schema from "./options.json";
+import schema from './options.json'
 
 export default function rawLoader(source) {
-  const options = getOptions(this);
+  const options = getOptions(this)
 
   validate(schema, options, {
-    name: "Raw Loader",
-    baseDataPath: "options",
-  });
+    name: 'Raw Loader',
+    baseDataPath: 'options',
+  })
 
   const json = JSON.stringify(source)
-    .replace(/\u2028/g, "\\u2028")
-    .replace(/\u2029/g, "\\u2029");
+    .replace(/\u2028/g, '\\u2028')
+    .replace(/\u2029/g, '\\u2029')
 
   const esModule =
-    typeof options.esModule !== "undefined" ? options.esModule : true;
+    typeof options.esModule !== 'undefined' ? options.esModule : true
 
-  return `${esModule ? "export default" : "module.exports ="} ${json};`;
+  return `${esModule ? 'export default' : 'module.exports ='} ${json};`
 }
 ```
 
@@ -6676,9 +6213,9 @@ babel loader 是一个综合了同步和异步的 loader，在使用缓存配置
 const transpile = function (source, options) {
   // ...
 
-  let result;
+  let result
   try {
-    result = babel.transform(source, options);
+    result = babel.transform(source, options)
   } catch (error) {
     // ...
   }
@@ -6688,8 +6225,8 @@ const transpile = function (source, options) {
     code: code,
     map: map,
     metadata: metadata,
-  };
-};
+  }
+}
 
 // ...
 
@@ -6697,7 +6234,7 @@ module.exports = function (source, inputSourceMap) {
   // ...
 
   if (cacheDirectory) {
-    const callback = this.async();
+    const callback = this.async()
     return cache(
       {
         directory: cacheDirectory,
@@ -6707,19 +6244,19 @@ module.exports = function (source, inputSourceMap) {
         transform: transpile,
       },
       (err, { code, map, metadata } = {}) => {
-        if (err) return callback(err);
+        if (err) return callback(err)
 
-        metadataSubscribers.forEach((s) => passMetadata(s, this, metadata));
+        metadataSubscribers.forEach((s) => passMetadata(s, this, metadata))
 
-        return callback(null, code, map);
+        return callback(null, code, map)
       }
-    );
+    )
   }
 
-  const { code, map, metadata } = transpile(source, options);
+  const { code, map, metadata } = transpile(source, options)
 
-  this.callback(null, code, map);
-};
+  this.callback(null, code, map)
+}
 ```
 
 babel-loader 通过 callback 传递了经过 babel.transform 转换后的代码及 source map。
@@ -6735,18 +6272,14 @@ style-loader 只有 pitch 函数。css-loader 是 normal module。整个执行�
 首先 css-loader 返回的是形如这样的代码：
 
 ```js
-import ___CSS_LOADER_API_IMPORT___ from "../node_modules/_css-loader@5.1.3@css-loader/dist/runtime/api.js";
+import ___CSS_LOADER_API_IMPORT___ from '../node_modules/_css-loader@5.1.3@css-loader/dist/runtime/api.js'
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(function (i) {
-  return i[1];
-});
+  return i[1]
+})
 // Module
-___CSS_LOADER_EXPORT___.push([
-  module.id,
-  ".xx{\r\n    height: 100px;\r\n}",
-  "",
-]);
+___CSS_LOADER_EXPORT___.push([module.id, '.xx{\r\n    height: 100px;\r\n}', ''])
 // Exports
-export default ___CSS_LOADER_EXPORT___;
+export default ___CSS_LOADER_EXPORT___
 ```
 
 style-loader 无法在编译时获取 CSS 相关的内容，因为 style-loader 无法处理 css-loader 生成结果的 runtime 依赖。style-loader 也无法在运行时获取 CSS 相关的内容，因为无论怎样拼接运行时代码，都无法获取到 CSS 的内容。
@@ -6774,10 +6307,10 @@ add-style.js
 
 ```js
 module.exports = function (content) {
-  var style = document.createElement("style");
-  style.innerHTML = content;
-  document.head.appendChild(style);
-};
+  var style = document.createElement('style')
+  style.innerHTML = content
+  document.head.appendChild(style)
+}
 ```
 
 在 pitch 阶段，style-loader 生成 require CSS 以及注入 runtime 的代码。该结果会返回给 webpack 进一步解析，css-loader 返回的结果会作为模块在运行时导入，在运行时能够获得 CSS 的内容，然后调用 add-style.js 把 CSS 内容插入到 DOM 中。
@@ -6788,8 +6321,6 @@ module.exports = function (content) {
 2. [Loader Interface](https://webpack.js.org/api/loaders/)
 3. [loader runner](https://github.com/webpack/loader-runner)
 4. [5-3 编写 Loader · 深入浅出 Webpack (wuhaolin.cn)](http://webpack.wuhaolin.cn/5原理/5-3编写Loader.html)
-
-
 
 ## 柒，框架和类库
 
@@ -6829,17 +6360,15 @@ Fiber 对现有代码的影响： 由于 Fiber 采用了全新的调度方式，
 
 ##### React 是如何工作的
 
-
-
 ```javascript
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 function App() {
-  return <div>Hello.</div>;
+  return <div>Hello.</div>
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 上面代码中我们引入的两个包，分别代表了 React 的 core API 层和渲染层，在这背后还有一层被称为协调器（Reconcilers）的层次。（协调器在[react-reconciler](https://github.com/facebook/react/tree/main/packages/react-reconciler)中实现）
@@ -6870,8 +6399,6 @@ React 16 及以后使用的是 Fiber Reconciler（纤维协调器），将递**�
 
 为了实现**渐进渲染**的目的，Fiber 架构中引入了新的数据结构：Fiber Node，Fiber Node Tree 根据 React Element Tree 生成，并用来驱动真实 DOM 的渲染。
 ​
-
-
 
 Fiber 节点的大致结构：
 
@@ -6912,8 +6439,6 @@ Fiber 的主要工作流程：
 - React 会遍历 Effect List 将所有变更一次性更新到 DOM 上。
 - 这一阶段的工作会导致用户可见的变化。因此该过程不可中断，必须一直执行直到更新完成
 
-
-
 ![](https://cdn.nlark.com/yuque/0/2022/png/377147/1646139297244-8a87f068-35c1-4e7f-bb7e-5c72d0bc464c.png#clientId=ue2e83fdd-a46d-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ue96b7aa7&margin=%5Bobject%20Object%5D&originHeight=1545&originWidth=924&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u504fce2e-dbda-4150-b348-4c7af6c5628&title=)
 
 #### 「参考资料」
@@ -6922,8 +6447,6 @@ Fiber 的主要工作流程：
 1. [React Conf 2017](https://www.youtube.com/watch?v=7HSd1sk07uU&list=PLb0IAmt7-GS3fZ46IGFirdqKTIxlws7e0)
 1. [Inside Fiber](https://blog.ag-grid.com/inside-fiber-an-in-depth-overview-of-the-new-reconciliation-algorithm-in-react/)
 1. [https://github.com/facebook/react/pull/19673](https://github.com/facebook/react/pull/19673)
-
-
 
 ### HOC vs Render Props vs Hooks🔥🔥🔥
 
@@ -6939,8 +6462,6 @@ Fiber 的主要工作流程：
 
 - `复用性`
 
-
-
 HOC / Render Props / Hooks 三种写法都可以**提高代码的复用性**，但实现方法不同：HOC 是对传入的组件进行增强后，返回新的组件给开发者；Render Props 是指将一个返回 React 组件的函数，作为 prop 传给另一个 React 组件的共享代码的技术；Hooks 是 React 提供的一组 API，使开发者可以在不编写 class 的情况下使用 state 和其他 React 特性
 ​
 
@@ -6953,7 +6474,7 @@ HOC 是 React 中复用代码的编程模式。具体来说，高阶组件是一
 
 ```javascript
 // react-redux connect 例子
-const ConnectedMyComponent = connect(mapState)(MyComponent);
+const ConnectedMyComponent = connect(mapState)(MyComponent)
 ```
 
 ```javascript
@@ -6961,14 +6482,14 @@ const ConnectedMyComponent = connect(mapState)(MyComponent);
 function logProps(WrappedComponent) {
   return class extends React.Component {
     componentDidUpdate(prevProps) {
-      console.log("Current props: ", this.props);
-      console.log("Previous props: ", prevProps);
+      console.log('Current props: ', this.props)
+      console.log('Previous props: ', prevProps)
     }
 
     render() {
-      return <WrappedComponent {...this.props} />;
+      return <WrappedComponent {...this.props} />
     }
-  };
+  }
 }
 ```
 
@@ -6987,7 +6508,7 @@ ReactDOM.render(
     />
   </Router>,
   node
-);
+)
 ```
 
 ##### React Hooks
@@ -6997,14 +6518,14 @@ React Hooks 是 React 16.8 引入的一组 API。开发者可以在不使用 cla
 
 ```javascript
 function Example() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   return (
     <div>
       <p>You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
-  );
+  )
 }
 ```
 
@@ -7043,8 +6564,6 @@ HOC、Render Props、Hooks 都有提高代码复用性的能力，但根据其�
 1. [Introducing Hooks](https://reactjs.org/docs/hooks-intro.html)
 1. [Comparison: HOCs vs Render Props vs Hooks](https://medium.com/simply/comparison-hocs-vs-render-props-vs-hooks-55f9ffcd5dc6)
 
-
-
 ### React Hooks 实现原理 🔥🔥🔥
 
 #### 「相关问题」
@@ -7058,8 +6577,6 @@ HOC、Render Props、Hooks 都有提高代码复用性的能力，但根据其�
 - `闭包`
 - `Fiber`
 - `链表`
-
-
 
 Hooks 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
 ​
@@ -7080,18 +6597,18 @@ Hooks 主要是利用闭包来保存状态，使用链表保存一系列 Hooks�
 模拟的 useState 实现中，通过闭包，将 state 保存在 `memoizedState[cursor]`。 memoizedState 是一个数组，可以按顺序保存 hook 多次调用产生的状态。
 
 ```js
-let memoizedState = [];
-let cursor = 0;
+let memoizedState = []
+let cursor = 0
 
 function useState(initialValue) {
   // 初次调用时，传入的初始值作为 state，后续使用闭包中保存的 state
-  let state = memoizedState[cursor] ?? initialValue;
+  let state = memoizedState[cursor] ?? initialValue
   // 对游标进行闭包缓存，使得 setState 调用时，操作正确的对应状态
-  const _cursor = cursor;
-  const setState = (newValue) => (memoizedState[_cursor] = newValue);
+  const _cursor = cursor
+  const setState = (newValue) => (memoizedState[_cursor] = newValue)
   // 游标自增，为接下来调用的 hook 使用时，引用 memoizedState 中的新位置
-  cursor += 1;
-  return [state, setState];
+  cursor += 1
+  return [state, setState]
 }
 ```
 
@@ -7102,23 +6619,23 @@ function mountState<S>(
   initialState: (() => S) | S
 ): [S, Dispatch<BasicStateAction<S>>] {
   // 创建 Hook，并将当前 Hook 添加到 Hooks 链表中
-  const hook = mountWorkInProgressHook();
+  const hook = mountWorkInProgressHook()
   // 如果初始值是函数，则调用函数取得初始值
-  if (typeof initialState === "function") {
-    initialState = initialState();
+  if (typeof initialState === 'function') {
+    initialState = initialState()
   }
-  hook.memoizedState = hook.baseState = initialState;
+  hook.memoizedState = hook.baseState = initialState
   // 创建一个链表来存放更新对象
   const queue = (hook.queue = {
     pending: null,
     dispatch: null,
     lastRenderedReducer: basicStateReducer,
     lastRenderedState: initialState,
-  });
+  })
   // dispatch 用于修改状态，并将此次更新添加到更新对象链表中
   const dispatch: Dispatch<BasicStateAction<S>> = (queue.dispatch =
-    (dispatchAction.bind(null, currentlyRenderingFiber, queue): any));
-  return [hook.memoizedState, dispatch];
+    (dispatchAction.bind(null, currentlyRenderingFiber, queue): any))
+  return [hook.memoizedState, dispatch]
 }
 ```
 
@@ -7127,19 +6644,19 @@ function mountState<S>(
 模拟的 useEffect 实现，同样利用了 memoizedState 闭包来存储依赖数组。依赖数组进行浅比较，默认的比较算法是 `Object.is`。
 
 ```js
-let memoizedState = [];
-let cursor = 0;
+let memoizedState = []
+let cursor = 0
 
 function useEffect(cb, depArray) {
-  const oldDeps = memoizedState[cursor];
-  let hasChange = true;
+  const oldDeps = memoizedState[cursor]
+  let hasChange = true
   if (oldDeps) {
     // 对比传入的依赖数组与闭包中保存的旧依赖数组，采用浅比较算法
-    hasChange = depArray.some((dep, i) => !Object.is(dep, oldDeps[i]));
+    hasChange = depArray.some((dep, i) => !Object.is(dep, oldDeps[i]))
   }
-  if (hasChange) cb();
-  memoizedState[cursor] = depArray;
-  cursor++;
+  if (hasChange) cb()
+  memoizedState[cursor] = depArray
+  cursor++
 }
 ```
 
@@ -7155,21 +6672,21 @@ function mountEffect(
     HookPassive, // hookFlags
     create,
     deps
-  );
+  )
 }
 function mountEffectImpl(fiberFlags, hookFlags, create, deps): void {
   // 创建hook
-  const hook = mountWorkInProgressHook();
-  const nextDeps = deps === undefined ? null : deps;
+  const hook = mountWorkInProgressHook()
+  const nextDeps = deps === undefined ? null : deps
   // 设置 workInProgress 的副作用标记
-  currentlyRenderingFiber.flags |= fiberFlags; // fiberFlags 被标记到 workInProgress
+  currentlyRenderingFiber.flags |= fiberFlags // fiberFlags 被标记到 workInProgress
   // 创建 Effect, 挂载到 hook.memoizedState 上
   hook.memoizedState = pushEffect(
     HookHasEffect | hookFlags, // hookFlags 用于创建 effect
     create,
     undefined,
     nextDeps
-  );
+  )
 }
 ```
 
@@ -7184,7 +6701,7 @@ export type Hook = {
   baseQueue: Update<any, any> | null,
   queue: UpdateQueue<any, any> | null, // 环形链表，存储的是该 hook 多次调用产生的更新对象
   next: Hook | null, // next 指针，之下链表中的下一个 Hook
-};
+}
 ```
 
 ```js
@@ -7193,27 +6710,21 @@ export type Fiber = {
   memoizedState: any, // 存储 Fiber 节点相关的状态值
 
   flags: Flags, // 标识当前 Fiber 节点是否有副作用
-};
+}
 ```
 
 与上节中的模拟实现不同，真实的 Hooks 是一个单链表的结构，React 按 Hooks 的执行顺序依次将 Hook 节点添加到链表中。下面以 useState 和 useEffect 两个最常用的 hook 为例，来分析 Hooks 如何与 Fiber 共同工作。
 
-
-
 在每个**状态 Hook**（如 useState）节点中，会通过 queue 属性上的循环链表记住所有的更新操作，并在 update 阶段依次执行循环链表中的所有更新操作，最终拿到最新的 state 返回。
 
-
-
 在每个**副作用 Hook**（如 useEffect）节点中，创建 effect 挂载到 Hook 的 memoizedState 中，并添加到环形链表的末尾，该链表会保存到 Fiber 节点的 updateQueue 中，在 commit 阶段执行。
-
-
 
 #### 「参考资料」
 
 1. [Why Do React Hooks Rely on Call Order?](https://overreacted.io/why-do-hooks-rely-on-call-order/)
 2. [React hooks: not magic, just arrays](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)
 
-### React 事件机制原理🔥🔥🔥
+### React 事件机制原理 🔥🔥🔥
 
 #### 「相关问题」
 
@@ -7227,25 +6738,15 @@ React 的事件处理机制可以分为**两个阶段**：初始化渲染时在 
 
 通过这种机制，冒泡的原生事件类型最多**在 root 节点上注册一次，节省内存开销**。且 React 为不同类型的事件定义了不同的处理**优先级**，从而让用户代码及时响应高优先级的用户交互，提升用户体验。
 
-
-
 React 的事件机制中依赖**合成事件**这个核心概念。合成事件在符合 W3C 规范定义的前提下，抹平浏览器之间的差异化表现。并且**简化事件逻辑，对关联事件进行合成**。如每当表单类型组件的值发生改变时，都会触发 onChange 事件，而 onChange 事件由 change、click、input、keydown、keyup 等原生事件组成。
-
-
 
 #### 「知识点深入」
 
-
-
 JavaScript 通过事件可以和 DOM 进行交互
-
-
 
 ##### 原生事件
 
 主流浏览器基于 DOM2、DOM3 规范，实现标准化 DOM 事件。基于 Event 实现了浏览器中常见的用户事件如 UIEvent、InputEvent、MouseEvent 等。
-
-
 
 在事件发生时，相关信息会存储在 **Event 的实例对象**中，对象包含 currentTarget、detail、target、preventDefault()、stopPropagation() 等属性和方法。DOM 节点可以通过 addEventListener 和 removeEventListener 来添加或移除事件监听函数。
 
@@ -7265,17 +6766,11 @@ number timeStamp
 string type
 ```
 
-
-
 ##### React 合成事件
 
 React 的事件机制中，在遵循规范的前提下，引入新的事件类型：**合成事件（SyntheticEvent）**。基于合成事件实现了浏览器中常见的用户事件，并对事件进行规范化处理，使它们在不同浏览器中具有一致的属性。
 
-
-
 在事件发生时，相关信息会存储在 SyntheticEvent 的实例对象中，对象包含原生事件对象类似的属性。
-
-
 
 ```js
 // SyntheticEvent 属性
@@ -7303,23 +6798,21 @@ string type
  * Mapping from registration name to event name
  */
 export const registrationNameDependencies = {
-  onClick: ["click"],
-  onMouseEnter: ["mouseout", "mouseover"],
+  onClick: ['click'],
+  onMouseEnter: ['mouseout', 'mouseover'],
   onChange: [
-    "change",
-    "click",
-    "focusin",
-    "focusout",
-    "input",
-    "keydown",
-    "keyup",
-    "selectionchange",
+    'change',
+    'click',
+    'focusin',
+    'focusout',
+    'input',
+    'keydown',
+    'keyup',
+    'selectionchange',
   ],
   // ...
-};
+}
 ```
-
-
 
 ##### React 事件机制
 
@@ -7332,14 +6825,12 @@ export const registrationNameDependencies = {
 1. allNativeEvents 用于收集所有合成事件相关联的原生事件名。这个收集动作在事件插件初始化阶段完成；
 
 ```js
-SimpleEventPlugin.registerEvents();
-EnterLeaveEventPlugin.registerEvents();
-ChangeEventPlugin.registerEvents();
-SelectEventPlugin.registerEvents();
-BeforeInputEventPlugin.registerEvents();
+SimpleEventPlugin.registerEvents()
+EnterLeaveEventPlugin.registerEvents()
+ChangeEventPlugin.registerEvents()
+SelectEventPlugin.registerEvents()
+BeforeInputEventPlugin.registerEvents()
 ```
-
-
 
 2. 对每个原生事件调用 addTrappedEventListener 函数。该函数最终使用 addEventListener 方法，对原生事件进行捕获或冒泡阶段的事件监听注册。
 
@@ -7354,21 +6845,19 @@ function addTrappedEventListener(
     targetContainer,
     domEventName,
     eventSystemFlags
-  );
+  )
 
   // ...
 
   if (isCapturePhaseListener) {
-    addEventCaptureListener(targetContainer, domEventName, listener);
+    addEventCaptureListener(targetContainer, domEventName, listener)
   } else {
-    addEventBubbleListener(targetContainer, domEventName, listener);
+    addEventBubbleListener(targetContainer, domEventName, listener)
   }
 }
 ```
 
 基于以上流程可知，调用 ReactDOM.createRoot 方法时，就已经在 root 节点上初始化所有原生事件的监听回调函数。而不是在组件上写合成事件的监听时，才开始**注册事件回调**。
-
-
 
 ##### React 事件的触发
 
@@ -7388,17 +6877,11 @@ function addTrappedEventListener(
 
 5. 调用 processDispatchQueue 方法，基于捕获或冒泡阶段的标识，按倒序或顺序执行 dispatchQueue 中的方法；
 
-   
-
 #### 「参考资料」
 
 1. [SyntheticEvent](https://reactjs.org/docs/events.html)
 2. [Handling Events](https://reactjs.org/docs/handling-events.html)
 3. [UI Events](https://www.w3.org/TR/DOM-Level-3-Events)
-
-
-
-
 
 ### 常见框架的 Diff 算法 🔥🔥🔥
 
@@ -7410,21 +6893,14 @@ function addTrappedEventListener(
 
 #### 「回答关键点」
 
-- `虚拟 DOM` 
-- `时间复杂度O(n)` 
-
-
+- `虚拟 DOM`
+- `时间复杂度O(n)`
 
 现代网站大多具有复杂布局，大量的节点和交互操作等特征，直接操作 DOM 方法不当带来的**性能**问题不可忽视。
 
-
-
 虚拟 DOM 的本质是 JavaScript 对象，是 DOM 的抽象简化版本，可以代表 DOM 的一部分特征。通过预先操作虚拟 DOM，在某个时机找出和真实 DOM 之间的差异部分并重新渲染，来**提升**操作真实 DOM 的性能和效率。
 
-
 为达到这个目的，还需要关注两个问题：什么时候重新渲染，怎么高效选择重新渲染的范围。找出需要重新渲染的范围，就是 Diff 的过程。React 和 Vue 的 Diff 算法思路基本一致，只对同层节点进行比较，利用唯一标识符对节点进行区分。
-
-
 
 #### 「知识点深入」
 
@@ -7432,14 +6908,10 @@ function addTrappedEventListener(
 
 两棵树的比对和更新，涉及到树编辑距离（Tree Editing Distance）算法：将一棵树转化为另一棵树的最小操作成本。操作类型包括：删除、插入、修改。时间复杂度为 O(n^3)。
 
-
-
 为了降低时间复杂度，React 和 Vue 的思路是基于以下两个假设条件，缩减递归迭代规模，将 Diff 算法的时间复杂度降低为 O(n)：
 
 1. 相同类型的组件产生相同的 DOM 结构，反之亦然。所以不同类型组件的结构不需要进一步递归 Diff。
 2. 同一层级的一组节点，可以通过唯一标识符进行区分。
-
-
 
 ##### React Reconciliation
 
@@ -7454,7 +6926,7 @@ Diff 的大致过程是，当对比两棵虚拟 DOM 树时，React 先对比根�
    ```html
    <!-- old -->
    <button class="bg-blue-100">xx</button>
-   
+
    <!-- new -->
    <div class="bg-blue-100">xx</div>
    ```
@@ -7466,7 +6938,7 @@ Diff 的大致过程是，当对比两棵虚拟 DOM 树时，React 先对比根�
    ```html
    <!-- old -->
    <button class="bg-blue-100 text-center">xx</button>
-   
+
    <!-- new -->
    <button class="bg-red-100 text-center">xx</button>
    ```
@@ -7511,8 +6983,6 @@ Diff 的大致过程是，当对比两棵虚拟 DOM 树时，React 先对比根�
 - [Reconciliation](https://reactjs.org/docs/reconciliation.html)
 - [patch](https://github.com/vuejs/vue/blob/2.6/src/core/vdom/patch.js)
 
-
-
 ## 捌，设计模式
 
 ## 玖，综合场景相关
@@ -7537,8 +7007,6 @@ Diff 的大致过程是，当对比两棵虚拟 DOM 树时，React 先对比根�
 #### 「知识点深入」
 
 ##### 图片优化
-
-
 
 **选择合适的图片格式**
 ​
@@ -7635,8 +7103,6 @@ CDN 将源站资源缓存到各加速节点后，用户请求源站资源时无�
 <img src="image.png" loading="lazy" alt="…" width="200" height="200" />
 ```
 
-
-
 2. Intersection Observer
 
 Intersection Observer API 可用于异步观察目标元素与祖先元素或与顶级文档视口的交叉点变化
@@ -7673,8 +7139,6 @@ images.forEach((image) => {
 
 3. scroll
 
-
-
 如果 Intersection Observer 存在兼容性问题，除了可以添加对应 polyfill 之外，也可以考虑降级为监听 scroll、resize、orientationchange 事件的方案。实现思路和 Intersection Observer 一致。具体细节上，需要自行计算图片节点与目标视口的纵向或横向距离，且需使用节流函数来避免性能问题。
 ​
 
@@ -7688,8 +7152,6 @@ images.forEach((image) => {
 
 1. link
 
-
-
 <link rel="preload"> 允许开发者在 HTML 的 head 标签中声明资源请求，指定页面需要预加载的资源，并且在浏览器的主要渲染机制启动之前加载，避免阻塞页面渲染且保证资源尽早可用。
 ```javascript
 <link rel="preload" as="image" href="important.png" />
@@ -7697,15 +7159,13 @@ images.forEach((image) => {
 
 2. 动态创建
 
-
-
 一般常见方案是动态创建 Image 标签或者是 Ajax 请求。使用 Ajax 时需要注意可能存在跨域问题。
 
 ```javascript
 // 动态创建 Image
 function preloadImage(url) {
-  var img = new Image();
-  img.src = url;
+  var img = new Image()
+  img.src = url
 }
 ```
 
@@ -7716,22 +7176,19 @@ function preloadImage(url) {
 1. [Usage statistics of WebP for websites](https://w3techs.com/technologies/details/im-webp)
 1. [Browser-level image lazy-loading for the web](https://web.dev/browser-level-image-lazy-loading/)
 
-
-
-### 如何减少白屏的时间🔥🔥🔥
+### 如何减少白屏的时间 🔥🔥🔥
 
 #### 「相关问题」
 
 #### 「回答关键点」
 
-- `资源优化` 
-- `预加载` 
-- `服务端渲染` 
-- `性能监控指标` 
-- `HTTP/2` 
+- `资源优化`
+- `预加载`
+- `服务端渲染`
+- `性能监控指标`
+- `HTTP/2`
 
 前端性能优化是前端开发中一个重要环节，它包括很多内容，其中页面的白屏时间是用户最初接触到的部分，**白屏时间过长会显著影响用户的留存率和转换率**
-
 
 以一个 APP 内嵌 Webview 打开页面作为例子，来分析页面打开过程以及可优化的方向：
 
@@ -7756,8 +7213,6 @@ function preloadImage(url) {
    - 接口合并
 
 #### 「知识点深入」
-
-
 
 ##### 前端性能监控指标
 
@@ -7790,15 +7245,11 @@ Lighthouse Performance：
 - T1：首屏有内容显示的时间。
 - T2：首屏全部显示出来的时间。
 
-
-
 ##### DNS 解析优化
 
 DNS 解析优化是性能优化重要的一环，DNS 的作用是根据域名获取对应的 IP 地址，获取之后后续的 HTTP 流程才能进行下去。
 
 DNS 解析是一个开销较大的过程，一次 DNS 解析通常需要耗费几十到上百毫秒，而在移动端网络或其他**弱网环境**下 DNS 解析延迟会更加严重，对 DNS 解析优化则可以减少这一步骤的耗时。
-
-
 
 **DNS 预解析**
 
@@ -7808,13 +7259,9 @@ DNS 解析是一个开销较大的过程，一次 DNS 解析通常需要耗费�
 <link rel="dns-prefetch" href="https://xxx.org/" />
 ```
 
-
-
 **域名收敛**
 
 域名收敛的目的是**减少页面中域名的数量**，从而减少所需的 DNS 解析次数，最终减少页面的 DNS 解析过程的耗时，加快页面加载速度。
-
-
 
 ##### TCP 连接优化
 
@@ -7824,13 +7271,9 @@ DNS 解析是一个开销较大的过程，一次 DNS 解析通常需要耗费�
 <link href="https://xxx.org" rel="preconnect" />
 ```
 
-
-
 ##### 请求优化
 
 通过使用 HTTP/2 协议，可以依赖 HTTP/2 的多路复用、首部压缩、二进制分帧和服务端推送等特性，从而加快整体请求的响应速度，加快页面的渲染展示。
-
-
 
 ##### 页面解析优化
 
@@ -7843,8 +7286,6 @@ DNS 解析是一个开销较大的过程，一次 DNS 解析通常需要耗费�
 ##### **预渲染**
 
 除了服务端渲染之外，还可以在前端打包时使用 prerender-spa-plugin 之类的插件进行简单的预渲染，减少页面白屏的时间。
-
-
 
 ##### 资源加载优化和页面渲染优化
 
@@ -7880,8 +7321,6 @@ DNS 解析是一个开销较大的过程，一次 DNS 解析通常需要耗费�
 <link rel="prefetch" href="https://xxx.org/index.js" as="script" />
 ```
 
-
-
 **preload**
 
 前端可以使用 preload 来指定提前获取之后需要使用到的资源，浏览器将会**立即加载对应资源**，在解析到对应资源时即可立即执行，例如:
@@ -7894,8 +7333,6 @@ DNS 解析是一个开销较大的过程，一次 DNS 解析通常需要耗费�
 
 quicklink 是 Google 开源的预加载库，quicklink 会判断链接进入视口之后，在闲时预加载。quicklink 实际上加速的是次级页面。
 
-
-
 ##### 接口请求优化
 
 浏览器在加载完 HTML 和资源之后，一般需要请求接口获取数据之后才会完整渲染页面，对接口请求进行优化也可加快页面的展示。
@@ -7904,13 +7341,9 @@ quicklink 是 Google 开源的预加载库，quicklink 会判断链接进入视�
 
 过多的接口请求会影响页面初始化时的渲染过程，可以通过增加一层中间层合并部分请求，达到加速页面展示的目的
 
-
-
 #### 「参考资料」
 
 1. [Navigation Timeing API](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API)
-
-
 
 ### 如何判断一个元素是否在可视区域中？🔥🔥
 
@@ -7924,8 +7357,6 @@ quicklink 是 Google 开源的预加载库，quicklink 会判断链接进入视�
 - 列表的无限滚动
 - 计算广告元素的曝光情况
 - 可点击链接的预加载
-
-
 
 #### 「知识点深入」
 
@@ -7950,26 +7381,29 @@ el.offsetTop - document.documentElement.scrollTop <= viewPortHeight
 实现
 
 ```js
-function isInViewPortOfOne (el) {
-    // viewPortHeight 兼容所有浏览器写法
-    const viewPortHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight 
-    const offsetTop = el.offsetTop
-    const scrollTop = document.documentElement.scrollTop
-    
-    const top = offsetTop - scrollTop
-    
-    return top <= viewPortHeight
+function isInViewPortOfOne(el) {
+  // viewPortHeight 兼容所有浏览器写法
+  const viewPortHeight =
+    window.innerHeight ||
+    document.documentElement.clientHeight ||
+    document.body.clientHeight
+  const offsetTop = el.offsetTop
+  const scrollTop = document.documentElement.scrollTop
+
+  const top = offsetTop - scrollTop
+
+  return top <= viewPortHeight
 }
 ```
 
-#####  getBoundingClientRect
+##### getBoundingClientRect
 
 api
 
 ```js
-const target = document.querySelector('.target');
-const clientRect = target.getBoundingClientRect();
-console.log(clientRect);
+const target = document.querySelector('.target')
+const clientRect = target.getBoundingClientRect()
+console.log(clientRect)
 
 // {
 //   bottom: 556.21875,
@@ -7992,22 +7426,12 @@ console.log(clientRect);
 
 ```js
 function isInViewPort(element) {
-  const viewWidth = window.innerWidth || document.documentElement.clientWidth;
-  const viewHeight = window.innerHeight || document.documentElement.clientHeight;
-    
-  const {
-    top,
-    right,
-    bottom,
-    left,
-  } = element.getBoundingClientRect();
+  const viewWidth = window.innerWidth || document.documentElement.clientWidth
+  const viewHeight = window.innerHeight || document.documentElement.clientHeight
 
-  return (
-    top >= 0 &&
-    left >= 0 &&
-    right <= viewWidth &&
-    bottom <= viewHeight
-  );
+  const { top, right, bottom, left } = element.getBoundingClientRect()
+
+  return top >= 0 && left >= 0 && right <= viewWidth && bottom <= viewHeight
 }
 ```
 
@@ -8019,32 +7443,30 @@ function isInViewPort(element) {
 const options = {
   // 表示重叠面积占被观察者的比例，从 0 - 1 取值，
   // 1 表示完全被包含
-  threshold: 1.0, 
-  root:document.querySelector('#scrollArea') // 必须是目标元素的父级元素
-};
-
-const callback = (entries, observer) => { 
-    entries.forEach(entry => {
-        entry.time;               // 触发的时间
-        entry.rootBounds;         // 根元素的位置矩形，这种情况下为视窗位置
-        entry.boundingClientRect; // 被观察者的位置举行
-        entry.intersectionRect;   // 重叠区域的位置矩形
-        entry.intersectionRatio;  // 重叠区域占被观察者面积的比例（被观察者不是矩形时也按照矩形计算）
-        entry.target;             // 被观察者
-    });
+  threshold: 1.0,
+  root: document.querySelector('#scrollArea'), // 必须是目标元素的父级元素
 }
 
-const observer = new IntersectionObserver(callback, options);
+const callback = (entries, observer) => {
+  entries.forEach((entry) => {
+    entry.time // 触发的时间
+    entry.rootBounds // 根元素的位置矩形，这种情况下为视窗位置
+    entry.boundingClientRect // 被观察者的位置举行
+    entry.intersectionRect // 重叠区域的位置矩形
+    entry.intersectionRatio // 重叠区域占被观察者面积的比例（被观察者不是矩形时也按照矩形计算）
+    entry.target // 被观察者
+  })
+}
+
+const observer = new IntersectionObserver(callback, options)
 ```
 
 使用
 
 ```js
-const target = document.querySelector('.target');
-observer.observe(target);
+const target = document.querySelector('.target')
+observer.observe(target)
 ```
-
-
 
 #### 「参考资料」
 
@@ -8053,53 +7475,51 @@ observer.observe(target);
 
 ### 大文件上传如何做断点续传？🔥
 
-[面试官：大文件上传如何做断点续传？ | web前端面试 - 面试官系列 (vue3js.cn)](https://vue3js.cn/interview/JavaScript/continue_to_upload.html#一、是什么)
+[面试官：大文件上传如何做断点续传？ | web 前端面试 - 面试官系列 (vue3js.cn)](https://vue3js.cn/interview/JavaScript/continue_to_upload.html#一、是什么)
 
 ## 拾，数据结构和算法
 
-
-
-### 尾递归🔥🔥
+### 尾递归 🔥🔥
 
 #### 数组求和
 
 ```js
-function sum(arr,total){
-    if(arr.length === 0){
-        return total
-    }
-    return sum(arr,total + arr.pop())
+function sum(arr, total) {
+  if (arr.length === 0) {
+    return total
+  }
+  return sum(arr, total + arr.pop())
 }
 ```
 
 #### 优化斐波那契数列
 
 ```js
-function f(n,start=1,total=1){
-    if(n <=2){
-        return total
-    }
-    
-    return f(n-1,total,total+start)
+function f(n, start = 1, total = 1) {
+  if (n <= 2) {
+    return total
+  }
+
+  return f(n - 1, total, total + start)
 }
 ```
 
 #### 数组扁平化
 
 ```js
-let a = [1,2,3, [1,2,3, [1,2,3]]]
+let a = [1, 2, 3, [1, 2, 3, [1, 2, 3]]]
 // 变成
-let a = [1,2,3,1,2,3,1,2,3]
+let a = [1, 2, 3, 1, 2, 3, 1, 2, 3]
 // 具体实现
 function flat(arr = [], result = []) {
-    arr.forEach(v => {
-        if(Array.isArray(v)) {
-            result = result.concat(flat(v, []))
-        }else {
-            result.push(v)
-        }
-    })
-    return result
+  arr.forEach((v) => {
+    if (Array.isArray(v)) {
+      result = result.concat(flat(v, []))
+    } else {
+      result.push(v)
+    }
+  })
+  return result
 }
 ```
 
@@ -8108,29 +7528,34 @@ function flat(arr = [], result = []) {
 ```js
 // 代码实现
 function keysLower(obj) {
-    let reg = new RegExp("([A-Z]+)", "g");
-    for (let key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            let temp = obj[key];
-            if (reg.test(key.toString())) {
-                // 将修改后的属性名重新赋值给temp，并在对象obj内添加一个转换后的属性
-                temp = obj[key.replace(reg, function (result) {
-                    return result.toLowerCase()
-                })] = obj[key];
-                // 将之前大写的键属性删除
-                delete obj[key];
-            }
-            // 如果属性是对象或者数组，重新执行函数
-            if (typeof temp === 'object' || Object.prototype.toString.call(temp) === '[object Array]') {
-                keysLower(temp);
-            }
-        }
+  let reg = new RegExp('([A-Z]+)', 'g')
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      let temp = obj[key]
+      if (reg.test(key.toString())) {
+        // 将修改后的属性名重新赋值给temp，并在对象obj内添加一个转换后的属性
+        temp = obj[
+          key.replace(reg, function (result) {
+            return result.toLowerCase()
+          })
+        ] = obj[key]
+        // 将之前大写的键属性删除
+        delete obj[key]
+      }
+      // 如果属性是对象或者数组，重新执行函数
+      if (
+        typeof temp === 'object' ||
+        Object.prototype.toString.call(temp) === '[object Array]'
+      ) {
+        keysLower(temp)
+      }
     }
-    return obj;
-};
+  }
+  return obj
+}
 ```
 
-### 函数缓存🔥🔥
+### 函数缓存 🔥🔥
 
 将函数运算过的结果进行缓存（用空间（缓存存储）换时间（计算过程））
 
@@ -8139,17 +7564,15 @@ function keysLower(obj) {
 ```js
 // 函数 + 函数体内可访问的变量总和
 
-(function() {
-    var a = 1;
-    function add() {
-        const b = 2
-        let sum = b + a
-        console.log(sum); // 3
-    }
-    add()
+;(function () {
+  var a = 1
+  function add() {
+    const b = 2
+    let sum = b + a
+    console.log(sum) // 3
+  }
+  add()
 })()
-
-
 ```
 
 #### 柯里化
@@ -8158,17 +7581,17 @@ function keysLower(obj) {
 // 把接受多个参数的函数转换成接受一个单一参数的函数
 
 // 非函数柯里化
-var add = function (x,y) {
-    return x+y;
+var add = function (x, y) {
+  return x + y
 }
-add(3,4) //7
+add(3, 4) //7
 
 // 函数柯里化
 var add2 = function (x) {
-    //**返回函数**
-    return function (y) {
-        return x+y;
-    }
+  //**返回函数**
+  return function (y) {
+    return x + y
+  }
 }
 add2(3)(4) //7
 ```
@@ -8178,16 +7601,16 @@ add2(3)(4) //7
 ```js
 // 通过接收其他函数作为参数或返回其他函数的函数
 
-function foo(){
-  var a = 2;
+function foo() {
+  var a = 2
 
   function bar() {
-    console.log(a);
+    console.log(a)
   }
-  return bar;
+  return bar
 }
-var baz = foo();
-baz();//2
+var baz = foo()
+baz() //2
 ```
 
 #### 实现函数缓存
@@ -8215,7 +7638,7 @@ const memoize = function (func, content) {
 - 对于纯函数，即每次使用特定输入调用时返回相同输出的函数
 ```
 
-### 上拉加载🔥
+### 上拉加载 🔥
 
 触底公式
 
@@ -8226,14 +7649,13 @@ scrollTop + clientHeight >= scrollHeight
 简单实现
 
 ```js
-let clientHeight  = document.documentElement.clientHeight; //浏览器高度
-let scrollHeight = document.body.scrollHeight;
-let scrollTop = document.documentElement.scrollTop;
- 
-let distance = 50;  //距离视窗还用50的时候，开始触发；
+let clientHeight = document.documentElement.clientHeight //浏览器高度
+let scrollHeight = document.body.scrollHeight
+let scrollTop = document.documentElement.scrollTop
 
-if ((scrollTop + clientHeight) >= (scrollHeight - distance)) {
-    console.log("开始加载数据");
+let distance = 50 //距离视窗还用50的时候，开始触发；
+
+if (scrollTop + clientHeight >= scrollHeight - distance) {
+  console.log('开始加载数据')
 }
 ```
-
