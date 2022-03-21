@@ -1,4 +1,4 @@
-## Instruction
+Instruction
 
 有效回答
 
@@ -342,11 +342,9 @@ after
 ##### 盒模型（box model）
 
 盒模型描述了一个由元素生成的矩形盒子，视觉格式化模型决定这些盒子的大小、位置以及属性（例如颜色、背景、边框尺寸等等）
-​
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/377147/1646049503430-bbd02144-aee1-4eec-92a9-530cf0f0dc25.png#clientId=u6ddb5e62-9bae-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=ud8bf4882&margin=%5Bobject%20Object%5D&name=image.png&originHeight=340&originWidth=455&originalType=url&ratio=1&rotation=0&showTitle=false&size=18922&status=done&style=none&taskId=u78ca05e6-686d-451c-840e-3c9d9dfedd3&title=)
+![Box model](F:\github_rep\over-interview\docs\README.assets\boxdim.png)
 术语解析
-​
 
 由于视觉格式化模型描述中，有许多相近的术语，在此先行列出解释：
 ​
@@ -881,7 +879,9 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 
 #### 「知识点深入」
 
-##### 像素
+##### 概念
+
+**像素**
 
 **分辨率（Resolution）**
 
@@ -906,8 +906,6 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 在移动端中，常见图片或者 1px 的边框在一些机型下显示模糊/变粗的问题。基于对像素相关的概念理解，可知 CSS 中的 1px 是指一个单位的逻辑像素。一个单位的逻辑像素映射到不同像素密度比的设备下，实际对应的物理像素不同。
 
 因此，同样尺寸的图片在高密度比的设备下，由于一个位图像素需要应用到多个物理像素上，所以会比低密度比设备中的视觉效果模糊。
-
-##### 视口（**viewport**）
 
 **视口（viewport）**
 
@@ -940,7 +938,7 @@ Tailwind CSS 是一个功能类优先的 CSS 框架，通过组合不同的类�
 1. **需要一维还是二维布局**：Flexbox 基于一条主轴方向进行布局。CSS Grid 可划分为行和列进行布局。如果只需要按照行或列进行布局则使用 Flexbox；如果需要同时按照行和列控制布局则使用 CSS Grid。
 2. **专注布局结构还是内容流**：Flexbox 专注于内容流。Flex Item 的宽度或高度由项目中的内容决定。Flex Item 根据其内部内容和可用空间进行增长和缩小。CSS Grid 专注于精确的内容布局结构规则。每个 Grid Item 都是一个网格单元，沿水平轴和垂直轴排列。如果允许内容灵活的分配空间则使用 Flexbox；如果需要准确控制布局中项目的位置则使用 CSS Grid。
 
-![image](C:\Users\Administrator\Desktop\金三银四.assets\129393911-324a2f65-30c3-423d-9825-cc3b4d5e3d9e.png)
+![image-20220321212406249](F:\github_rep\over-interview\docs\README.assets\image-20220321212406249.png)
 
 ##### 使用媒体查询
 
@@ -1076,7 +1074,9 @@ body {
 - 重复声明
 - 修改声明的变量
 - 使用
-- **变量提升**
+
+
+**变量提升**
 
 ```js
 // var
@@ -2963,9 +2963,7 @@ function mynew(Func, ...args) {
 ​
 
 **防抖**: n 秒后只运行一次，若在 n 秒内被重复触发，则重新计时
-​
-
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/377147/1646299824477-cf2d756e-8b83-4ef7-8a96-6688a099154a.png#clientId=u7115af13-2b9e-4&crop=0&crop=0&crop=1&crop=1&from=paste&id=uebbc8cab&margin=%5Bobject%20Object%5D&name=image.png&originHeight=491&originWidth=750&originalType=url&ratio=1&rotation=0&showTitle=false&size=43551&status=done&style=none&taskId=u1f26fed8-73cd-47f7-aa72-b07fea0861f&title=)
+![img](https://static.vue-js.com/a2c81b50-8787-11eb-ab90-d9ae814b240d.png)
 
 ##### 实现
 
