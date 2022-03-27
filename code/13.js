@@ -1,4 +1,4 @@
-Array.prototype.myapply = function (thisArg, ...argArr) {
+Array.prototype.myapply = function (thisArg, argsArr) {
 
   if (typeof this !== 'function') {
     throw Error('no function')
@@ -14,7 +14,11 @@ Array.prototype.myapply = function (thisArg, ...argArr) {
 
   thisArg[func] = this;
 
-  return thisArg[func](...argArr)
+  const result = thisArg[func](...argsArr)
+
+  delete thisArg[func];
+
+  return result
 
 }
 
