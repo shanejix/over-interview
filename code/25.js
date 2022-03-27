@@ -172,14 +172,20 @@ class Promise {
         for (let i = 0; i < promises.length; i++) {
           promises[i]
             .then(res => {
-              result[i] = res
+              result[i] = {
+                status: 'fulfilled',
+                value: res,
+              }
               count++
               if (count === promises.length) {
                 resovle(result)
               }
             })
             .catch(err => {
-              result[i] = err
+              result[i] = {
+                status: 'rejected',
+                value: err,
+              }
               count++
               if (count === promises.length) {
                 resovle(result)
