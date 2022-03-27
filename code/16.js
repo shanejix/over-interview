@@ -20,3 +20,7 @@ const bar = debounce(foo, 3000);
 for (let i = 0; i < 30000; i++) {
   bar()
 }
+
+// for (let i = 0; i < 30000000; i++) {
+//   bar()
+// }
