@@ -136,17 +136,19 @@ class Promise {
     return new Promise((resolve, reject) => reject(reason))
   }
 
-  all(promiseArr) {
+  all(promises) {
     return new Promise((resolve, reject) => {
       const result = [];
-      let index = 0;
+      let count = 0;
 
-      for (let i = 0; i < promiseArr.length; i++) {
-        promiseArr[i]
+      for (let i = 0; i < promises.length; i++) {
+        const promise = Promise.resolve(promises[i])
+
+        promise
           .then(res => {
             result[i] = res
-            index++
-            if (index === promiseArr.length) {
+            count++
+            if (count === promises.length) {
               resolve(result)
             }
           })
@@ -157,11 +159,37 @@ class Promise {
     })
   }
 
-  trace(promiseArr) {
+  trace(promises) {
 
   }
 
-  allSetted(promiseArr) {
+  allSetted(promises) {
+    return new Promise((resovle, reject) => {
+      try {
+        const result = [];
+        let count = 0;
 
+        for (let i = 0; i < promises.length; i++) {
+          promises[i]
+            .then(res => {
+              result[i] = res
+              count++
+              if (count === promises.length) {
+                resovle(result)
+              }
+            })
+            .catch(err => {
+              result[i] = err
+              count++
+              if (count === promises.length) {
+                resovle(result)
+              }
+            })
+        }
+      } catch (error) {
+        reject(error)
+      }
+
+    })
   }
 }
