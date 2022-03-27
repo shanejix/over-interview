@@ -161,6 +161,20 @@ class Promise {
 
   trace(promises) {
 
+    return new Promise((resolve, reject) => {
+      promises.forEach(p => {
+        const promise = Promise.resolve(p);
+
+        promise
+          .then(res => {
+            resolve(res)
+          })
+          .catch(err => {
+            reject(err)
+          })
+      })
+    })
+
   }
 
   allSetted(promises) {
