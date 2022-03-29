@@ -1,43 +1,33 @@
-function fatten(arr) {
+function deepClone(obj, hash = new WeakMap()) {
+  if (typeof obj === null) {
+    return obj
+  }
 
+  if (typeof obj !== 'object') {
+    return obj
+  }
 
-  return arr.reduce(
-    (acc, curr) => {
-      // console.log(curr, acc);
+  if (obj instanceof RegExp) {
+    return new RegExp(obj)
+  }
 
-      if (Array.isArray(curr)) {
-        return [...acc, ...fatten(curr)]
-      } else {
-        return [...acc, curr]
-      }
+  if (obj instanceof Date) {
+    return new Date(obj)
+  }
 
-      // return acc.concat(Array.isArray(curr) ? fatten(curr) : curr)
-    },
-    []
-  )
-}
+  if (hash.get(obj)) {
+    return hash.get(obj)
+  }
 
-const arr = [1, 3, 4, [3, 3, [4, 6]]];
+  let cloneObj = new obj.constuctor();
 
-const res = fatten(arr);
+  hash.set(obj, cloneObj)
 
-console.log(res);
-
-
-function fatten2(arr) {
-  let res = [];
-
-  for (let item of arr) {
-    if (Array.isArray(item)) {
-      // res.concat(fatten(item))
-      res = [...res, ...fatten(item)]
-    } else {
-      // res.concat(item)
-      res = [...res, item]
+  for (let key in obj) {
+    if (obj.hashOwnProperty(key)) {
+      cloneObj[key] = deepClone(obj[key], hash)
     }
   }
 
-  return res
+  return cloneObj
 }
-
-console.log('fatten2', fatten2(arr))
