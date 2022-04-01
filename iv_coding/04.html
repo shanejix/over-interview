@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #root {
+        height: 200px;
+        width: 200px;
+        background-color: rebeccapurple;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      var Something = function (element) {
+        this.name = 'Something Good'
+      }
+
+      function onclick1() {
+        console.log('click1', this)
+        // console.log(this.name) // undefined, as this is the element
+      }
+
+      function onclick2() {
+        console.log('click2', this)
+        // console.log(this.name) // 'Something Good', as this is the binded Something object
+      }
+
+      const onclick3 = () => {
+        console.log('click3', this)
+      }
+
+      const element = document.getElementById('root')
+
+      element.addEventListener('click', onclick1, false)
+      element.addEventListener('click', onclick2.bind(Something), false) // Trick
+      element.addEventListener('click', onclick3.bind(Something), false) // Trick
+      element.addEventListener('click', onclick3, false) // Trick
+    </script>
+  </body>
+</html>
