@@ -50,15 +50,11 @@ Instruction
   JS 得心应手
   ```
 
-  
-
 - 哪方面的知识掌握是最全面的
 
   ```js
   前端工程化
   ```
-
-  
 
 - 性格上最大的优势
 
@@ -66,15 +62,11 @@ Instruction
   对技术的热情和对问题孜孜不倦的深挖实践
   ```
 
-  
-
 - 最擅长的事情
 
   ```js
   擅长从工作中分析总结，制定对某类问题的解决方法，编写效率工具
   ```
-
-  
 
 - 哪些成就和贡献
 
@@ -82,26 +74,21 @@ Instruction
   Github xx 项目核心贡献者
   ```
 
-  
-
 #### 范例
 
 - 面试官，你好，我叫 xx，毕业于 xx 大学 xx 专业，目前三年工作经验。（简单介绍，启下）
 
-- 在技术方面比较熟悉 React 开发，也能写写typescript（突出的技能）；在上一家公司主要负责 xx 平台官网的开发和重构、基础设施的建设和通用打包脚本编写这些，也担任过物料平台开发的主要工作，负责项目搭建、优化等。（突出的工作成就和贡献）
+- 在技术方面比较熟悉 React 开发，也能写写 typescript（突出的技能）；在上一家公司主要负责 xx 平台官网的开发和重构、基础设施的建设和通用打包脚本编写这些，也担任过物料平台开发的主要工作，负责项目搭建、优化等。（突出的工作成就和贡献）
 
 - 自己比较擅长从日常工作中分析总结，制定对某类问题的解决方法，编写效率工具（性格优势）；平时会更新技术博客和 Github 并且为大型开源项目提过 pr
 
-  
-
 ## 壹，HTML 相关
 
-### HTML语义化
+### HTML 语义化
 
 #### 「相关问题」
 
-- 怎么理解html语义化
-
+- 怎么理解 html 语义化
 
 #### 「回答关键点」
 
@@ -111,7 +98,7 @@ Instruction
 
 - 让浏览器更容易解析
 
-- 让爬虫更容易识别，有利于SEO
+- 让爬虫更容易识别，有利于 SEO
 
 ![image](6dea26b8-74b6-4d61-b9a0-062f0a999a4c-946285.jpg)
 
@@ -119,13 +106,11 @@ Instruction
 
 - 少用无语义的标签：div ；span
 
-- label的for属性和对应的input关联起来
+- label 的 for 属性和对应的 input 关联起来
 
-- 设置img的alt和a的title属性
+- 设置 img 的 alt 和 a 的 title 属性
 
 #### 「参考资料」
-
-
 
 ## 贰，CSS 相关
 
@@ -1074,7 +1059,6 @@ body {
 - 重复声明
 - 修改声明的变量
 - 使用
-
 
 **变量提升**
 
@@ -7712,3 +7696,11 @@ if (scrollTop + clientHeight >= scrollHeight - distance) {
   console.log('开始加载数据')
 }
 ```
+
+## 参考链接
+
+- https://lucifer.ren/fe-interview/#/
+- http://febook.hzfe.org/awesome-interview/
+- https://vue3js.cn/interview/
+- https://react.iamkasong.com/
+- https://7kms.github.io/react-illustration-series/
